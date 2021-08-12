@@ -327,6 +327,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3015943439301205418, guid: fae984c72baa7184f8769b3581b9e87d,
+        type: 3}
+      propertyPath: enemyType
+      value: Ant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015943439301205418, guid: fae984c72baa7184f8769b3581b9e87d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3015943439301205419, guid: fae984c72baa7184f8769b3581b9e87d,
         type: 3}
       propertyPath: m_Enabled
@@ -727,11 +737,6 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 8306226145448718650}
-    - target: {fileID: 5454804728445790499, guid: fae984c72baa7184f8769b3581b9e87d,
-        type: 3}
-      propertyPath: attackRange
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5475997354886001658, guid: fae984c72baa7184f8769b3581b9e87d,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -35374,6 +35374,7 @@ Transform:
   - {fileID: 7816623082403358432}
   - {fileID: 2287882127139321964}
   - {fileID: 8049028321328112915}
+  - {fileID: 1535397203572747485}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35600,7 +35601,7 @@ MonoBehaviour:
   flameThrowerOffset: {x: 0, y: 0, z: 0}
   iceShards: {fileID: 198433943929519872, guid: 1a1c02facd51d87458dcaa3a761e2c03,
     type: 3}
-  earthWave: {fileID: 198345217066185332, guid: 32c9fd11a72259d45aa26ae41c34c5aa,
+  earthWave: {fileID: 198345217066185332, guid: d4b1eb90ee4f76143a5a01ab613d73dc,
     type: 3}
   flameThrower: {fileID: 198637950067575458, guid: 007c57e2df8e9b144b99f471b84f3d56,
     type: 3}
@@ -35761,6 +35762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a225ce56528020f498c19ebd88806713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  presenceCheck: {fileID: 0}
   playerMainCamTransform: {fileID: 2287882127139321964}
   playerBodyTransform: {fileID: 249941065638059864}
   castingTarget: {fileID: 0}
@@ -41893,6 +41895,36 @@ Transform:
   - {fileID: 4838249293833754368}
   m_Father: {fileID: 3270804124404115353}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6847555839887461522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535397203572747485}
+  m_Layer: 0
+  m_Name: GrasshopperLandingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535397203572747485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847555839887461522}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6520644040782715786}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6872963089592158323
 GameObject:

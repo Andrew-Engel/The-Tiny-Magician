@@ -11,7 +11,6 @@ public class AntAttackSequence : MonoBehaviour
     [SerializeField] private Transform attackSource;
     private Transform player;
     private PlayerBehavior playerBehavior;
-    public float centipedeAttackDelay;
     public bool attackOccuring = false;
     private GameBehavior _gameManager;
     public int attackDamage = 6;

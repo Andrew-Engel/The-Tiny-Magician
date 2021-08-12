@@ -76,7 +76,7 @@ public class EnemyLockOn : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log($"Enemies in TRansform List: " + enemyTransformsList.Count);
+     
        
        
     }

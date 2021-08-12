@@ -16056,6 +16056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f14ed30df6c074d89db51e76dd8759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: Centipede
   backGroundMusicTitle: Background Music
   combatMusicTitle: Combat Song Flute
   agent: {fileID: 2243083326696505623}

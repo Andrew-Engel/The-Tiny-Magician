@@ -918,7 +918,7 @@ MonoBehaviour:
   combatMusicTitle: Combat Flute Music
   enemyHUD: {fileID: 0}
   healthbar: {fileID: 0}
-  isCentipede: 0
+  enemyType: 
   dissolveParticleSystem: {fileID: 2472038522795236696, guid: f091726771a58f74b80d69b2ef2cb0fb,
     type: 3}
   damageSound: {fileID: 8300000, guid: 8be583750ae395545952edf98cff1df8, type: 3}
@@ -1431,13 +1431,12 @@ MonoBehaviour:
   agent: {fileID: 3015943439301205419}
   animator: {fileID: 4805355181547107540}
   attackReactionDuration: 0
-  isCentipede: 0
+  enemyType: 
   centipedeWalkingRigLeft: {fileID: 0}
   centipedeWalkingRigRight: {fileID: 0}
   centipedeSpineRig: {fileID: 0}
   centipedeHindLegsRig: {fileID: 0}
   enemyBehavior: {fileID: 1688736592040019431}
-  centipedeAttack: {fileID: 0}
   player: {fileID: 0}
   attackPoint: {fileID: 0}
   targetPoint: {fileID: 0}
@@ -1449,6 +1448,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   centipedeThreatenTime: 0
+  centipedeAttack: {fileID: 0}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 80
   timeBetweenAttacks: 0
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   combatMusicTitle: 
   enemyHUD: {fileID: 0}
   healthbar: {fileID: 0}
-  isCentipede: 0
+  enemyType: 
   dissolveParticleSystem: {fileID: 0}
   damageSound: {fileID: 0}
   experienceGiven: 10
@@ -1531,13 +1531,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4805355181547107540}
-  attackRange: 0.01
+  attackRange: 5
   attackRate: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
   attackSource: {fileID: 7644898161871407943}
-  centipedeAttackDelay: 0
   attackOccuring: 0
   attackDamage: 1
 --- !u!1 &3112225830302718331

@@ -31,6 +31,7 @@ public class StaminaBar : MonoBehaviour
 
         }
     }
+    public static int absoluteMaxStamina = 150;
     public int maxStamina = 50;
     public event EventHandler <OnStaminaUseEventArgs> OnStaminaUse;
     public class OnStaminaUseEventArgs : EventArgs
@@ -92,7 +93,7 @@ public class StaminaBar : MonoBehaviour
     {
 
 
-        float staminaAmountNormalized = ((float)stamina / (float)maxStamina);
+        float staminaAmountNormalized = ((float)stamina / (float)absoluteMaxStamina);
 
         if (OnStaminaUse != null)
         {

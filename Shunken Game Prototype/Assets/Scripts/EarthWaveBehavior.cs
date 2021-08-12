@@ -10,6 +10,7 @@ public class EarthWaveBehavior : MonoBehaviour
     {
         impulseSource = GetComponent<Cinemachine.CinemachineImpulseSource>();
         impulseSource.GenerateImpulse(Camera.main.transform.forward);
+        Debug.Log("Impulse");
     }
 
     // Update is called once per frame

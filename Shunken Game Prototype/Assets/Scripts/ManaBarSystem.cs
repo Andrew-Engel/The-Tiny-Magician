@@ -18,6 +18,7 @@ public class ManaBarSystem : MonoBehaviour
         }
     }
     public int maxMana = 50;
+    public static int absoluteMaxMana = 150;
     public event EventHandler <OnManaUseEventArgs> OnManaUse;
     public class OnManaUseEventArgs : EventArgs
     {

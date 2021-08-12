@@ -9,6 +9,7 @@ using UnityEngine.Animations.Rigging;
 
 public class EnemyAi : MonoBehaviour
 {
+   
     //Audio
     [SerializeField] string backGroundMusicTitle = "Background Music", combatMusicTitle = "Combat Song Flute";
     //GroundFitter
@@ -22,12 +23,12 @@ public class EnemyAi : MonoBehaviour
     bool isMoving;
     public float attackReactionDuration;
     //What Type of Enemy?
-    [SerializeField] bool isCentipede;
+    [SerializeField] string enemyType;
     [SerializeField] Rig centipedeWalkingRigLeft, centipedeWalkingRigRight, centipedeSpineRig, centipedeHindLegsRig;
     //other scripts
     [SerializeField] EnemyBehavior enemyBehavior;
     PlayerBehavior playerBehavior;
-    [SerializeField] CentipedeAttackSequence centipedeAttack;
+  
     private AntAttackSequence ant;
     //targetting
  
@@ -36,8 +37,12 @@ public class EnemyAi : MonoBehaviour
    // private LineRenderer laserLine;
     public LayerMask whatIsGround, whatIsPlayer;
     //Audio
+
     //Centipede
     [SerializeField] float centipedeThreatenTime;
+    [SerializeField] CentipedeAttackSequence centipedeAttack;
+    //Grasshopper
+    private GrasshopperAttackSequence grasshopper;
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -73,7 +78,9 @@ public class EnemyAi : MonoBehaviour
     private void Start()
     {
         sightRangeWhenPlayerSneaking = sightRange / 2;
+        if (enemyType == "Ant")
         ant = GetComponent<AntAttackSequence>();
+        else if (enemyType == "Grasshopper") grasshopper = GetComponent<GrasshopperAttackSequence>();
         player = GameObject.Find("PlayerModel").GetComponent<Transform>();
         playerSightTarget = GameObject.Find("playerSightTarget").GetComponent<Transform>();
         if (fitter != null)
@@ -124,15 +131,18 @@ public class EnemyAi : MonoBehaviour
     {
         if (agent.enabled)
         {
-    
+
             if (!FindObjectOfType<AudioManager>().IsSoundPlaying(combatMusicTitle) && !PauseMenuFunctionality.gameIsPaused)
             {
                 AudioManager.instance.StopPlaying(backGroundMusicTitle);
                 AudioManager.instance.Play(combatMusicTitle);
             }
             agent.SetDestination(player.position);
-            if (isCentipede)
+
+            switch (enemyType)
             {
+                case ("Centipede"):
+            
                 headTransform.LookAt(player, Vector3.up);
                 if (centipedeWalkingRigLeft.weight == 0f)
                 { centipedeWalkingRigLeft.weight = 1f; }
@@ -143,12 +153,14 @@ public class EnemyAi : MonoBehaviour
                 if (centipedeHindLegsRig.weight == 0f)
                 { centipedeHindLegsRig.weight = 1f; }
                 animator.SetBool("Threaten", false);
-            }
-            else
+                    break;
+                default:
             { transform.LookAt(player);
 
                 animator.SetBool("Attack", false);
             }
+                    break;
+        }
 
            
 
@@ -165,26 +177,44 @@ public class EnemyAi : MonoBehaviour
         //Make sure enemy doesn't move
         if (agent.enabled)
         {
-            
-            
-            agent.SetDestination(transform.position);
-            if (isCentipede && !centipedeAttack.attackOccuring)
+
+
+          
+            switch (enemyType)
             {
-               
-               
-                    animator.SetBool("Threaten", true);
-                    centipedeSpineRig.weight = 0f;
-                    headTransform.LookAt(player, Vector3.up);
-                    centipedeWalkingRigLeft.weight = 0f;
-                    centipedeWalkingRigRight.weight = 0f;
-                    CentipedeAttack();
-                
+                case ("Centipede"):
+                    if (!centipedeAttack.attackOccuring)
+                    {
+                        agent.SetDestination(transform.position);
+
+                        animator.SetBool("Threaten", true);
+                        centipedeSpineRig.weight = 0f;
+                        headTransform.LookAt(player, Vector3.up);
+                        centipedeWalkingRigLeft.weight = 0f;
+                        centipedeWalkingRigRight.weight = 0f;
+                        CentipedeAttack();
+
+                    }
+                    break;
+                case ("Ant"):
+                    agent.SetDestination(transform.position);
+                    transform.LookAt(player);
+                        AntAttack();
+                    break;
+                case ("Grasshopper"):
+                    Debug.Log("Grasshopper Attack AI");
+                    if (!grasshopper.attackOccuring)
+                    {
+                       
+                        grasshopper.GrassHopperAttack();
+                    }
+                    break;
+                default:
+                    Debug.Log("Attack");
+                    transform.LookAt(player);
+                    break;
             }
-            else
-            { transform.LookAt(player);
-               if (!isCentipede)
-                AntAttack();
-            }
+       
 
         }
     }
@@ -211,6 +241,7 @@ public class EnemyAi : MonoBehaviour
 
         LayerMask rayCastLayerMask = whatIsPlayer | whatIsGround;
         //Check for sight and attack range
+       
         if (Sneaking.playerSneaking)
         { playerInSightRange = Physics.CheckSphere(transform.position, sightRangeWhenPlayerSneaking, whatIsPlayer, QueryTriggerInteraction.Ignore); }
         else playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer, QueryTriggerInteraction.Ignore);

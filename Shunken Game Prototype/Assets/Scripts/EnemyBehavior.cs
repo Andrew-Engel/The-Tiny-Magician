@@ -14,7 +14,7 @@ public class EnemyBehavior : MonoBehaviour
     bool enemyDeathCompleted = false;
     //locations
 
-    [SerializeField] bool isCentipede;
+    [SerializeField] string enemyType;
     //animations
     private MeleeAttacking meleeAttacking;
  
@@ -58,32 +58,33 @@ public class EnemyBehavior : MonoBehaviour
 
                     levelSystem.AddExperience(experienceGiven);
 
-                   
-                    if (!isCentipede)
+                   switch (enemyType)
                     {
-                      
-                        //_dissolve.DeathDissolve(1.7f);
-                        Destroy(this.transform.parent.gameObject, 1.7f);
-                        Instantiate(dissolveParticleSystem, this.transform);
+                        case ("Centipede"):
+                            Destroy(this.transform.parent.gameObject, 1.7f);
+                            Instantiate(dissolveParticleSystem, this.transform);
+                            break;
 
-                    }
-                    else
-                    {
-                      
-                        // _dissolve.DeathDissolve(1.7f);
-                        Destroy(this.transform.gameObject, 1.7f);
+                        case ("Ant"):
+                            Destroy(this.transform.parent.gameObject, 1.7f);
+                            break;
 
+                        default:
+                            Destroy(this.transform.parent.gameObject, 1.7f);
+                            break;
                     }
+              
                 }
 
             }
         }
     }
     void OnDestroy()
-    { presenceCheck.EnemyDeathEvent(); }
+    {// presenceCheck.EnemyDeathEvent(); 
+    }
     void Start()
     {
-        presenceCheck = GameObject.Find("Enemies").GetComponent<EnemyPresenceCheckSampleScene>();
+       // presenceCheck = GameObject.Find("Enemies").GetComponent<EnemyPresenceCheckSampleScene>();
         // _dissolve = GetComponent<DissolveEffectTrigger>();
         levelSystem = GameObject.Find("GameManager").GetComponent<LevelSystem>();
         itemDropping = GetComponent<ItemDropping>();
