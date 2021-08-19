@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grasshopper
-  m_Shader: {fileID: -6465566751694194690, guid: d41d52f095190274f91012c3101bbdf3,
+  m_Shader: {fileID: -6465566751694194690, guid: 5ceacf24f520e4a4ea6ed49a1c12ede6,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -90,7 +90,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_551A8284: 0.16
+    - Vector1_5BC4323: 8
     - Vector1_8606F96E: 0
+    - Vector1_F8AD0BCD: 8.21
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -100,6 +103,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Dissolve: 0
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -113,7 +117,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.52
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -121,6 +125,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_E53190CD: {r: 11.219272, g: 4.4640365, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

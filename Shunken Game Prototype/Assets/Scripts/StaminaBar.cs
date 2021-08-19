@@ -32,7 +32,7 @@ public class StaminaBar : MonoBehaviour
         }
     }
     public static int absoluteMaxStamina = 150;
-    public int maxStamina = 50;
+    public static int maxStamina = 50;
     public event EventHandler <OnStaminaUseEventArgs> OnStaminaUse;
     public class OnStaminaUseEventArgs : EventArgs
     {
@@ -56,6 +56,10 @@ public class StaminaBar : MonoBehaviour
     {
         controls.Player.Disable();
     }
+    void Start()
+    {
+        UpdateStamina();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -68,9 +72,11 @@ public class StaminaBar : MonoBehaviour
             staminaSprintDepletionTimer += (sprintingStaminaRate * Time.deltaTime);
             if (staminaSprintDepletionTimer >= 1f)
             {
-
+                
                 _stamina-= 2;
-                UpdateStamina();
+                if (Sneaking.playerSneaking)
+                    _stamina -= 2;
+                    UpdateStamina();
                 staminaSprintDepletionTimer = 0f;
             }
         }

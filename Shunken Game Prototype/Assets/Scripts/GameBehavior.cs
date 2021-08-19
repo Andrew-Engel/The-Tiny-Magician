@@ -29,7 +29,8 @@ public class GameBehavior : MonoBehaviour //Imanager
 
     private int _itemsCollected = 0;
     public int _playerHP = 20;
-    public int maxPlayerHP = 20;
+    public static int maxPlayerHP = 20;
+   public static int absoluteMaxHP = 42;
     //Cam Sensitivity
     //public float camSensitivity;
     private AudioManager audioManager;
@@ -48,7 +49,8 @@ public class GameBehavior : MonoBehaviour //Imanager
         player = GameObject.Find("Player").GetComponent<PlayerBehavior>();
     
         animator = GameObject.Find("Player").GetComponent<Animator>();
-         FindObjectOfType<AudioManager>().Play(backgroundMusicTitle); 
+         FindObjectOfType<AudioManager>().Play(backgroundMusicTitle);
+        SendHealthToHealthBar(_playerHP);
     }
     
 
@@ -111,10 +113,10 @@ public class GameBehavior : MonoBehaviour //Imanager
            
         }
     }
-    private void SendHealthToHealthBar(int currentLives)
+    public void SendHealthToHealthBar(int currentLives)
     {
-        float normalizedValue = (float)currentLives / (float)maxPlayerHP;
-
+        float normalizedValue = (float)currentLives / (float)absoluteMaxHP;
+        Debug.Log(normalizedValue);
         OnHealthChange(this, new OnHealthChangeEventArgs { healthLevelNormalized = normalizedValue });
     }
 }

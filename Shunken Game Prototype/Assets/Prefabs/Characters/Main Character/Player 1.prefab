@@ -35408,7 +35408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
+  MoveSpeed: 8
   SprintSpeed: 15
   RotationSmoothTime: 0.12
   SpeedChangeRate: 16.41
@@ -35634,7 +35634,7 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 86d439cf5a1a148418335d1fee403907, type: 3}
   jumpPlayerSound: {fileID: 8300000, guid: 2e671fd114f24d34594304ccda129ada, type: 3}
   jumpLanding: {fileID: 8300000, guid: bafce24e6815b43ceabac013c69e93a7, type: 3}
-  levelUpSound: {fileID: 8300000, guid: 220de0a1ff9b5ba44bc32e1294e9c5a1, type: 3}
+  levelUpSound: {fileID: 8300000, guid: e0cc1af8c9937ef42a58b4a2a5b7733c, type: 3}
   walkingSoundTempo: 0.5
   walkingSoundPlaying: 0
   turnAnimationThreshold: 0

@@ -32,7 +32,7 @@ public class PlayerBehavior : MonoBehaviour
     public float jumpVelocity = 5f;
 
     //otherscripts
-    StaminaBar staminaBar;
+    StaminaBar stamina;
     MagicCasting magic;
     [SerializeField] ThirdPersonController thirdPersonController;
     //Animation
@@ -72,6 +72,7 @@ public class PlayerBehavior : MonoBehaviour
        // controls.Player.Look.canceled += context => look = Vector2.zero;
 
         controls.Player.Interact.performed += context => Interact();
+      //  stamina = GameObject.Find("GameManager").GetComponent<StaminaBar>();
     }
 
     void OnEnable()
@@ -86,7 +87,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         jumping = false;
-        staminaBar = GetComponent<StaminaBar>();
+    
         magic = GetComponent<MagicCasting>();
 
       
