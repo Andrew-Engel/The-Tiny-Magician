@@ -36,16 +36,19 @@ public class PauseMenuFunctionality : MonoBehaviour
     }
     private void PauseMenu()
     {
-        Debug.Log("Pause");
-        audio.PlayOneShot(menuClick, 1f);
-        if (gameIsPaused)
+        if (!InventorySystem.inventoryOpen)
         {
-           
-            Resume();
-        }
-        else
-        {
-            Pause();
+            Debug.Log("Pause");
+            audio.PlayOneShot(menuClick, 1f);
+            if (gameIsPaused)
+            {
+
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
     public void Resume()

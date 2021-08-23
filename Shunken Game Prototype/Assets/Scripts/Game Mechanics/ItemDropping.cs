@@ -7,19 +7,20 @@ public class ItemDropping : MonoBehaviour
     [SerializeField] LayerMask whatIsGroundLayer;
     [SerializeField] GameObject[] healthPickupItems, manaPickupItems, staminaPickupItems;
     [SerializeField] private GameObject lootBox;
-    private Transform lootBoxParent;
+   [SerializeField] private Transform lootBoxParent;
    [SerializeField] private int  lotteryNumberRange= 3;
 
     // Start is called before the first frame update
     void Start()
     {
         lootBoxParent = GameObject.Find("lootBoxes").GetComponent<Transform>();
+        Debug.Log("Start");
     }
     public void RunPotionLottery()
     {
         Vector3 dropPoint = FindBestPlaceToDrop();
-        int lotteryNumber;
-       lotteryNumber = Random.Range(3,lotteryNumberRange);
+        int lotteryNumber = 3;
+      //lotteryNumber = Random.Range(0,lotteryNumberRange);
         Debug.Log($"lottery running for potions. Lottery number: " + lotteryNumber);
         switch (lotteryNumber)
         {
@@ -90,8 +91,8 @@ public class ItemDropping : MonoBehaviour
     {
         RaycastHit hitUp;
         RaycastHit hitDown;
-        Physics.Raycast(this.transform.parent.position, Vector3.up, out hitUp, whatIsGroundLayer);
-        Physics.Raycast(this.transform.parent.position, Vector3.down, out hitDown, whatIsGroundLayer);
+        Physics.Raycast(this.transform.parent.position, Vector3.up, out hitUp, Mathf.Infinity, whatIsGroundLayer);
+        Physics.Raycast(this.transform.parent.position, Vector3.down, out hitDown, Mathf.Infinity, whatIsGroundLayer);
         if (hitDown.point != null)
         {
             Debug.Log("hitdonw");

@@ -35349,6 +35349,7 @@ GameObject:
   - component: {fileID: 2387534112019872741}
   - component: {fileID: 2433804810267567075}
   - component: {fileID: 7876047983625377073}
+  - component: {fileID: 7114318981727060262}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -35847,6 +35848,29 @@ MonoBehaviour:
   animator: {fileID: 8768018037074602643}
   ChestRig: {fileID: 1999578963645886953}
   headRig: {fileID: 6648500585158587219}
+--- !u!114 &7114318981727060262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5851912704480985392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48107e5c5b9b85540a26c1a8c460bfe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followCam: {fileID: 0}
+  effectFOV: 70
+  effectTime: 0.3
+  groundOffset: {x: 0, y: 5, z: 0}
+  airEscapeDistance: 30
+  airEscapeTime: 1
+  airEscapeHeight: 3
+  playerModel: {fileID: 4538163788138596115}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5909088778002445477
 GameObject:
   m_ObjectHideFlags: 0

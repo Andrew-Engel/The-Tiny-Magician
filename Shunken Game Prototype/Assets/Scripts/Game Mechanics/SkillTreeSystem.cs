@@ -12,7 +12,9 @@ public enum Spells
     FireBall   = 2,
     FlameThrower = 3,
     EarthWave  = 4,
-    Crafting = 5
+    AirEscape = 5,
+    Crafting = 6,
+    
 
 };
 
@@ -28,6 +30,7 @@ public class SkillTreeSystem : MonoBehaviour
     {
         public string spellToBeUnlocked;
         public string nextSpell;
+        public bool addToInventory;
     }
     private string _nextSpell = "Nothing";
     public List<string> spellsUnlocked = new List<string>();
@@ -71,22 +74,26 @@ public class SkillTreeSystem : MonoBehaviour
     {
         Spells skill = (Spells)Enum.Parse(typeof(Spells), spell, true);
         int skillConstant = (int)skill;
-        if (skillConstant < 5)
+        if (skillConstant < 6)
             return true;
         else return false;
     }
    public void UnlockSpell(string spell)
     {
         if (CanSpellBeUnlocked(((Spells)Enum.Parse(typeof(Spells),spell,true))) && skillPoints >0 && !spellsUnlocked.Contains(spell))
-        { 
+        { bool AddToInventory = false;
+            Debug.Log("SpellUnlicked");
             if (IsThisAMagicSpell(spell))
-            spellsUnlocked.Add(spell.ToString());
+            {
+                spellsUnlocked.Add(spell.ToString());
+                AddToInventory = true;
+            }
             skillPoints--;
             SetSkillPointsText();
             if (OnSpellUnlock != null)
             {
 
-                OnSpellUnlock(this, new OnSpellUnlockEventArgs { spellToBeUnlocked = spell.ToString(), nextSpell = _nextSpell});
+                OnSpellUnlock(this, new OnSpellUnlockEventArgs { spellToBeUnlocked = spell.ToString(), nextSpell = _nextSpell, addToInventory = AddToInventory});
             }
         }
     }
@@ -117,6 +124,8 @@ public class SkillTreeSystem : MonoBehaviour
 
                 }
                 else return false;
+            case Spells.AirEscape:
+                return true;
             case Spells.Crafting:
                 _nextSpell = "Nothing";
                 return true;

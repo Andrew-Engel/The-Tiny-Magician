@@ -239,11 +239,13 @@ MonoBehaviour:
   flameThrowerIcon: {fileID: 0}
   earthShatterIcon: {fileID: 0}
   iceLanceIcon: {fileID: 0}
+  airEscapeIcon: {fileID: 0}
   noSpellIcon2: {fileID: 0}
   fireBallIcon2: {fileID: 0}
   flameThrowerIcon2: {fileID: 0}
   earthShatterIcon2: {fileID: 0}
   iceLanceIcon2: {fileID: 0}
+  airEscapeIcon2: {fileID: 0}
   fireBallSound: {fileID: 8300000, guid: ca53e226dcc54dc4d8f7e2e558a880d4, type: 3}
   flameThrowerSound: {fileID: 8300000, guid: 1ab1dc1296ee95a46a01330fb5646f2f, type: 3}
   earthShatterSound: {fileID: 8300000, guid: 86d9a15dec86eaf49a1df2561832430a, type: 3}
@@ -402,3 +404,4 @@ MonoBehaviour:
   - {fileID: 2438976436882113718, guid: 7102fa2fc04137b4ea83167663643fa4, type: 3}
   - {fileID: 2438976436882113718, guid: 368a1bff8a8f34947801b0e3ba98573e, type: 3}
   - {fileID: 2438976436882113718, guid: 0e5485e88e9c59248a3a00322c469220, type: 3}
+  - {fileID: 2438976436882113718, guid: 77c9e520e365014478f478492ae2ad79, type: 3}

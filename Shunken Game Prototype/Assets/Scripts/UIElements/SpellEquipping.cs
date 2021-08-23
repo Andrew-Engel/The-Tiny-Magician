@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using System.Linq;
 using UnityEngine.UI;
 
 public class SpellEquipping : MonoBehaviour
@@ -29,10 +29,12 @@ public class SpellEquipping : MonoBehaviour
     }
     private void SkillTreeSystem_OnSpellUnlock(object sender, SkillTreeSystem.OnSpellUnlockEventArgs e)
     {
+        if (e.addToInventory)
         AddIconToUnlocked(e.spellToBeUnlocked);
     }
     private void AddIconToUnlocked(string spellName)
     {
+        
         Instantiate(spellIcons[spellName], spellIconsAvailableParent);
     }
     public void EquipSpell(string spellName)
@@ -40,13 +42,14 @@ public class SpellEquipping : MonoBehaviour
         GameObject lastSpellOnList;
         string iconString = spellsEquiped[spellsEquiped.Length - 1];
         lastSpellOnList = spellIcons[iconString];
-        if (spellIconsAvailableParent.Find(lastSpellOnList.name + "(Clone)") == null && lastSpellOnList.name != "Nothing")
+        if (spellIconsAvailableParent.Find(lastSpellOnList.name + "(Clone)") == null && lastSpellOnList.name != "Nothing" && !spellsEquiped.Contains(iconString))
         { Instantiate(lastSpellOnList, spellIconsAvailableParent); }
         for (int i = spellsEquiped.Length - 1; i > 0; i--)
         {
           
             spellsEquiped[i] = spellsEquiped[i - 1];
-           GameObject equippedIcon = spellIconsEquippedParent.GetChild(i).gameObject;
+            if (spellsEquiped[i] == "Nothing") spellsEquiped[i] =spellName;
+            GameObject equippedIcon = spellIconsEquippedParent.GetChild(i).gameObject;
             Destroy(equippedIcon);
             GameObject newIcon = spellIcons[spellsEquiped[i]];
            Transform instantiatedIcon = Instantiate(newIcon, spellIconsEquippedParent).transform;

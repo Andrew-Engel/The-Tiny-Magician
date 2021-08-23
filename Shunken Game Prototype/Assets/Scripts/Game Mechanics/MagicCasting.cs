@@ -24,6 +24,8 @@ public class MagicCasting : MonoBehaviour
         public string currentSpell;
         
     }
+    //Other Spells
+    AirPathSpells airPathSpells;
     //Mana Bar System
     private ManaBarSystem manaBarSystem;
     // Equipped Spells
@@ -43,7 +45,8 @@ public class MagicCasting : MonoBehaviour
         {Spells.FireBall.ToString(),10 },
         {Spells.IceShards.ToString(),5 },
         {Spells.FlameThrower.ToString(),3 },
-        {Spells.EarthWave.ToString(),20 }
+        {Spells.EarthWave.ToString(),20 },
+        {Spells.AirEscape.ToString(),10 }
     };
     //preventing walking backwards and spells while not strafing
     private EnemyLockOn enemyLockOn;
@@ -111,10 +114,12 @@ public class MagicCasting : MonoBehaviour
     {
         if (!spellInProgress)
         {
+           
             if (spellUsed == "FireBall")
             {
                 DOTween.To(() => throwingRig.weight, x => throwingRig.weight = x, 0f, 0.3f);
                 fireBallInHand.SetActive(false);
+ 
             }
 
             spellIndex++;
@@ -134,7 +139,7 @@ public class MagicCasting : MonoBehaviour
                 if (spellIndex >= (SpellEquipping.spellsEquiped.Length - 1))
                 {
                     nextSpell = SpellEquipping.spellsEquiped[0];
-                    Debug.Log("Spell Icon Index set to 0");
+                  
                 }
                 else nextSpell = SpellEquipping.spellsEquiped[spellIndex + 1];
                 if (OnSpellChange != null)
@@ -142,7 +147,7 @@ public class MagicCasting : MonoBehaviour
                 if (spellUsed == "FireBall")
                 {
                     DOTween.To(() => throwingRig.weight, x => throwingRig.weight = x, 1f, 0.3f);
-
+                    Debug.Log("throwing rig set to 1");
                 }
             }
            
@@ -153,6 +158,7 @@ public class MagicCasting : MonoBehaviour
     // set up starting values and variables
     void Start()
     {
+        airPathSpells = GetComponent<AirPathSpells>();
         sneakingSystem = GetComponent<Sneaking>();
         manaBarSystem = GameObject.Find("GameManager").GetComponent<ManaBarSystem>();
         skillTree = GameObject.Find("GameManager").GetComponent<SkillTreeSystem>();
@@ -335,6 +341,13 @@ public class MagicCasting : MonoBehaviour
                             }
                         }
                         break;
+                    case "AirEscape":
+                         if (manaBarSystem.mana >= spellManaCost["AirEscape"])
+                        {
+                            if (Sneaking.playerSneaking) sneakingSystem.Crouch();
+                           StartCoroutine( airPathSpells.AirEscapeBackwards());
+                        }
+                        break;
                 }
             }
         }
@@ -346,7 +359,7 @@ public class MagicCasting : MonoBehaviour
         animator.SetLayerWeight(1, 0f);
         StayInPlace.stayInPlace = false;
     }
-    private void StopMagic()
+    public void StopMagic()
     {
         audio.Stop();
         aimingReticle.SetActive(false);

@@ -39,6 +39,7 @@ public class ManaBarSystem : MonoBehaviour
         {
             RegenerateMana();
         }
+        if (mana == 0) playerMagic.StopMagic();
     }
     private void RegenerateMana()
     {

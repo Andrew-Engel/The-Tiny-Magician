@@ -298,7 +298,7 @@ GameBehavior gameManager;
                 s.source.Pause();
             }
         }
-        else 
+        else if (inventoryOpen && !PauseMenuFunctionality.gameIsPaused)
         {
            
             Cursor.visible = false;

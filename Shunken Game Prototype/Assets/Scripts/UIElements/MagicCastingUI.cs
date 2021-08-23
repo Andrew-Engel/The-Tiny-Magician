@@ -10,8 +10,8 @@ public class MagicCastingUI : MonoBehaviour
     [SerializeField] RectTransform currentSpellIconTransform, nextSpellIconTransform;
     private Vector3 nextSpellIconOriginalPosition;
     [SerializeField] private Image manaBar;
-    [SerializeField] CanvasGroup  noSpellIcon,fireBallIcon, flameThrowerIcon, earthShatterIcon, iceLanceIcon;
-    [SerializeField] CanvasGroup noSpellIcon2, fireBallIcon2, flameThrowerIcon2, earthShatterIcon2, iceLanceIcon2;
+    [SerializeField] CanvasGroup  noSpellIcon,fireBallIcon, flameThrowerIcon, earthShatterIcon, iceLanceIcon, airEscapeIcon;
+    [SerializeField] CanvasGroup noSpellIcon2, fireBallIcon2, flameThrowerIcon2, earthShatterIcon2, iceLanceIcon2, airEscapeIcon2;
     [SerializeField] AudioClip fireBallSound, flameThrowerSound, earthShatterSound, iceLanceSound, noSpellSound;
     private AudioSource audioSource;
     private CanvasGroup currentIcon, nextIcon;
@@ -43,6 +43,7 @@ public class MagicCastingUI : MonoBehaviour
         spellIcons.Add(Spells.IceShards.ToString(), iceLanceIcon);
         spellIcons.Add(Spells.FlameThrower.ToString(), flameThrowerIcon);
         spellIcons.Add(Spells.EarthWave.ToString(), earthShatterIcon);
+        spellIcons.Add(Spells.AirEscape.ToString(), airEscapeIcon);
 
     }
     private void SetUpIconDictionary2()
@@ -52,6 +53,7 @@ public class MagicCastingUI : MonoBehaviour
         nextSpellIcons.Add(Spells.IceShards.ToString(), iceLanceIcon2);
         nextSpellIcons.Add(Spells.FlameThrower.ToString(), flameThrowerIcon2);
         nextSpellIcons.Add(Spells.EarthWave.ToString(), earthShatterIcon2);
+        nextSpellIcons.Add(Spells.AirEscape.ToString(), airEscapeIcon2);
 
     }
     private void SetUpSoundDictionary()
