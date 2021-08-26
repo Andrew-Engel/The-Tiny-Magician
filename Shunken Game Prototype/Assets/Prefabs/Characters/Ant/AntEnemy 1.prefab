@@ -919,6 +919,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 0}
   healthbar: {fileID: 0}
   enemyType: 
+  animator: {fileID: 0}
   dissolveParticleSystem: {fileID: 2472038522795236696, guid: f091726771a58f74b80d69b2ef2cb0fb,
     type: 3}
   damageSound: {fileID: 8300000, guid: 8be583750ae395545952edf98cff1df8, type: 3}
@@ -1060,6 +1061,7 @@ MonoBehaviour:
   - {fileID: 8083077565627105332, guid: ba81e70eff7dc844c843a8631e46b0f5, type: 3}
   - {fileID: 2573148760462790595, guid: 33e90885df624384f8c1ccc25192caa8, type: 3}
   lootBox: {fileID: 9215444625666089406, guid: 0315b1f7f46ddea449864ea407928c2a, type: 3}
+  lootBoxParent: {fileID: 0}
   lotteryNumberRange: 10
 --- !u!1 &2374205712909274387
 GameObject:
@@ -1446,7 +1448,7 @@ MonoBehaviour:
     m_Bits: 128
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   centipedeThreatenTime: 0
   centipedeAttack: {fileID: 0}
   walkPoint: {x: 0, y: 0, z: 0}
@@ -1514,6 +1516,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 0}
   healthbar: {fileID: 0}
   enemyType: 
+  animator: {fileID: 0}
   dissolveParticleSystem: {fileID: 0}
   damageSound: {fileID: 0}
   experienceGiven: 10
@@ -1535,7 +1538,7 @@ MonoBehaviour:
   attackRate: 3
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   attackSource: {fileID: 7644898161871407943}
   attackOccuring: 0
   attackDamage: 1

@@ -36,7 +36,7 @@ public class PauseMenuFunctionality : MonoBehaviour
     }
     private void PauseMenu()
     {
-        if (!InventorySystem.inventoryOpen)
+        if (!InventorySystem.inventoryOpen && !GameBehavior.showLossScreen)
         {
             Debug.Log("Pause");
             audio.PlayOneShot(menuClick, 1f);

@@ -21,11 +21,11 @@ TagManager:
   - UI
   - Enemy
   - Ground
-  - Lighting
   - Player
+  - RagDoll
   - Postprocessing
   - LootBox
-  - 
+  - Collidable
   - 
   - 
   - 

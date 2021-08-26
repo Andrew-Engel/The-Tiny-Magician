@@ -281,7 +281,7 @@ GameBehavior gameManager;
     private void OpenInventory()
     {
         Debug.Log("OpenInventory");
-        if (!inventoryOpen && !PauseMenuFunctionality.gameIsPaused)
+        if (!inventoryOpen && !PauseMenuFunctionality.gameIsPaused && !GameBehavior.showLossScreen)
         {
             if (OnInventoryOpen != null)
             OnInventoryOpen(this, EventArgs.Empty);

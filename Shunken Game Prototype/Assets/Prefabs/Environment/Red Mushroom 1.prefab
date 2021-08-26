@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 1524719692733600359}
   - component: {fileID: 3660321705189779117}
   - component: {fileID: 8995806657525958118}
-  - component: {fileID: 7849961857532801750}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Red Mushroom 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +29,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 272.61948, y: 38.90429, z: -224.4539}
   m_LocalScale: {x: 707.3815, y: 707.3815, z: 707.3815}
-  m_Children: []
+  m_Children:
+  - {fileID: 4532793912898211604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,13 +98,44 @@ CapsuleCollider:
   m_Height: 0.013686409
   m_Direction: 2
   m_Center: {x: -0.0000000016298144, y: -0.0000000013969835, z: 0.00788368}
---- !u!65 &7849961857532801750
+--- !u!1 &8925168998821603705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4532793912898211604}
+  - component: {fileID: 1838864547287209497}
+  m_Layer: 7
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4532793912898211604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925168998821603705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2488027611475926466}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1838864547287209497
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3012045320500709240}
+  m_GameObject: {fileID: 8925168998821603705}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using RootMotion.Dynamics;
 
 
 public enum Spells
@@ -14,6 +15,7 @@ public enum Spells
     EarthWave  = 4,
     AirEscape = 5,
     Crafting = 6,
+    Agility = 7
     
 
 };
@@ -21,6 +23,7 @@ public enum Spells
 
 public class SkillTreeSystem : MonoBehaviour
 {
+    BehaviourPuppet behaviourPuppet;
     ManaBarSystem manaBar;
     GameBehavior _HP;
     StaminaBar stamina;
@@ -41,6 +44,7 @@ public class SkillTreeSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI skillPointsAvailableText;
     private void Start()
     {
+        behaviourPuppet = GameObject.Find("Puppet").GetComponent<BehaviourPuppet>();
         spellsUnlocked.Add("Nothing");
         levelSystemAnimated = GetComponent<LevelSystemAnimated>();
         SetSkillPointsText();
@@ -61,7 +65,7 @@ public class SkillTreeSystem : MonoBehaviour
         SetSkillPointsText();
     }
 
-    private int skillPoints =5;
+    private int skillPoints =10;
     public int _skillPoints
     {
         get
@@ -127,9 +131,13 @@ public class SkillTreeSystem : MonoBehaviour
             case Spells.AirEscape:
                 return true;
             case Spells.Crafting:
-                _nextSpell = "Nothing";
+                _nextSpell = "Agility";
                 return true;
-                break;
+            case Spells.Agility:
+                
+                    _nextSpell = "Nothing";
+                    return true;
+    
             default:
                 return false;
         }
@@ -189,5 +197,12 @@ public class SkillTreeSystem : MonoBehaviour
     private void SetSkillPointsText()
     {
         skillPointsAvailableText.text = "Skill Points: " + (skillPoints);
+    }
+    public void IncreaseAgility()
+    {
+        skillPoints--;
+        Debug.Log("Agility");
+        behaviourPuppet.collisionResistance = new Weight(1300);
+        
     }
 }

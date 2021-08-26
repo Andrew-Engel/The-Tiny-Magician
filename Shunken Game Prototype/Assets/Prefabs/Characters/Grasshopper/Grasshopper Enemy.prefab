@@ -898,14 +898,13 @@ MonoBehaviour:
   enemyBehavior: {fileID: 3808905545402790458}
   player: {fileID: 0}
   attackPoint: {fileID: 2136793307150316799}
-  targetPoint: {fileID: 0}
   headTransform: {fileID: 168396696622743563}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   centipedeThreatenTime: 0
   centipedeAttack: {fileID: 0}
   walkPoint: {x: 0, y: 0, z: 0}
@@ -940,9 +939,10 @@ MonoBehaviour:
   attackRate: 3
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
-  leapDistance: 40
+    m_Bits: 256
+  leapDistance: 50
   closeAttackRange: 2
+  playerTransform: {fileID: 0}
   apexTransform: {fileID: 6341879748309891421}
   leapHeight: 10
   attackSource: {fileID: 2136793307150316799}
@@ -1144,9 +1144,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6218670197740047289}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Mass: 300
+  m_Drag: 10
+  m_AngularDrag: 10
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1475,6 +1475,7 @@ MonoBehaviour:
   - {fileID: 8083077565627105332, guid: ba81e70eff7dc844c843a8631e46b0f5, type: 3}
   - {fileID: 2573148760462790595, guid: 33e90885df624384f8c1ccc25192caa8, type: 3}
   lootBox: {fileID: 9215444625666089406, guid: 0315b1f7f46ddea449864ea407928c2a, type: 3}
+  lootBoxParent: {fileID: 0}
   lotteryNumberRange: 10
 --- !u!1 &6540025125173913601
 GameObject:

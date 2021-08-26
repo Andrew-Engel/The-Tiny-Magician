@@ -32,7 +32,7 @@ public class EnemyAi : MonoBehaviour
     private AntAttackSequence ant;
     //targetting
  
-    public Transform player, attackPoint, targetPoint;
+    public Transform player, attackPoint;
    [SerializeField] Transform headTransform;
    // private LineRenderer laserLine;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -202,7 +202,7 @@ public class EnemyAi : MonoBehaviour
                         AntAttack();
                     break;
                 case ("Grasshopper"):
-                    Debug.Log("Grasshopper Attack AI");
+                  
                     if (!grasshopper.attackOccuring)
                     {
                        

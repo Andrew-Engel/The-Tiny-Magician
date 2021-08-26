@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using CustomExtensions;
-using TMPro;
+using RootMotion.Dynamics;
 using System;
+using DG.Tweening;
 
 public class GameBehavior : MonoBehaviour //Imanager
-{
+{ Transform screenCanvasTransform;
+    public PuppetMaster puppet;
+    public event EventHandler OnPlayerDeath;
     public event EventHandler<OnHealthChangeEventArgs> OnHealthChange;
     public class OnHealthChangeEventArgs : EventArgs
     {
@@ -21,7 +24,7 @@ public class GameBehavior : MonoBehaviour //Imanager
 
     
     public bool showWinScreen = false;
-    public bool showLossScreen = false;
+    public static bool showLossScreen = false;
    
     public int maxItems = 4;
    
@@ -44,6 +47,9 @@ public class GameBehavior : MonoBehaviour //Imanager
     }
     void Start ()
     {
+        hud = GameObject.Find("PlayTime HUD");
+        screenCanvasTransform = GameObject.Find("Screen Canvas").GetComponent<Transform>();
+        puppet = GameObject.Find("PuppetMaster").GetComponent<PuppetMaster>();
         buttonTapCount = 0;
        // Cursor.visible = false;
         player = GameObject.Find("Player").GetComponent<PlayerBehavior>();
@@ -67,7 +73,11 @@ public class GameBehavior : MonoBehaviour //Imanager
     }
     private void EndOfGame()
     {
-        Time.timeScale = 0f;
+        hud.SetActive(false);
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0, 3.5f).SetUpdate(true);
+        Instantiate(lossScreen, screenCanvasTransform);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     public int HP
     {
@@ -84,16 +94,16 @@ public class GameBehavior : MonoBehaviour //Imanager
             }
             if (_playerHP <= 0)
             {
-             
-               
-               
+
+
+                puppet.Kill();
                 showLossScreen = true;
 
                 Debug.Log("PLayerDeath");
-                
-                AudioManager.instance.Play("PlayerDeath");   
-                    
-                    Invoke("EndOfGame", 2.0f);
+                if (!showLossScreen)
+                AudioManager.instance.Play("PlayerDeath");
+
+                EndOfGame();
                 
                 
                 

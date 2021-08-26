@@ -5259,7 +5259,8 @@ MonoBehaviour:
   combatMusicTitle: Combat Song Flute
   enemyHUD: {fileID: 0}
   healthbar: {fileID: 0}
-  isCentipede: 0
+  enemyType: 
+  animator: {fileID: 0}
   dissolveParticleSystem: {fileID: 2472038522795236696, guid: f091726771a58f74b80d69b2ef2cb0fb,
     type: 3}
   damageSound: {fileID: 8300000, guid: 8be583750ae395545952edf98cff1df8, type: 3}
@@ -5389,6 +5390,7 @@ MonoBehaviour:
   - {fileID: 8083077565627105332, guid: ba81e70eff7dc844c843a8631e46b0f5, type: 3}
   - {fileID: 2573148760462790595, guid: 33e90885df624384f8c1ccc25192caa8, type: 3}
   lootBox: {fileID: 9215444625666089406, guid: 0315b1f7f46ddea449864ea407928c2a, type: 3}
+  lootBoxParent: {fileID: 0}
   lotteryNumberRange: 6
 --- !u!1 &2781318540523325382
 GameObject:
@@ -16056,19 +16058,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f14ed30df6c074d89db51e76dd8759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: Centipede
   backGroundMusicTitle: Background Music
   combatMusicTitle: Combat Song Flute
   agent: {fileID: 2243083326696505623}
   animator: {fileID: 7905577296560752049}
   attackReactionDuration: 0
-  isCentipede: 1
+  enemyType: Centipede
   centipedeWalkingRigLeft: {fileID: 1404036362111109652}
   centipedeWalkingRigRight: {fileID: 5786789955569240175}
   centipedeSpineRig: {fileID: 5894564849574282177}
   centipedeHindLegsRig: {fileID: 5031346161952425116}
   enemyBehavior: {fileID: 0}
-  centipedeAttack: {fileID: 3412963138132465809}
   player: {fileID: 0}
   attackPoint: {fileID: 0}
   targetPoint: {fileID: 0}
@@ -16078,8 +16078,9 @@ MonoBehaviour:
     m_Bits: 128
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   centipedeThreatenTime: 0
+  centipedeAttack: {fileID: 3412963138132465809}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 0
   timeBetweenAttacks: 0
@@ -16167,7 +16168,7 @@ MonoBehaviour:
   attackRate: 2
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   attackSource: {fileID: 1936117813548130269}
   centipedeAttackDelay: 6
   attackOccuring: 0

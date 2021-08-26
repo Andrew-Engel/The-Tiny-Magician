@@ -23,7 +23,7 @@ public class SkillTreeUISoundsAndAnimations : MonoBehaviour,IPointerEnterHandler
     private Image buttonImage;
     private SkillTreeSystem skillTree;
     public string whatSpellDoesThisButtonUnlock;
-    private Animator animator;
+    
     void Awake()
     {
        
@@ -32,7 +32,7 @@ public class SkillTreeUISoundsAndAnimations : MonoBehaviour,IPointerEnterHandler
     void Start()
     {
         explainationBoxCanvasGroup = explainationBox.GetComponent<CanvasGroup>();
-        animator = GetComponentInParent<Animator>();
+        
   
         audioSource = GetComponentInParent<AudioSource>();
         skillTree = GameObject.FindWithTag("GameManager").GetComponent<SkillTreeSystem>();
@@ -82,9 +82,9 @@ public class SkillTreeUISoundsAndAnimations : MonoBehaviour,IPointerEnterHandler
     }
     private void SliderAnimation()
     {
-       
 
-        animator.SetTrigger(whatSpellDoesThisButtonUnlock);
+
+        DOTween.To(() => transitionSlider.value, x => transitionSlider.value = x, 1f, 0.5f).SetUpdate(true);
         audioSource.PlayOneShot(skillUnlockedSliderSound, 1.0f);
         
 

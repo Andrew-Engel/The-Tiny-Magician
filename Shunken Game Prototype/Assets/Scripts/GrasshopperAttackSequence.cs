@@ -6,6 +6,8 @@ using DG.Tweening;
 
 public class GrasshopperAttackSequence : MonoBehaviour
 {
+    public bool playerWithinMinRange;
+    public bool playerWithinMaxRange;
     Vector3 targetPosition;
     [Tooltip("Useful for rough ground")]
     public float GroundedOffset = -0.14f;
@@ -13,19 +15,19 @@ public class GrasshopperAttackSequence : MonoBehaviour
     public float GroundedRadius = 0.28f;
     [Tooltip("What layers the character uses as ground")]
     public LayerMask GroundLayers;
-    bool Grounded;
+   public bool Grounded;
     bool jumping;
     [SerializeField] AudioClip wingFlappingSound, landingSound;
     private AudioSource _audio;
     [SerializeField] ParticleSystem landingEffect;
-    bool leaping;
+  
     NavMeshAgent agent;
     public int attackDamage;
     [SerializeField] float attackRate;
     [SerializeField] LayerMask playerLayer;
     [SerializeField] float leapDistance = 25f;
     [SerializeField] float closeAttackRange;
-    Transform playerTransform;
+    public Transform playerTransform;
     Transform grasshopperLandingTransform;
     [SerializeField] Transform apexTransform;
     [SerializeField] float leapHeight;
@@ -48,11 +50,26 @@ public class GrasshopperAttackSequence : MonoBehaviour
     }
     public void GrassHopperAttack()
     {
+        Debug.Log("Attack Grasshopper");
+        
         GroundedCheck();
-      bool playerWithinMaxRange =  Physics.Raycast(this.transform.position, playerTransform.position- this.transform.position, leapDistance,  playerLayer);
-        bool playerWithinMinRange = Physics.Raycast(this.transform.position, playerTransform.position - this.transform.position, leapDistance - 8f, playerLayer);
-        if (playerWithinMaxRange && !playerWithinMinRange && Grounded) StartCoroutine(GrasshopperLeap());
-        else if (playerWithinMaxRange && playerWithinMaxRange) StartCoroutine(GrasshopperCloseAttack());
+           //playerWithinMaxRange =  Physics.Raycast(this.transform.position, playerTransform.position- this.transform.position, leapDistance,  playerLayer);
+         // playerWithinMinRange = Physics.Raycast(this.transform.position, playerTransform.position - this.transform.position, leapDistance - 10f, playerLayer);
+          playerWithinMaxRange =  Physics.CheckSphere(this.transform.position,  leapDistance,  playerLayer, QueryTriggerInteraction.Ignore);
+        playerWithinMinRange = Physics.CheckSphere(this.transform.position, leapDistance -10f, playerLayer, QueryTriggerInteraction.Ignore); ;
+       
+        if (playerWithinMaxRange && !playerWithinMinRange && Grounded)
+        {
+            Debug.Log("Leap!!");
+            StartCoroutine(GrasshopperLeap());
+
+        }
+        else if (playerWithinMaxRange && playerWithinMaxRange)
+        {
+            Debug.Log("CloseAttack");
+            StartCoroutine(GrasshopperCloseAttack());
+
+        }
     }
   public IEnumerator GrasshopperLeap()
     {
@@ -74,8 +91,9 @@ public class GrasshopperAttackSequence : MonoBehaviour
     }
     public IEnumerator GrasshopperCloseAttack()
     {
+        
         agent.SetDestination(playerTransform.position);
-
+        
         if (Physics.CheckSphere(attackSource.position, closeAttackRange, playerLayer, QueryTriggerInteraction.Ignore))
         {
             agent.SetDestination(this.transform.position);
@@ -94,7 +112,7 @@ public class GrasshopperAttackSequence : MonoBehaviour
     
     private void GrasshopperLeapTrajectory()
     {
-        Vector3 targetLanding = playerTransform.position + new Vector3(0, 2, 0);
+        Vector3 targetLanding = playerTransform.position + new Vector3(0, 5, 0);
 
         transform.DOJump(targetLanding, leapHeight, 1, leapDuration, false);
     }
@@ -105,7 +123,7 @@ public class GrasshopperAttackSequence : MonoBehaviour
     void OnTriggerEnter (Collider other)
     {
        
-        if (other.tag == "Landable" && jumping)
+        if (other.CompareTag("Landable") && jumping)
         {
             impulseSource.GenerateImpulse(Camera.main.transform.forward);
             Debug.Log("GrasshopperLanded");

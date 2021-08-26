@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2344681027302853104}
   - component: {fileID: 535098986028924218}
   - component: {fileID: 5776845186706109462}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: BladeOfGrass3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,9 +8,11 @@ using UnityEngine.Animations.Rigging;
 using StarterAssets;
 using UnityEngine.UI;
 using DG.Tweening;
+using RootMotion.Dynamics;
 
 public class MagicCasting : MonoBehaviour
 {
+    public PuppetMaster puppet;
     //eventsystems
     public event EventHandler<OnSpellChangeEventArgs> OnSpellChange;
     public class OnSpellChangeEventArgs : EventArgs
@@ -26,6 +28,7 @@ public class MagicCasting : MonoBehaviour
     }
     //Other Spells
     AirPathSpells airPathSpells;
+    FirePathSpells firePathSpells;
     //Mana Bar System
     private ManaBarSystem manaBarSystem;
     // Equipped Spells
@@ -52,7 +55,8 @@ public class MagicCasting : MonoBehaviour
     private EnemyLockOn enemyLockOn;
     private Vector2 move;
     //preventing switching spell when spell in progress
-    bool spellInProgress = false;
+    public static bool spellInProgress = false;
+   public static bool casting = false;
     //other variables
     [SerializeField] GameObject castingEffect;
     
@@ -103,7 +107,9 @@ public class MagicCasting : MonoBehaviour
 
         controls = new PlayerControls();
         controls.Player.MagicExecution.performed += context => CastMagic();
+     
         controls.Player.MagicExecution.canceled += context => StopMagic();
+
         controls.Player.SwitchSpell.performed += context => SwitchSpells();
 
 
@@ -115,12 +121,14 @@ public class MagicCasting : MonoBehaviour
         if (!spellInProgress)
         {
            
-            if (spellUsed == "FireBall")
+           /* if (spellUsed == "FireBall")
             {
+                puppet.mode = PuppetMaster.Mode.Disabled;
                 DOTween.To(() => throwingRig.weight, x => throwingRig.weight = x, 0f, 0.3f);
                 fireBallInHand.SetActive(false);
- 
-            }
+                puppet.mode = PuppetMaster.Mode.Active;
+
+            }*/
 
             spellIndex++;
             string nextSpell;
@@ -146,8 +154,10 @@ public class MagicCasting : MonoBehaviour
                     OnSpellChange(this, new OnSpellChangeEventArgs { currentSpell = spellUsed, nextSpell = nextSpell });
                 if (spellUsed == "FireBall")
                 {
+                    puppet.mode = PuppetMaster.Mode.Disabled;
                     DOTween.To(() => throwingRig.weight, x => throwingRig.weight = x, 1f, 0.3f);
                     Debug.Log("throwing rig set to 1");
+                    puppet.mode = PuppetMaster.Mode.Active;
                 }
             }
            
@@ -159,6 +169,7 @@ public class MagicCasting : MonoBehaviour
     void Start()
     {
         airPathSpells = GetComponent<AirPathSpells>();
+        firePathSpells = GetComponent<FirePathSpells>();
         sneakingSystem = GetComponent<Sneaking>();
         manaBarSystem = GameObject.Find("GameManager").GetComponent<ManaBarSystem>();
         skillTree = GameObject.Find("GameManager").GetComponent<SkillTreeSystem>();
@@ -202,33 +213,7 @@ public class MagicCasting : MonoBehaviour
         TriggerOnSpellUseEvent();
         spellInProgress = false;
     }
-    private IEnumerator ThrowFireBall()
-    {
-        spellInProgress = true;
-        if (OnSpellUseAndCancel != null)
-        { OnSpellUseAndCancel(this, new OnSpellUseAndCancelEventArgs { currentSpell = spellUsed }); }
-           DOTween.To(() => throwingChestRig.weight, x => throwingChestRig.weight = x, 0f, 0.3f);
-        // DOTween.To(() => throwingArmRig.weight, x => throwingArmRig.weight = x, 1, 0.8f);
-        throwingArmRig.weight = 1;
-        yield return new WaitForSeconds(fireBallDelay);
-        TriggerOnSpellUseEvent();
-        audio.PlayOneShot(fireBallSound, 0.7f);
-        //Determine player state, and decide which rpeset point fireball should be isntantiated in
-        Transform currentCastingPoint;
-        if (Sneaking.playerSneaking) currentCastingPoint = castingSneakPoint;
-        else currentCastingPoint = castingPoint;
 
-        GameObject fireBallClone = Instantiate(fireBall, currentCastingPoint.position, Quaternion.identity);
-        Rigidbody fireBall_rb = fireBallClone.GetComponent<Rigidbody>();
-        fireBall_rb.AddForce(currentCastingPoint.forward * fireBallVelocity);
-        if (OnSpellUseAndCancel != null)
-        { OnSpellUseAndCancel(this, new OnSpellUseAndCancelEventArgs { currentSpell = spellUsed }); }
-        if (!enemyLockOn.lockedOnEnemy && ! Sneaking.playerSneaking)
-          DOTween.To(() => throwingChestRig.weight, x => throwingChestRig.weight= x, 1, 0.2f);
-        // DOTween.To(() => throwingArmRig.weight, x => throwingArmRig.weight = x, 0, 0.8f);
-        throwingArmRig.weight = 0;
-        spellInProgress = false;
-    }
     private void FindCastTarget()
     {
         RaycastHit hit;
@@ -259,32 +244,41 @@ public class MagicCasting : MonoBehaviour
         }
         Debug.DrawRay(castingPoint.position, castingTarget- castingPoint.position, Color.red);
     }
+    private IEnumerator StartMagic(string spell)
+    {//Use this for spells that use animation rigging, it seems puppet master must be disabled before a couple seconds the spells is made for animation rigging to work
+        
+        puppet.mode = PuppetMaster.Mode.Disabled;
+       // float regularTime = 0.1f;
+    //    float extendedTime = 0.5f;
+        yield return new WaitForSeconds(0.1f);
+       switch (spell)
+        {
+            case "Fireball":
+                firePathSpells.Fireball();
+                break;
+            case "IceShards":
+                StartIceLance();
+                break;
+            case "FlameThrower":
+                FlameThrower();
+                break;
+        }
+    }
     private void CastMagic()
     {
         if (Time.timeScale > 0)
         {
+          
             //the top if statement ensures that you can't shoot spells while sprinting towards camera, for this create a buggy feeling
             if ((enemyLockOn.lockedOnEnemy) || (move.y >= 0 && !enemyLockOn.lockedOnEnemy))
             {
-                
+               
                 switch (spellUsed)
                 {
                     case "IceShards":
                         if (manaBarSystem.mana >= spellManaCost["IceShards"])
                         {
-                            aimingReticle.SetActive(true);
-
-                            // animator.SetLayerWeight(1, 1f);
-
-                            aim.weight = 1f;
-                            castingAimedSpells = true;
-                            aimCam.Priority = 11;
-
-
-                            castingEffect.SetActive(true);
-                            InvokeRepeating("IceLance", 0, iceLanceTempo);
-                            InvokeRepeating("IceLanceAudio", 0, iceLanceTempo);
-                            // iceShards.transform.position = castingPoint.transform.position;
+                           StartCoroutine( StartMagic("IceShards"));
 
                         }
 
@@ -293,33 +287,14 @@ public class MagicCasting : MonoBehaviour
                     case "EarthWave":
                         if (ThirdPersonController.Grounded && manaBarSystem.mana >= spellManaCost["EarthWave"])
                         {
-                            if (Sneaking.playerSneaking)
-                            sneakingSystem.Crouch();
-                            TriggerOnSpellUseEvent();
-                            StartCoroutine(StandStill());
-                            animator.SetLayerWeight(1, 1f);
-                            animator.SetBool("EarthWave", true);
-                            audio.PlayOneShot(earthWaveFire, 1f);
-                            audio.PlayOneShot(earthWaveRocks, 1f);
-
-                            // aim.weight = 1f;
-                            castingAimedSpells = true;
-                            aimCam.Priority = 11;
-
-                            Instantiate(earthWave, earthWavePoint.position, earthWavePoint.rotation);
-
-
+                            EarthWave();
 
                         }
                         break;
                     case "FireBall":
                         if (manaBarSystem.mana >= spellManaCost["FireBall"])
                         {
-
-                            castingAimedSpells = true;
-                            aimCam.Priority = 11;
-                            fireBallInHand.SetActive(true);
-                            StartCoroutine(ThrowFireBall());
+                           StartCoroutine( StartMagic("Fireball"));
 
                         }
                         break;
@@ -327,23 +302,13 @@ public class MagicCasting : MonoBehaviour
 
                         if (manaBarSystem.mana >= spellManaCost["FlameThrower"])
                         {
-                            if (Sneaking.playerSneaking)
-                                sneakingSystem.Crouch();
-                            aim.weight = 1f;
-                            castingAimedSpells = true;
-                            aimCam.Priority = 11;
-                            if (castingPoint.childCount == 0)
-                            {
-                                castingEffect.SetActive(true);
-                                Instantiate(flameThrower, flameThrowerPoint.position + flameThrowerOffset, castingPoint.rotation, castingPoint);
-                                audio.PlayOneShot(flameThrowerSound, 1f);
-                                InvokeRepeating("TriggerOnSpellUseEvent", 0, 0.5f);
-                            }
+                            StartCoroutine(StartMagic("FlameThrower"));
                         }
                         break;
                     case "AirEscape":
                          if (manaBarSystem.mana >= spellManaCost["AirEscape"])
                         {
+                            casting = true;
                             if (Sneaking.playerSneaking) sneakingSystem.Crouch();
                            StartCoroutine( airPathSpells.AirEscapeBackwards());
                         }
@@ -361,6 +326,7 @@ public class MagicCasting : MonoBehaviour
     }
     public void StopMagic()
     {
+        
         audio.Stop();
         aimingReticle.SetActive(false);
         CancelInvoke("IceLanceAudio");
@@ -386,6 +352,96 @@ public class MagicCasting : MonoBehaviour
             animator.SetBool("EarthWave", false);
             if (castingPoint.transform.childCount != 0)
             Destroy(castingPoint.transform.GetChild(0).gameObject, 3f);
+        }
+        ResetPuppetMode();
+        casting = false;
+    }
+    public IEnumerator ThrowFireBall()
+    {
+        MagicCasting.spellInProgress = true;
+        if (OnSpellUseAndCancel != null)
+        { OnSpellUseAndCancel(this, new OnSpellUseAndCancelEventArgs { currentSpell = spellUsed }); }
+        DOTween.To(() => throwingChestRig.weight, x => throwingChestRig.weight = x, 0f, 0.3f);
+        // DOTween.To(() => throwingArmRig.weight, x => throwingArmRig.weight = x, 1, 0.8f);
+        throwingArmRig.weight = 1;
+        yield return new WaitForSeconds(fireBallDelay);
+        TriggerOnSpellUseEvent();
+        audio.PlayOneShot(fireBallSound, 0.7f);
+        //Determine player state, and decide which rpeset point fireball should be isntantiated in
+        Transform currentCastingPoint;
+        if (Sneaking.playerSneaking) currentCastingPoint = castingSneakPoint;
+        else currentCastingPoint = castingPoint;
+
+        GameObject fireBallClone = Instantiate(fireBall, currentCastingPoint.position, Quaternion.identity);
+        Rigidbody fireBall_rb = fireBallClone.GetComponent<Rigidbody>();
+        fireBall_rb.AddForce(currentCastingPoint.forward * fireBallVelocity);
+        if (OnSpellUseAndCancel != null)
+        { OnSpellUseAndCancel(this, new OnSpellUseAndCancelEventArgs { currentSpell = spellUsed }); }
+        if (!enemyLockOn.lockedOnEnemy && !Sneaking.playerSneaking)
+            DOTween.To(() => throwingChestRig.weight, x => throwingChestRig.weight = x, 1, 0.2f);
+        // DOTween.To(() => throwingArmRig.weight, x => throwingArmRig.weight = x, 0, 0.8f);
+        throwingArmRig.weight = 0;
+        spellInProgress = false;
+    }
+    private void FlameThrower()
+    {
+        casting = true;
+        if (Sneaking.playerSneaking)
+            sneakingSystem.Crouch();
+        aim.weight = 1f;
+        castingAimedSpells = true;
+        aimCam.Priority = 11;
+        if (castingPoint.childCount == 0)
+        {
+            castingEffect.SetActive(true);
+            Instantiate(flameThrower, flameThrowerPoint.position + flameThrowerOffset, castingPoint.rotation, castingPoint);
+            audio.PlayOneShot(flameThrowerSound, 1f);
+            InvokeRepeating("TriggerOnSpellUseEvent", 0, 0.5f);
+        }
+    }
+    private void EarthWave()
+    {
+        casting = true;
+        if (Sneaking.playerSneaking)
+            sneakingSystem.Crouch();
+        TriggerOnSpellUseEvent();
+        StartCoroutine(StandStill());
+        animator.SetLayerWeight(1, 1f);
+        animator.SetBool("EarthWave", true);
+        audio.PlayOneShot(earthWaveFire, 1f);
+        audio.PlayOneShot(earthWaveRocks, 1f);
+
+        // aim.weight = 1f;
+        castingAimedSpells = true;
+        aimCam.Priority = 11;
+
+        Instantiate(earthWave, earthWavePoint.position, earthWavePoint.rotation);
+
+
+    }
+    private void StartIceLance()
+    {
+        casting = true;
+        aimingReticle.SetActive(true);
+
+        // animator.SetLayerWeight(1, 1f);
+
+        aim.weight = 1f;
+        castingAimedSpells = true;
+        aimCam.Priority = 11;
+
+
+        castingEffect.SetActive(true);
+        InvokeRepeating("IceLance", 0, iceLanceTempo);
+        InvokeRepeating("IceLanceAudio", 0, iceLanceTempo);
+        // iceShards.transform.position = castingPoint.transform.position;
+    }
+    void ResetPuppetMode()
+    {
+        if (casting)
+        {
+            Debug.Log("Mode reset");
+            puppet.mode = PuppetMaster.Mode.Active;
         }
     }
     private IEnumerator ResetAimCamAndMagicWithDelay(float delay)

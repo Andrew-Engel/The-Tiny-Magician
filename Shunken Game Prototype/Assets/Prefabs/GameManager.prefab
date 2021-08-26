@@ -58,8 +58,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b3199c5d9605d4fafdf2ff76b5a82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puppet: {fileID: 0}
   backgroundMusicTitle: Background Music
-  lossScreen: {fileID: 0}
+  lossScreen: {fileID: 6520377212055111971, guid: c93b347b8032b0f44b72c9b32347eef5,
+    type: 3}
   hud: {fileID: 0}
   showWinScreen: 0
   showLossScreen: 0

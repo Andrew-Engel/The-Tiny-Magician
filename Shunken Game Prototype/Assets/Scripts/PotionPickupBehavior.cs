@@ -26,6 +26,7 @@ public class PotionPickupBehavior : MonoBehaviour
     //1
     void OnTriggerEnter(Collider collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "PlayerModel")
         {
 

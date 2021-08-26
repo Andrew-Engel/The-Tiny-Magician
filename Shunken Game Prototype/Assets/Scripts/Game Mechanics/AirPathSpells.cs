@@ -27,7 +27,7 @@ public class AirPathSpells : MonoBehaviour
         Vector3 targetEnd = FindAirEscapeTarget();
         anim.SetBool("LeapBack", true);
         transform.DOJump(targetEnd,airEscapeHeight, 1 , airEscapeTime);
-        yield return new WaitForSeconds(airEscapeTime);
+        yield return new WaitForSeconds(airEscapeTime-0.25f);
         anim.SetBool("LeapBack", false);
         DOTween.To(() => followCam.m_Lens.FieldOfView, x => followCam.m_Lens.FieldOfView = x, 50f, effectTime);
 
@@ -39,19 +39,24 @@ public class AirPathSpells : MonoBehaviour
         Vector3 targetLocalPosition = playerModel.localPosition + offSet;
         targetLocation = transform.TransformPoint(targetLocalPosition);
         RaycastHit Hit;
-  
-        if (Physics.Raycast(targetLocation, Vector3.up, out Hit, Mathf.Infinity,groundLayer))
+
+        Debug.DrawRay(targetLocation, Vector3.down, Color.red);
+        if (Physics.Raycast(targetLocation, Vector3.up, out Hit, Mathf.Infinity, groundLayer))
         {
             Debug.DrawRay(targetLocation, Vector3.up, Color.blue);
             targetLocation = Hit.point + groundOffset;
             Debug.Log("HitUpAir");
-            
+
         }
         else if (Physics.Raycast(targetLocation, Vector3.down, out Hit, Mathf.Infinity, groundLayer))
-            {
-                Debug.DrawRay(targetLocation, Vector3.down, Color.red);
-                targetLocation = Hit.point + groundOffset;
+        {
+            targetLocation = Hit.point + groundOffset;
             Debug.Log("HitUpDown");
+        }
+        else
+        {
+            targetLocation += groundOffset;
+            Debug.Log("No Raycasts Hit");
         }
 
         return targetLocation;

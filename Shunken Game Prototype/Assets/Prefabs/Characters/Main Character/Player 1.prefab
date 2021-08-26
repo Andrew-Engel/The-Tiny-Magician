@@ -35863,10 +35863,10 @@ MonoBehaviour:
   followCam: {fileID: 0}
   effectFOV: 70
   effectTime: 0.3
-  groundOffset: {x: 0, y: 5, z: 0}
+  groundOffset: {x: 0, y: 1, z: 0}
   airEscapeDistance: 30
-  airEscapeTime: 1
-  airEscapeHeight: 3
+  airEscapeTime: 2
+  airEscapeHeight: 5
   playerModel: {fileID: 4538163788138596115}
   groundLayer:
     serializedVersion: 2

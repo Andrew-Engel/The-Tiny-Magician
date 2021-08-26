@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using RootMotion.Dynamics;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -14,6 +15,7 @@ namespace StarterAssets
 #endif
 	public class ThirdPersonController : MonoBehaviour
 	{
+		public BehaviourPuppet puppet;
 		public static bool sprinting;
 		//[SerializeField] MagicCasting magic;
 		//Magic casting has static bools in this script; if not using magiccastingscript!
@@ -244,7 +246,7 @@ namespace StarterAssets
 				float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
 
 				// rotate to face input direction relative to camera position
-				if (!LockCameraPosition && !MagicCasting.castingAimedSpells)
+				if (!LockCameraPosition && !MagicCasting.castingAimedSpells && puppet.state == BehaviourPuppet.State.Puppet)
 				transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
 			}
 
@@ -264,7 +266,7 @@ namespace StarterAssets
 
 		private void JumpAndGravity()
 		{
-			if (Grounded)
+			if (Grounded && puppet.state == BehaviourPuppet.State.Puppet)
 			{
 				// reset the fall timeout timer
 				_fallTimeoutDelta = FallTimeout;
