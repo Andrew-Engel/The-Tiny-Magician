@@ -42,8 +42,7 @@ public class SpellEquipping : MonoBehaviour
         GameObject lastSpellOnList;
         string iconString = spellsEquiped[spellsEquiped.Length - 1];
         lastSpellOnList = spellIcons[iconString];
-        if (spellIconsAvailableParent.Find(lastSpellOnList.name + "(Clone)") == null && lastSpellOnList.name != "Nothing" && !spellsEquiped.Contains(iconString))
-        { Instantiate(lastSpellOnList, spellIconsAvailableParent); }
+
         for (int i = spellsEquiped.Length - 1; i > 0; i--)
         {
           
@@ -58,6 +57,8 @@ public class SpellEquipping : MonoBehaviour
             instantiatedIcon.SetSiblingIndex(i);
 
         }
+        if (spellIconsAvailableParent.Find(lastSpellOnList.name + "(Clone)") == null && lastSpellOnList.name != "Nothing" && !spellsEquiped.Contains(iconString))
+        { Instantiate(lastSpellOnList, spellIconsAvailableParent); }
         spellsEquiped[0] = spellName;
         Destroy(spellIconsEquippedParent.GetChild(0).gameObject);
        Transform firstIcon = Instantiate(spellIcons[spellsEquiped[0]], spellIconsEquippedParent).transform;
