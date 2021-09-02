@@ -202,7 +202,7 @@ public class SkillTreeSystem : MonoBehaviour
     {
         skillPoints--;
         Debug.Log("Agility");
-        behaviourPuppet.collisionResistance = new Weight(1300);
+        behaviourPuppet.collisionResistance = new Weight(2000);
         
     }
 }

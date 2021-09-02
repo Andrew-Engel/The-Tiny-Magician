@@ -112,7 +112,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             animator.SetFloat("MoveY", move.y);
             animator.SetFloat("MoveX", move.x);
-            if (ThirdPersonController.sprinting)
+            if (ThirdPersonController.sprinting && thirdPersonController.targetSpeed > thirdPersonController.MoveSpeed)
             {
                 
                 if (!FindObjectOfType<AudioManager>().IsSoundPlaying("Gravel Footsteps"))

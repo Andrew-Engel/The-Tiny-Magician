@@ -13,7 +13,7 @@ public class ItemDropping : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lootBoxParent = GameObject.Find("lootBoxes").GetComponent<Transform>();
+        lootBoxParent = GameObject.Find("LootBoxParent").GetComponent<Transform>();
         Debug.Log("Start");
     }
     public void RunPotionLottery()

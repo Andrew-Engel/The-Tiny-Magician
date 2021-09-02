@@ -5259,7 +5259,7 @@ MonoBehaviour:
   combatMusicTitle: Combat Song Flute
   enemyHUD: {fileID: 0}
   healthbar: {fileID: 0}
-  enemyType: 
+  enemyType: Centipede
   animator: {fileID: 0}
   dissolveParticleSystem: {fileID: 2472038522795236696, guid: f091726771a58f74b80d69b2ef2cb0fb,
     type: 3}
@@ -16071,7 +16071,6 @@ MonoBehaviour:
   enemyBehavior: {fileID: 0}
   player: {fileID: 0}
   attackPoint: {fileID: 0}
-  targetPoint: {fileID: 0}
   headTransform: {fileID: 8112802981230896092}
   whatIsGround:
     serializedVersion: 2

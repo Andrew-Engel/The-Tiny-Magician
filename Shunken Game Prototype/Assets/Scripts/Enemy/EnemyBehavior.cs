@@ -61,9 +61,10 @@ public class EnemyBehavior : MonoBehaviour
                    switch (enemyType)
                     {
                         case ("Centipede"):
-                            Destroy(this.transform.parent.gameObject, 1.7f);
+                            
                             animator.SetBool("Death", true);
                             Instantiate(dissolveParticleSystem, this.transform);
+                            Destroy(this.transform.parent.gameObject, 1.7f);
                             break;
 
                         case ("Ant"):
@@ -101,6 +102,8 @@ public class EnemyBehavior : MonoBehaviour
         switch (enemyType)
             {
             case ("Centipede"):
+                animator = GetComponent<Animator>();
+                break;
             case ("Ant"):
                 animator = GetComponentInChildren<Animator>();
                 break;

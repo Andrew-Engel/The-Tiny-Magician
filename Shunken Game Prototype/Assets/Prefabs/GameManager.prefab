@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 4187948043546319197}
   - component: {fileID: 9004632100509942198}
   - component: {fileID: 4080589620842228025}
+  - component: {fileID: 4078552198549134366}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -64,7 +65,6 @@ MonoBehaviour:
     type: 3}
   hud: {fileID: 0}
   showWinScreen: 0
-  showLossScreen: 0
   maxItems: 4
   _playerHP: 14
   healthBar: {fileID: 0}
@@ -407,3 +407,16 @@ MonoBehaviour:
   - {fileID: 2438976436882113718, guid: 368a1bff8a8f34947801b0e3ba98573e, type: 3}
   - {fileID: 2438976436882113718, guid: 0e5485e88e9c59248a3a00322c469220, type: 3}
   - {fileID: 2438976436882113718, guid: 77c9e520e365014478f478492ae2ad79, type: 3}
+--- !u!114 &4078552198549134366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394132764989996630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55d395ee9b5cb643968c2b988d59685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchFuelMeter: {fileID: 0}

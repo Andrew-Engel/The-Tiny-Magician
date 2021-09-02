@@ -31,7 +31,8 @@ namespace StarterAssets
 		public float RotationSmoothTime = 0.12f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
-
+		[Tooltip("Current Speed that can be sent to other classes")]
+		public float targetSpeed;
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
 		public float JumpHeight = 1.2f;
@@ -91,7 +92,7 @@ namespace StarterAssets
 
 		[SerializeField] private Animator _animator;
 		private CharacterController _controller;
-		private StarterAssetsInputs _input;
+		 private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
@@ -195,7 +196,7 @@ namespace StarterAssets
 		{
 
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			 targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 			if (stamina.stamina < 5)
 				targetSpeed = MoveSpeed;
 			if (_input.sprint)

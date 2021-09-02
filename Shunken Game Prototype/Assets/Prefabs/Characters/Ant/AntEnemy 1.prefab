@@ -918,7 +918,7 @@ MonoBehaviour:
   combatMusicTitle: Combat Flute Music
   enemyHUD: {fileID: 0}
   healthbar: {fileID: 0}
-  enemyType: 
+  enemyType: Ant
   animator: {fileID: 0}
   dissolveParticleSystem: {fileID: 2472038522795236696, guid: f091726771a58f74b80d69b2ef2cb0fb,
     type: 3}
@@ -1441,7 +1441,6 @@ MonoBehaviour:
   enemyBehavior: {fileID: 1688736592040019431}
   player: {fileID: 0}
   attackPoint: {fileID: 0}
-  targetPoint: {fileID: 0}
   headTransform: {fileID: 7644898161871407943}
   whatIsGround:
     serializedVersion: 2

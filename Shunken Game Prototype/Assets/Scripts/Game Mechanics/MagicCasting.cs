@@ -398,6 +398,7 @@ public class MagicCasting : MonoBehaviour
             audio.PlayOneShot(flameThrowerSound, 1f);
             InvokeRepeating("TriggerOnSpellUseEvent", 0, 0.5f);
         }
+        if (throwingRig.weight > 0) throwingRig.weight = 0f;
     }
     private void EarthWave()
     {
