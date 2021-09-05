@@ -10,6 +10,9 @@ public class CampingBaseBehavior : MonoBehaviour
     GameBehavior gameBehavior;
     bool playerNearby, modalWindowOpen;
     [SerializeField] CanvasGroup interactPrompt, modalWindow,blackScreen;
+    [SerializeField] GameObject enemiesNearbyMessage;
+    CanvasGroup enemyNearbyCG;
+    RectTransform enemyNearbyRT;
     //InputControls
     PlayerControls controls;
     void Awake()
@@ -23,7 +26,8 @@ public class CampingBaseBehavior : MonoBehaviour
         staminaBar = GameObject.Find("GameManager").GetComponent<StaminaBar>();
         manaBarSystem = GameObject.Find("GameManager").GetComponent<ManaBarSystem>();
         gameBehavior = GameObject.Find("GameManager").GetComponent<GameBehavior>();
-
+        enemyNearbyCG = enemiesNearbyMessage.GetComponent<CanvasGroup>();
+        enemyNearbyRT = enemiesNearbyMessage.GetComponent<RectTransform>();
     }
     void OnEnable()
     {
@@ -45,9 +49,13 @@ public class CampingBaseBehavior : MonoBehaviour
             ShowModalWindow();
 
         }
-        else if (playerNearby && modalWindowOpen)
+        else if (playerNearby && modalWindowOpen && !EnemyLockOn.enemiesNearby)
         {
             StartCoroutine(SleepThroughNight());
+        }
+        else if (playerNearby && modalWindowOpen && EnemyLockOn.enemiesNearby)
+        {
+            StartCoroutine(ShowEnemyWarning());
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -66,6 +74,7 @@ public class CampingBaseBehavior : MonoBehaviour
                 DOTween.To(() => interactPrompt.alpha, x => interactPrompt.alpha = x, 0, 0.2f);
         
             if (modalWindowOpen) HideModalWindow();
+            if (enemyNearbyCG.alpha > 0) HideEnemyWarning();
             }
         }
     private IEnumerator SleepThroughNight()
@@ -94,6 +103,18 @@ public class CampingBaseBehavior : MonoBehaviour
         staminaBar.stamina = StaminaBar.maxStamina;
         gameBehavior.HP = GameBehavior.maxPlayerHP;
         manaBarSystem.mana = ManaBarSystem.maxMana;
+    }
+    private IEnumerator ShowEnemyWarning()
+    {
+        enemyNearbyCG.alpha = 1f;
+
+        enemyNearbyRT.DOScale(1.3f, 0.8f);
+        yield return new WaitForSeconds(0.5f);
+        enemyNearbyRT.DOScale(1f, 0.8f);
+    }
+    private void HideEnemyWarning()
+    {
+        enemyNearbyCG.alpha = 0f;
     }
     
 }

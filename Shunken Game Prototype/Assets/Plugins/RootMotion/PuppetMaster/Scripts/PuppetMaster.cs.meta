@@ -4,9 +4,8 @@ labels:
 - Ragdoll
 - Physics
 - Activeragdolls
-timeCreated: 1444739157
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 10100
