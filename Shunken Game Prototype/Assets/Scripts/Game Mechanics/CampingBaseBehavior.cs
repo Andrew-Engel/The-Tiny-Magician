@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class CampingBaseBehavior : MonoBehaviour
 {
+    Animator playerAnimator;
     StaminaBar staminaBar;
     ManaBarSystem manaBarSystem;
     GameBehavior gameBehavior;
@@ -23,6 +24,7 @@ public class CampingBaseBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerAnimator = GameObject.Find("PlayerModel").GetComponent<Animator>();
         staminaBar = GameObject.Find("GameManager").GetComponent<StaminaBar>();
         manaBarSystem = GameObject.Find("GameManager").GetComponent<ManaBarSystem>();
         gameBehavior = GameObject.Find("GameManager").GetComponent<GameBehavior>();
@@ -79,14 +81,25 @@ public class CampingBaseBehavior : MonoBehaviour
         }
     private IEnumerator SleepThroughNight()
     {
-        DOTween.To(() => blackScreen.alpha, x => blackScreen.alpha = x, 1, 3f).SetUpdate(true);
-        Time.timeScale = 0f;
+        playerAnimator.SetTrigger("WakeUp");
+        DOTween.To(() => blackScreen.alpha, x => blackScreen.alpha = x, 1, 2f).SetUpdate(true);
+
+        Invoke("SetTime", 2f);
         yield return new WaitForSecondsRealtime(3f);
         HideModalWindow();
-        DOTween.To(() => blackScreen.alpha, x => blackScreen.alpha = x, 0, 1f).SetUpdate(true);
         EnviroSkyMgr.instance.SetTimeOfDay(7f);
         Time.timeScale = 1f;
+        DOTween.To(() => blackScreen.alpha, x => blackScreen.alpha = x, 0, 2f).SetUpdate(true);
+     
+        
+        
+        
         RegenerateAllStats();
+    }
+    private void SetTime()
+    {
+        if (Time.timeScale >0f) Time.timeScale = 0f;
+        else Time.timeScale = 1f;
     }
     private void ShowModalWindow()
     {

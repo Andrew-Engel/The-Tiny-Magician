@@ -113,6 +113,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""EquipThrowable"",
+                    ""type"": ""Button"",
+                    ""id"": ""6b68a11e-38b3-42bc-b196-0e54b5a55166"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -324,6 +332,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""OpenInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""864198cc-58f0-4c65-b68e-2ed8f762f54d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""EquipThrowable"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -389,6 +408,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Melee = m_Player.FindAction("Melee", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
+        m_Player_EquipThrowable = m_Player.FindAction("EquipThrowable", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -450,6 +470,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Melee;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_OpenInventory;
+    private readonly InputAction m_Player_EquipThrowable;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -466,6 +487,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Melee => m_Wrapper.m_Player_Melee;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
+        public InputAction @EquipThrowable => m_Wrapper.m_Player_EquipThrowable;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -511,6 +533,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @OpenInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
                 @OpenInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
                 @OpenInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
+                @EquipThrowable.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipThrowable;
+                @EquipThrowable.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipThrowable;
+                @EquipThrowable.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipThrowable;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -551,6 +576,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @OpenInventory.started += instance.OnOpenInventory;
                 @OpenInventory.performed += instance.OnOpenInventory;
                 @OpenInventory.canceled += instance.OnOpenInventory;
+                @EquipThrowable.started += instance.OnEquipThrowable;
+                @EquipThrowable.performed += instance.OnEquipThrowable;
+                @EquipThrowable.canceled += instance.OnEquipThrowable;
             }
         }
     }
@@ -605,5 +633,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMelee(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
+        void OnEquipThrowable(InputAction.CallbackContext context);
     }
 }

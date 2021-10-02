@@ -79,6 +79,13 @@ public class CraftingSystemUIElementBehavior : MonoBehaviour, IPointerEnterHandl
                     ingredientQuantatityTexts[i].text = CraftingSystem.staminaPotionlevelOneRecipe.ElementAt(i).Value.ToString();
                 }
                 break;
+            case ("Bomb"):
+                numberOfIngredients = 3;
+                for (int i = 0; i < numberOfIngredients; i++)
+                {
+                    ingredientQuantatityTexts[i].text = CraftingSystem.bombRecipe.ElementAt(i).Value.ToString();
+                }
+                break;
 
         }
 

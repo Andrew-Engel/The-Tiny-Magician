@@ -96,6 +96,18 @@ public class EnemyHitBox : MonoBehaviour
 
                 DamagePopup.Create(this.transform.position, MeleeDamageAmount, isMeleeCritical);
                 break;
+            case "Bomb":
+
+                int bombDamage;
+                bombDamage = UnityEngine.Random.Range(ExplosionOnContact.damage -8, ExplosionOnContact.damage * +8);
+                bool isBombCritical = UnityEngine.Random.Range(0, 100) < 10;
+                if (isBombCritical) bombDamage *= 2;
+
+                if (enemyBehavior != null)
+                    enemyBehavior.enemyLives -= bombDamage;
+
+                DamagePopup.Create(this.transform.position, bombDamage, isBombCritical);
+                break;
         }
     }
  

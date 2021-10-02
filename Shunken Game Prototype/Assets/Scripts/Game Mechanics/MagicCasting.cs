@@ -29,6 +29,7 @@ public class MagicCasting : MonoBehaviour
     //Other Spells
     AirPathSpells airPathSpells;
     FirePathSpells firePathSpells;
+
     //Mana Bar System
     private ManaBarSystem manaBarSystem;
     // Equipped Spells
@@ -170,6 +171,7 @@ public class MagicCasting : MonoBehaviour
     {
         airPathSpells = GetComponent<AirPathSpells>();
         firePathSpells = GetComponent<FirePathSpells>();
+     
         sneakingSystem = GetComponent<Sneaking>();
         manaBarSystem = GameObject.Find("GameManager").GetComponent<ManaBarSystem>();
         skillTree = GameObject.Find("GameManager").GetComponent<SkillTreeSystem>();

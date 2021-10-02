@@ -70,6 +70,19 @@ public class InventorySystem : MonoBehaviour
         { "LevelThree",0 }
 
     };
+    // amount of grenades
+    public static int grenadeAmount = 8; 
+    private int grenadeDummyAmount
+    {
+        get { return grenadeAmount; }
+        set { if (grenadeAmount<1)
+            {
+                GameObject BombUI = GameObject.Find("BombUIitem");
+                Destroy(BombUI);
+
+            }
+                    }
+    }
     public static Dictionary<string, int> craftingMaterialAmounts = new Dictionary<string, int>
     {
         {CraftingMaterials.Fiber.ToString(),0 },
@@ -77,7 +90,8 @@ public class InventorySystem : MonoBehaviour
         {CraftingMaterials.Antiseptic.ToString(),0 },
         {CraftingMaterials.Blood.ToString(),0 },
         {CraftingMaterials.Tinder.ToString(),0 },
-        {CraftingMaterials.Water.ToString(),0 }
+        {CraftingMaterials.Water.ToString(),0 },
+         {CraftingMaterials.Chemicals.ToString(),0 }
     };
 //other scripts containing player HP, mana, stamina
 GameBehavior gameManager;
@@ -152,6 +166,9 @@ GameBehavior gameManager;
                         break;
                 }
                 break;
+            case ("Bomb"):
+                grenadeAmount++;
+                break;
         }
         if (OnItemUse != null)
         { OnItemUse(this, new OnItemUseEventArgs { itemUsed = itemTitle, itemLevel = itemLevel, addingToInventory = true }); }
@@ -177,6 +194,9 @@ GameBehavior gameManager;
                 break;
             case ("Water"):
                 craftingMaterialAmounts["Water"] += quantity;
+                break;
+            case ("Chemicals"):
+                craftingMaterialAmounts["Chemicals"] += quantity;
                 break;
         }
 

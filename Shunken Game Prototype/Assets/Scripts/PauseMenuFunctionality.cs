@@ -74,7 +74,7 @@ public class PauseMenuFunctionality : MonoBehaviour
 
     }
    
-    void Pause()
+   public void Pause()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -88,6 +88,10 @@ public class PauseMenuFunctionality : MonoBehaviour
             s.source.Pause();
         }
 
+    }
+    public void CloseInventoryBool()
+    {
+        InventorySystem.inventoryOpen = false;
     }
     public void LoadMenu()
     {

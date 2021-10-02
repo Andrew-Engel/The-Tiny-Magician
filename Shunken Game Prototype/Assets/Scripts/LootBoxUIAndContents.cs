@@ -27,6 +27,7 @@ public class LootBoxUIAndContents : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _audio = GetComponent<AudioSource>();
         SetUpIconDictionary();
         _inventorySystem = GameObject.Find("GameManager").GetComponent<InventorySystem>();
         RunLottery();
@@ -52,12 +53,12 @@ public class LootBoxUIAndContents : MonoBehaviour
         icons.Add("Blood", itemIcons[3]);
         icons.Add("Tinder", itemIcons[4]);
         icons.Add("Water", itemIcons[5]);
-
+        icons.Add("Chemicals", itemIcons[6]);
     }
     private void ChooseLootItems(int arrayIndex)
     {
         int lotteryNumber;
-        lotteryNumber = Random.Range(1, 6);
+        lotteryNumber = Random.Range(1, 10);
         
         switch (lotteryNumber)
         {
@@ -78,6 +79,12 @@ public class LootBoxUIAndContents : MonoBehaviour
                 break;
             case (6):
                 lootItemsIncluded[arrayIndex] = CraftingMaterials.Water.ToString();
+                break;
+            case (7):
+            case (8):
+            case (9):
+            case (10):
+                lootItemsIncluded[arrayIndex] = CraftingMaterials.Chemicals.ToString();
                 break;
         }
 

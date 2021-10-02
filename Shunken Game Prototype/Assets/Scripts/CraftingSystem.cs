@@ -9,7 +9,8 @@ public enum CraftingMaterials
     Antiseptic = 2,
     Blood = 3,
     Tinder = 4,
-    Water = 5
+    Water = 5,
+    Chemicals = 6
 
 };
 public class CraftingSystem : MonoBehaviour
@@ -39,12 +40,13 @@ public class CraftingSystem : MonoBehaviour
         {CraftingMaterials.Water.ToString(),3 },
         {CraftingMaterials.Blood.ToString(), 1 },
     };
-    /*
+    
     public static Dictionary<string, int> bombRecipe = new Dictionary<string, int>
     {
         {CraftingMaterials.Tinder.ToString(),3 },
         {CraftingMaterials.Fiber.ToString(), 2 },
-    };*/
+        {CraftingMaterials.Chemicals.ToString(), 1 },
+    };
     private void Start()
     {
         inventory = GetComponent<InventorySystem>();
@@ -109,6 +111,22 @@ public class CraftingSystem : MonoBehaviour
         }
 
     }
+    public void CraftBomb()
+    {
+        if (CheckForSufficientMaterials("Bomb"))
+        {
+            inventory.AddItem("Bomb", 1);
+            InventorySystem.craftingMaterialAmounts[CraftingMaterials.Tinder.ToString()] -= bombRecipe[CraftingMaterials.Tinder.ToString()];
+            InventorySystem.craftingMaterialAmounts[CraftingMaterials.Fiber.ToString()] -= bombRecipe[CraftingMaterials.Fiber.ToString()];
+            InventorySystem.craftingMaterialAmounts[CraftingMaterials.Chemicals.ToString()] -= bombRecipe[CraftingMaterials.Chemicals.ToString()];
+
+            inventoryUI.RefreshCraftingMaterialAmount(CraftingMaterials.Tinder.ToString(), InventorySystem.craftingMaterialAmounts[CraftingMaterials.Tinder.ToString()]);
+            inventoryUI.RefreshCraftingMaterialAmount(CraftingMaterials.Fiber.ToString(), InventorySystem.craftingMaterialAmounts[CraftingMaterials.Fiber.ToString()]);
+            inventoryUI.RefreshCraftingMaterialAmount(CraftingMaterials.Chemicals.ToString(), InventorySystem.craftingMaterialAmounts[CraftingMaterials.Chemicals.ToString()]);
+            if (OnItemCrafting != null)
+                OnItemCrafting(this, new OnItemCraftingEventArgs { itemCrafted = "Bomb" });
+        }
+    }
    
     public bool CheckForSufficientMaterials(string productType)
     {switch (productType)
@@ -127,7 +145,10 @@ public class CraftingSystem : MonoBehaviour
                 if (InventorySystem.craftingMaterialAmounts[CraftingMaterials.Water.ToString()] >= staminaPotionlevelOneRecipe[CraftingMaterials.Water.ToString()] && InventorySystem.craftingMaterialAmounts[CraftingMaterials.Blood.ToString()] >= staminaPotionlevelOneRecipe[CraftingMaterials.Blood.ToString()])
                     return true;
                 else return false;
-         
+            case ("Bomb"):
+                if (InventorySystem.craftingMaterialAmounts[CraftingMaterials.Tinder.ToString()] >= bombRecipe[CraftingMaterials.Tinder.ToString()] && InventorySystem.craftingMaterialAmounts[CraftingMaterials.Tinder.ToString()] >= bombRecipe[CraftingMaterials.Tinder.ToString()] && InventorySystem.craftingMaterialAmounts[CraftingMaterials.Chemicals.ToString()] >= bombRecipe[CraftingMaterials.Chemicals.ToString()])
+                    return true;
+                else return false;
             default:
                 return false;
                 break;

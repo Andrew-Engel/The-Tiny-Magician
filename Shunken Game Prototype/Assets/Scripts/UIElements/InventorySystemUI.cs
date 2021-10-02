@@ -12,6 +12,7 @@ public class InventorySystemUI : MonoBehaviour
     [SerializeField] AudioClip healthAdditionSound,healthUseSound;
     [SerializeField] AudioClip manaAdditionSound, manaUseSound;
     [SerializeField] AudioClip staminaAdditionSound, staminaUseSound;
+    [SerializeField] AudioClip bombAdditionSound;
     [SerializeField] AudioClip inventoryOpenSound;
     private AudioSource _audio;
     InventorySystem inventorySystem;
@@ -37,6 +38,7 @@ public class InventorySystemUI : MonoBehaviour
     [SerializeField] GameObject[] healthItemUIPrefabs;
     [SerializeField] GameObject[] manaItemUIPrefabs;
     [SerializeField] GameObject[] staminaItemUIPrefabs;
+    [SerializeField] GameObject[] bombItemUIPrefabs;
     [SerializeField] Transform itemListParent;
    public Dictionary<string, GameObject> itemUI = new Dictionary<string, GameObject>();
     // Start is called before the first frame update
@@ -49,6 +51,7 @@ public class InventorySystemUI : MonoBehaviour
         SetUpUIDictionaryHealth();
         SetUpUIDictionaryMana();
         SetUpUIDictionaryStamina();
+        SetUPUIDictionaryBomb();
         _audio = GetComponent<AudioSource>();
     }
     private void SetUpUIDictionaryHealth()
@@ -74,6 +77,10 @@ public class InventorySystemUI : MonoBehaviour
             itemUI.Add("Stamina" + i.ToString(), staminaItemUIPrefabs[i - 1]);
 
         }
+    }
+    private void SetUPUIDictionaryBomb()
+    {
+        itemUI.Add("Bomb", bombItemUIPrefabs[0]);
     }
     // Update is called once per frame
     void Update()
@@ -114,6 +121,9 @@ public class InventorySystemUI : MonoBehaviour
                 break;
             case ("Water"):
                 craftingMaterialQuantityTexts[5].text = quantity.ToString();
+                break;
+            case ("Chemicals"):
+                craftingMaterialQuantityTexts[6].text = quantity.ToString();
                 break;
         }
     }
@@ -322,13 +332,40 @@ public class InventorySystemUI : MonoBehaviour
                     }
                 }
                 break;
+            case ("Bomb"):
+                {
+                    _audio.PlayOneShot(staminaAdditionSound, 1f);
+
+                    if (GameObject.Find("BombUIitem(Clone)") == null)
+                    {
+                        newItem = true;
+                        itemIndex = "Bomb";
+                        quantityTextName = "Item Quantity(Bomb)";
+                        potionStatTextName = "Item Stats(Bomb)";
+                        statTextToBeAdded = " ";
+                        quantityTextToBeAdded = InventorySystem.grenadeAmount.ToString();
+
+                    }
+                    else
+                    {
+                        newItem = false;
+                        quantityTextName = "Item Quantity(Bomb)";
+                        quantityTextToBeAdded = InventorySystem.grenadeAmount.ToString();
+                        //  Debug.Log($"QuantityTextToBe ADded:" + quantityTextToBeAdded);
+                    }
+
+                }
+                break;
         }
         if (newItem)
         {
             Instantiate(itemUI[itemIndex], itemListParent.position, Quaternion.identity, itemListParent);
             quantityText = GameObject.Find(quantityTextName).GetComponent<TextMeshProUGUI>();
-            potionStat = GameObject.Find(potionStatTextName).GetComponent<TextMeshProUGUI>();
-            potionStat.text = statTextToBeAdded;
+            if (itemIndex != "Bomb")
+            {
+                potionStat = GameObject.Find(potionStatTextName).GetComponent<TextMeshProUGUI>();
+                potionStat.text = statTextToBeAdded;
+            }
             quantityText.text = quantityTextToBeAdded;
             //Debug.Log($"Text: " + quantityText)
         }
@@ -465,6 +502,7 @@ public class InventorySystemUI : MonoBehaviour
 
                 }
                 break;
+          
         }
     }
     private void OnInventoryOpen(object sender, EventArgs e)

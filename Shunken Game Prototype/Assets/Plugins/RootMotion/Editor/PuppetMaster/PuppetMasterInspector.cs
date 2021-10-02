@@ -35,7 +35,7 @@ namespace RootMotion.Dynamics
             {
                 monoScript = MonoScript.FromMonoBehaviour(script);
                 int currentExecutionOrder = MonoImporter.GetExecutionOrder(monoScript);
-                if (currentExecutionOrder != 10100) MonoImporter.SetExecutionOrder(monoScript, 10100);
+                if (currentExecutionOrder != 90) MonoImporter.SetExecutionOrder(monoScript, 90);
 
                 // Fix negative collider sizes for ragdolls created before PuppetMaster 0.3
                 BoxCollider[] boxColliders = script.GetComponentsInChildren<BoxCollider>();

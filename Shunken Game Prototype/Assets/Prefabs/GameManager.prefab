@@ -352,6 +352,7 @@ MonoBehaviour:
   staminaAdditionSound: {fileID: 8300000, guid: 2934bb5d9e5654544b33b86b4bb1632f,
     type: 3}
   staminaUseSound: {fileID: 8300000, guid: 2934bb5d9e5654544b33b86b4bb1632f, type: 3}
+  bombAdditionSound: {fileID: 0}
   inventoryOpenSound: {fileID: 8300000, guid: 9e26d8772033a0d44a852aa1a67d33a7, type: 3}
   craftingMaterialQuantityTexts:
   - {fileID: 0}
@@ -372,6 +373,8 @@ MonoBehaviour:
   - {fileID: 5138808280267918618, guid: e880411acf6b80f49bf39c83a363b590, type: 3}
   - {fileID: 5138808280267918618, guid: 734d26fc9abaaaf478f2b8e8bee0c21a, type: 3}
   - {fileID: 5138808280267918618, guid: 9ad356997044a814a89dc2f58a4cf50a, type: 3}
+  bombItemUIPrefabs:
+  - {fileID: 5138808280267918618, guid: 3323d615910af5f4ca0fc755bc295007, type: 3}
   itemListParent: {fileID: 0}
 --- !u!114 &9004632100509942198
 MonoBehaviour:
@@ -419,4 +422,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55d395ee9b5cb643968c2b988d59685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torchFuelMeter: {fileID: 0}

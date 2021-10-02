@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Cinemachine;
+using RootMotion.Dynamics;
 
 public class AirPathSpells : MonoBehaviour
 {
+    public PuppetMaster puppet;
     [SerializeField] CinemachineVirtualCamera followCam;
     [SerializeField] float effectFOV = 30f, effectTime = 0.8f;
     [SerializeField] Vector3 groundOffset = new Vector3(0, 3, 0);
@@ -27,7 +29,9 @@ public class AirPathSpells : MonoBehaviour
         Vector3 targetEnd = FindAirEscapeTarget();
         anim.SetBool("LeapBack", true);
         transform.DOJump(targetEnd,airEscapeHeight, 1 , airEscapeTime);
+      //  puppet.mode = PuppetMaster.Mode.Disabled;
         yield return new WaitForSeconds(airEscapeTime-0.25f);
+       // puppet.mode = PuppetMaster.Mode.Active;
         anim.SetBool("LeapBack", false);
         DOTween.To(() => followCam.m_Lens.FieldOfView, x => followCam.m_Lens.FieldOfView = x, 50f, effectTime);
 

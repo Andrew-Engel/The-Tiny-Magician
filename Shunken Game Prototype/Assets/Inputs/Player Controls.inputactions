@@ -100,6 +100,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "EquipThrowable",
+                    "type": "Button",
+                    "id": "6b68a11e-38b3-42bc-b196-0e54b5a55166",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -309,6 +317,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "OpenInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "864198cc-58f0-4c65-b68e-2ed8f762f54d",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "EquipThrowable",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
