@@ -166,17 +166,6 @@ namespace RootMotion.Dynamics
             if (OnPostMuscleCollisionExit != null) OnPostMuscleCollisionExit(collision);
         }
 
-        void OnEnable()
-        {
-            if (!initiated)
-            {
-                // Discarding Unity's initial OnEnable call, because the starting behaviour will be determined by PuppetMaster
-                return;
-            }
-
-            Activate();
-        }
-
         public void Activate()
         {
             foreach (BehaviourBase b in puppetMaster.behaviours)
@@ -302,7 +291,7 @@ namespace RootMotion.Dynamics
                         if (behaviour != null && behaviour.GetTypeSpring() == switchToBehaviour)
                         {
                             found = true;
-                            behaviour.enabled = true;
+                            behaviour.Activate();
                             break;
                         }
                     }

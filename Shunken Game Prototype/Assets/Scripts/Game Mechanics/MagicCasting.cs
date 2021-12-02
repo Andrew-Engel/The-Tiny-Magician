@@ -122,14 +122,14 @@ public class MagicCasting : MonoBehaviour
         if (!spellInProgress)
         {
            
-           /* if (spellUsed == "FireBall")
+            if (spellUsed == "FireBall")
             {
                 puppet.mode = PuppetMaster.Mode.Disabled;
                 DOTween.To(() => throwingRig.weight, x => throwingRig.weight = x, 0f, 0.3f);
                 fireBallInHand.SetActive(false);
                 puppet.mode = PuppetMaster.Mode.Active;
 
-            }*/
+            }
 
             spellIndex++;
             string nextSpell;
@@ -355,6 +355,7 @@ public class MagicCasting : MonoBehaviour
             if (castingPoint.transform.childCount != 0)
             Destroy(castingPoint.transform.GetChild(0).gameObject, 3f);
         }
+        if (spellUsed != "AirEscape")
         ResetPuppetMode();
         casting = false;
     }

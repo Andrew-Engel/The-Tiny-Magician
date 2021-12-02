@@ -185,6 +185,10 @@ namespace RootMotion.Dynamics {
 		}
 
 		protected override void OnLateUpdate(float deltaTime) {
+            if (puppetMaster.muscles[0].state.mappingWeightMlp < 1f) return;
+            if (puppetMaster.muscles[0].rigidbody.isKinematic) return;
+            if (puppetMaster.isBlending) return;
+
 			puppetMaster.targetRoot.position += puppetMaster.muscles[0].transform.position - puppetMaster.muscles[0].target.position;
 			GroundTarget(raycastLayers);
 		}

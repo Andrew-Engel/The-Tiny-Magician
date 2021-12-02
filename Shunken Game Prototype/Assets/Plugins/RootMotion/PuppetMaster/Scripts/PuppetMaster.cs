@@ -293,7 +293,7 @@ namespace RootMotion.Dynamics
         /// Array of all Puppet Behaviours
         /// </summary>
         /// <value>The behaviours.</value>
-        public BehaviourBase[] behaviours { get; private set; } // @todo add/remove behaviours in runtime (add OnDestroy to BehaviourBase)
+        [HideInInspector][NonSerialized] public BehaviourBase[] behaviours = new BehaviourBase[0];
 
         /// <summary>
         /// Returns true if the PuppetMaster is in active mode or blending in/out of it.

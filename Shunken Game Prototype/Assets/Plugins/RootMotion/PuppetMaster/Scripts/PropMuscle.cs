@@ -181,7 +181,12 @@ namespace RootMotion.Dynamics
 
                     // Pick up the new prop
                     currentProp.PickUp(puppetMaster, muscle.index);
-                    muscle.rigidbody.ResetInertiaTensor();
+
+                    muscle.rigidbody.centerOfMass = currentProp.localCenterOfMass;
+                    muscle.rigidbody.inertiaTensor = currentProp.inertiaTensor;
+                    //muscle.rigidbody.ResetInertiaTensor(); // This seems to have a bug, inertia tensor increases with every pick-up.
+                    
+                    
                     activeProp = currentProp;
 
                     if (OnPickUpProp != null) OnPickUpProp(currentProp);

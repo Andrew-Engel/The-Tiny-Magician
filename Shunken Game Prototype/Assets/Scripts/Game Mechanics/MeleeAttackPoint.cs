@@ -21,12 +21,7 @@ public class MeleeAttackPoint : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+  
     private void IsEnemyInRange()
     {
      
@@ -49,7 +44,7 @@ public class MeleeAttackPoint : MonoBehaviour
     }
     private void OnMeleeAttack(object sender, MeleeAttacking.OnMeleeAttackEventArgs e)
     {
-
+        Debug.Log("OnMeleeAttack");
         if (isLeftHand && e.meleeUsed == "Jab")
         {
             attacking = true;

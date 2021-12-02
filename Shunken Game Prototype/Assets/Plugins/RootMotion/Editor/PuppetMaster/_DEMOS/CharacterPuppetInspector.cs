@@ -39,16 +39,18 @@ namespace RootMotion.Demos {
 		}
 
 		public static void ReplacePuppetModel(CharacterThirdPerson script, GameObject replace) {
-			// Drag your Humanoid character to the scene, parent it to the "Animation Controller" just where the Pilot is
+			// Is the replacement model in the Scene or in the Project?
 			GameObject find = GameObject.Find(replace.name);
 			bool isSceneObject = find != null && find == replace;
 
+            // Instantiate the new character model
 			GameObject instance = isSceneObject? replace: (GameObject)GameObject.Instantiate(replace, script.transform.position, script.transform.rotation);
 			instance.transform.parent = script.characterAnimation.transform;
 			instance.name = replace.name;
 			instance.transform.position = script.transform.position;
 			instance.transform.rotation = script.transform.rotation;
 
+            // Find the Animator
 			Animator animator = instance.GetComponentInChildren<Animator>();
 			bool isAnimator = animator != null;
 			if (!isAnimator || !animator.isHuman) {
@@ -56,6 +58,7 @@ namespace RootMotion.Demos {
 				return;
 			}
 
+            // Enable updateWhenOffscreen for all SkinnedMeshRenderers so they would not get culled when the ragdoll moves them out of their Renderer.bounds
 			SkinnedMeshRenderer[] skinnedMeshRenders = instance.GetComponentsInChildren<SkinnedMeshRenderer>();
 			foreach (SkinnedMeshRenderer s in skinnedMeshRenders) s.updateWhenOffscreen = true;
 
@@ -83,10 +86,12 @@ namespace RootMotion.Demos {
 			bool isRagdoll = joint != null;
 			bool isConfigurable = isRagdoll && joint is ConfigurableJoint;
 
+            // If existing ragdoll found, but using joint types other than ConfigurableJoint, convert all to ConfigurableJoints (required by PM)
 			if (isRagdoll && !isConfigurable) {
 				JointConverter.ToConfigurable(instance);
 			}
 
+            // Ragdoll setup with BipedRagdollCreator
 			if (!isRagdoll) {
 				BipedRagdollReferences r = BipedRagdollReferences.FromAvatar(animator);
 				BipedRagdollCreator.Options options = BipedRagdollCreator.AutodetectOptions(r);

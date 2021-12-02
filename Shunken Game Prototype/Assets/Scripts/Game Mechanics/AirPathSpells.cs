@@ -29,9 +29,9 @@ public class AirPathSpells : MonoBehaviour
         Vector3 targetEnd = FindAirEscapeTarget();
         anim.SetBool("LeapBack", true);
         transform.DOJump(targetEnd,airEscapeHeight, 1 , airEscapeTime);
-      //  puppet.mode = PuppetMaster.Mode.Disabled;
-        yield return new WaitForSeconds(airEscapeTime-0.25f);
-       // puppet.mode = PuppetMaster.Mode.Active;
+        puppet.enabled = false;
+        yield return new WaitForSeconds(airEscapeTime-0.1f);
+        puppet.enabled = true;
         anim.SetBool("LeapBack", false);
         DOTween.To(() => followCam.m_Lens.FieldOfView, x => followCam.m_Lens.FieldOfView = x, 50f, effectTime);
 

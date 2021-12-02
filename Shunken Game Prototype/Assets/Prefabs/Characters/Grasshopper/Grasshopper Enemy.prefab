@@ -926,11 +926,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f96d1f030c08044bf534892e846884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerWithinMinRange: 0
+  playerWithinMaxRange: 0
   GroundedOffset: -0.14
   GroundedRadius: 5
   GroundLayers:
     serializedVersion: 2
     m_Bits: 128
+  Grounded: 0
   wingFlappingSound: {fileID: 8300000, guid: e8c36a37da7ebfb489f4ccfef05d1d55, type: 3}
   landingSound: {fileID: 8300000, guid: f6c66d97edd1c3f4ca5ea19e220336b4, type: 3}
   landingEffect: {fileID: 198220379293217532, guid: d8f0099df63275647a8bcf646df1ca00,
@@ -1477,6 +1480,9 @@ MonoBehaviour:
   lootBox: {fileID: 9215444625666089406, guid: 0315b1f7f46ddea449864ea407928c2a, type: 3}
   lootBoxParent: {fileID: 0}
   lotteryNumberRange: 10
+  specialObject: {fileID: 6369098212758140442, guid: 170359786a89b424d8be098e336dd02d,
+    type: 3}
+  dropSpecialItem: 1
 --- !u!1 &6540025125173913601
 GameObject:
   m_ObjectHideFlags: 0

@@ -108,7 +108,7 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (move != Vector2.zero && ThirdPersonController.Grounded&& ! MeleeAttacking.jumpAttack)
+        if (move != Vector2.zero && ThirdPersonController.Grounded&& ! MeleeAttacking.jumpAttack && !PauseMenuFunctionality.gameIsPaused)
         {
             animator.SetFloat("MoveY", move.y);
             animator.SetFloat("MoveX", move.x);
@@ -169,7 +169,7 @@ public class PlayerBehavior : MonoBehaviour
 public void JumpAudio()
 {
 
-    if (ThirdPersonController.Grounded)
+    if (ThirdPersonController.Grounded && !PauseMenuFunctionality.gameIsPaused)
     {
 
         audio.PlayOneShot(jump, 1.0f);

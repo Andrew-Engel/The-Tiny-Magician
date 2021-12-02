@@ -11,8 +11,8 @@ namespace RootMotion.Demos {
 		public float force = 10f;
 		public ParticleSystem blood;
 
-		// Update is called once per frame
-		void Update () {
+        // Update is called once per frame
+        void Update () {
 			if (Input.GetMouseButtonDown(0)) {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -23,6 +23,7 @@ namespace RootMotion.Demos {
 
 					if (broadcaster != null) {
 						broadcaster.Hit(unpin, ray.direction * force, hit.point);
+                        
 
 						blood.transform.position = hit.point;
 						blood.transform.rotation = Quaternion.LookRotation(-ray.direction);

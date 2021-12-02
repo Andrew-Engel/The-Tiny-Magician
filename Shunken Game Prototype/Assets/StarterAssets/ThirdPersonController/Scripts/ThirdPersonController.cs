@@ -124,21 +124,24 @@ namespace StarterAssets
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 		}
-
+		
 		private void Update()
 		{
 			//_hasAnimator = TryGetComponent(out _animator);
-			
+			//Move();
+
 			JumpAndGravity();
 			GroundedCheck();
-			Move();
+			
 
 			
 		}
-
+		
 		private void LateUpdate()
 		{
+			Move();
 			CameraRotation();
+			
 		}
 
 		private void AssignAnimationIDs()

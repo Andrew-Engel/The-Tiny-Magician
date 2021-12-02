@@ -39,6 +39,7 @@ public class InventorySystemUI : MonoBehaviour
     [SerializeField] GameObject[] manaItemUIPrefabs;
     [SerializeField] GameObject[] staminaItemUIPrefabs;
     [SerializeField] GameObject[] bombItemUIPrefabs;
+    [SerializeField] GameObject[] specialItemUIPrefabs;
     [SerializeField] Transform itemListParent;
    public Dictionary<string, GameObject> itemUI = new Dictionary<string, GameObject>();
     // Start is called before the first frame update
@@ -52,6 +53,7 @@ public class InventorySystemUI : MonoBehaviour
         SetUpUIDictionaryMana();
         SetUpUIDictionaryStamina();
         SetUPUIDictionaryBomb();
+        SetUpDictionarySpecialItem();
         _audio = GetComponent<AudioSource>();
     }
     private void SetUpUIDictionaryHealth()
@@ -82,10 +84,9 @@ public class InventorySystemUI : MonoBehaviour
     {
         itemUI.Add("Bomb", bombItemUIPrefabs[0]);
     }
-    // Update is called once per frame
-    void Update()
+    private void SetUpDictionarySpecialItem()
     {
-        
+        itemUI.Add("Shard", specialItemUIPrefabs[0]);
     }
     private void On_Item_Use(object sender, InventorySystem.OnItemUseEventArgs e)
     {
@@ -127,7 +128,7 @@ public class InventorySystemUI : MonoBehaviour
                 break;
         }
     }
-    private void AddItem(string item, int itemLevel)
+    public void AddItem(string item, int itemLevel)
     {
         string statTextToBeAdded = "default";
         string quantityTextToBeAdded = "default";
@@ -356,12 +357,34 @@ public class InventorySystemUI : MonoBehaviour
 
                 }
                 break;
+            case ("Shard"):
+                {
+                    if (DemoObjective.fragments==1)
+                    {
+                        Debug.Log("ShardAdded2");
+                        newItem = true;
+                        itemIndex = "Shard";
+                        quantityTextName = "Item Quantity(Shard)";
+                        potionStatTextName = "Item Stats(Shard)";
+                        statTextToBeAdded = " ";
+                        quantityTextToBeAdded = DemoObjective.fragments.ToString();
+
+                    }
+                    else
+                    {
+                        newItem = false;
+                        quantityTextToBeAdded = DemoObjective.fragments.ToString();
+                        quantityTextName = "Item Quantity(Shard)";
+                        Debug.Log("ShardAdded");
+                    }
+                    break;
+                }
         }
         if (newItem)
         {
             Instantiate(itemUI[itemIndex], itemListParent.position, Quaternion.identity, itemListParent);
             quantityText = GameObject.Find(quantityTextName).GetComponent<TextMeshProUGUI>();
-            if (itemIndex != "Bomb")
+            if (itemIndex != "Bomb" && itemIndex != "Shard" )
             {
                 potionStat = GameObject.Find(potionStatTextName).GetComponent<TextMeshProUGUI>();
                 potionStat.text = statTextToBeAdded;

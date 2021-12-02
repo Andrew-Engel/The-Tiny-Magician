@@ -9,6 +9,8 @@ public class ItemDropping : MonoBehaviour
     [SerializeField] private GameObject lootBox;
    [SerializeField] private Transform lootBoxParent;
    [SerializeField] private int  lotteryNumberRange= 3;
+    [SerializeField] GameObject specialObject;
+    [SerializeField] bool dropSpecialItem = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +21,12 @@ public class ItemDropping : MonoBehaviour
     public void RunPotionLottery()
     {
         Vector3 dropPoint = FindBestPlaceToDrop();
-        int lotteryNumber = 3;
-      //lotteryNumber = Random.Range(0,lotteryNumberRange);
-        Debug.Log($"lottery running for potions. Lottery number: " + lotteryNumber);
+        //int lotteryNumber = 3;
+     int lotteryNumber = Random.Range(0,lotteryNumberRange);
+        if (dropSpecialItem)
+        {
+            Instantiate(specialObject, dropPoint, Quaternion.identity);
+        }
         switch (lotteryNumber)
         {
             case (0):

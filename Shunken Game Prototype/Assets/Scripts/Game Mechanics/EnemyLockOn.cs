@@ -120,16 +120,21 @@ public class EnemyLockOn : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-     
-        Collider[] nearbyEnemies = Physics.OverlapSphere(this.transform.position, lockonRange);
-        foreach (Collider enemy in nearbyEnemies)
+       // Debug.Log("Searching for Enemies1");
+       // Debug.Log($"Game Object name: " + other.gameObject.name + ", Game Object tag: " + other.tag);
+        if (other.CompareTag("Enemy"))
         {
-            if (enemy.tag == "Enemy")
+            //Debug.Log("Searching for Enemies2");
+            Collider[] nearbyEnemies = Physics.OverlapSphere(this.transform.position, lockonRange);
+            foreach (Collider enemy in nearbyEnemies)
             {
-                enemiesNearby = true;
-                Transform enemyTransform = enemy.gameObject.GetComponent<Transform>();
-                if (!enemyTransformsList.Contains(enemyTransform))
-                { enemyTransformsList.Add(enemyTransform); }
+                if (enemy.tag == "Enemy")
+                {
+                    enemiesNearby = true;
+                    Transform enemyTransform = enemy.gameObject.GetComponent<Transform>();
+                    if (!enemyTransformsList.Contains(enemyTransform))
+                    { enemyTransformsList.Add(enemyTransform); }
+                }
             }
         }
 
@@ -144,7 +149,7 @@ public class EnemyLockOn : MonoBehaviour
     {
         
         
-            if (other.tag == "Enemy")
+            if (other.CompareTag("Enemy"))
             {
             Debug.Log("Enemy Removed from list");
                 Transform enemyTransform = other.gameObject.GetComponent<Transform>();
@@ -156,7 +161,7 @@ public class EnemyLockOn : MonoBehaviour
                 if (lockedOnEnemy)
                 LockOnEnemy();
             }
-            else
+            else if (enemyTransformsList.Contains(enemyTransform))
             enemyTransformsList.Remove(enemyTransform);
            
             }

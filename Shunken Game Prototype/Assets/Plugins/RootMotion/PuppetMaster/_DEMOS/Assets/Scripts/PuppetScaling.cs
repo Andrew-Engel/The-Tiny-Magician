@@ -4,7 +4,7 @@ using RootMotion.Dynamics;
 
 namespace RootMotion.Demos {
 
-	// Scales the puppet and/or any of it's muscles.
+	// Scales the puppet and/or any of its muscles.
 	public class PuppetScaling : MonoBehaviour {
 
 		public PuppetMaster puppetMaster;

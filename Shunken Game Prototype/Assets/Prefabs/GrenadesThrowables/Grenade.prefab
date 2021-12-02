@@ -93,11 +93,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4265859942278319979}
-  - component: {fileID: 492116482053536222}
   - component: {fileID: 2391635987221553037}
   - component: {fileID: 697776258215745294}
   - component: {fileID: 861599190476670269}
   - component: {fileID: 1601190497199422959}
+  - component: {fileID: 2198386905243587155}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Shootable
@@ -122,37 +122,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &492116482053536222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794949260089169746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437d6ec63157d574988cc83cdc7c2dac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshRoot: {fileID: 3364396172924796351}
-  muscleProps:
-    group: 8
-    mappingWeight: 1
-    pinWeight: 1
-    muscleWeight: 1
-    muscleDamper: 1
-    internalCollisionIgnores:
-      ignoreAll: 0
-      muscles: []
-      groups: 
-    animatedTargetChildren: []
-  forceLayers: 0
-  mass: 1
-  propType: 0
-  pickedUpMaterial: {fileID: 0}
-  additionalPinOffsetAdd: {x: 0, y: 0, z: 0}
-  additionalPinWeight: 1
-  additionalPinMass: 1
 --- !u!54 &2391635987221553037
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -380,6 +349,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2198386905243587155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794949260089169746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437d6ec63157d574988cc83cdc7c2dac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRoot: {fileID: 3364396172924796351}
+  muscleProps:
+    group: 8
+    mappingWeight: 1
+    pinWeight: 1
+    muscleWeight: 1
+    muscleDamper: 1
+    internalCollisionIgnores:
+      ignoreAll: 0
+      muscles: []
+      groups: 
+    animatedTargetChildren: []
+  forceLayers: 1
+  mass: 1
+  propType: 0
+  pickedUpMaterial: {fileID: 0}
+  additionalPinOffsetAdd: {x: 0, y: 0, z: 0}
+  additionalPinWeight: 1
+  additionalPinMass: 1
 --- !u!1 &1721754163318514247
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,8 +407,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721754163318514247}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.19, z: -0.063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08, y: 0.108, z: 0.052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4265859942278319979}

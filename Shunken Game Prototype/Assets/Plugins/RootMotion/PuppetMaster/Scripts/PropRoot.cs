@@ -28,9 +28,9 @@ namespace RootMotion.Dynamics {
 		/// </summary>
 		public PuppetMaster puppetMaster;
 
-		[Tooltip("If a prop is connected, what will it's joint be connected to?")]
+		[Tooltip("If a prop is connected, what will its joint be connected to?")]
 		/// <summary>
-		/// If a prop is connected, what will it's joint be connected to?
+		/// If a prop is connected, what will its joint be connected to?
 		/// </summary>
 		public Rigidbody connectTo;
 

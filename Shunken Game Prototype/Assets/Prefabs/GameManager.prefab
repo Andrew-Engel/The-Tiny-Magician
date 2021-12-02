@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 9004632100509942198}
   - component: {fileID: 4080589620842228025}
   - component: {fileID: 4078552198549134366}
+  - component: {fileID: 3261436548026785629}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -422,3 +423,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55d395ee9b5cb643968c2b988d59685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3261436548026785629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394132764989996630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa01ec7b53e56247809feb7d5bcb4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveMenuTitles: []
+  objectiveMenuPrefabsList:
+  - {fileID: 4145807509483931040, guid: 9d9888d172f0c7b44873d6bae4a17e02, type: 3}
+  screenOverlayPrefabs:
+  - {fileID: 4145807509483931040, guid: 7d61b0eebf6a5824487382dc812c27eb, type: 3}
+  MenuTitleParent: {fileID: 0}
+  ScreenOverlayParent: {fileID: 0}

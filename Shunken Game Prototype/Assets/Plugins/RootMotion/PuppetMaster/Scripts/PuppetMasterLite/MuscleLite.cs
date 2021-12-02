@@ -27,7 +27,6 @@ namespace RootMotion.Dynamics
         private Quaternion targetAnimatedRotation = Quaternion.identity;
         private Quaternion defaultTargetLocalRotation = Quaternion.identity;
         private Quaternion toParentSpace = Quaternion.identity;
-        private Quaternion localRotationConvert = Quaternion.identity;
         private Quaternion targetAnimatedWorldRotation = Quaternion.identity;
         private Quaternion defaultRotation = Quaternion.identity;
         private Vector3 defaultPosition;
@@ -66,8 +65,7 @@ namespace RootMotion.Dynamics
 
             targetParent = connectedBodyTarget != null ? connectedBodyTarget : target.parent;
             toParentSpace = Quaternion.Inverse(targetParentRotation) * parentRotation;
-            localRotationConvert = Quaternion.Inverse(targetLocalRotation) * localRotation;
-
+            
             // Joint space
             Vector3 forward = Vector3.Cross(joint.axis, joint.secondaryAxis).normalized;
             Vector3 up = Vector3.Cross(forward, joint.axis).normalized;
@@ -133,14 +131,13 @@ namespace RootMotion.Dynamics
             lastRotationDamper = -1f;
         }
 
-        // Moves and rotates the muscle to match it's target
+        // Moves and rotates the muscle to match its target
         public void MoveToTarget()
         {
             if (!initiated) return;
-            
+
             // Moving rigidbodies only won't animate the pose. MoveRotation does not work on a kinematic Rigidbody that is connected to another by a Joint
-            transform.position = target.position;
-            transform.rotation = target.rotation;
+            transform.SetPositionAndRotation(target.position, target.rotation);
             rigidbody.MovePosition(transform.position);
             rigidbody.MoveRotation(transform.rotation);
         }
@@ -162,7 +159,7 @@ namespace RootMotion.Dynamics
 
             if (joint.connectedBody != null)
             {
-                targetAnimatedRotation = targetLocalRotation * localRotationConvert;
+                targetAnimatedRotation = targetLocalRotation;
             }
 
             targetAnimatedWorldRotation = target.rotation;
@@ -227,38 +224,38 @@ namespace RootMotion.Dynamics
             float w = masterWeight * mappingWeightMlp;
             if (w <= 0f) return;
 
+            Quaternion r = transform.rotation;
+            Vector3 p = transform.position;
+
             if (w >= 1f)
             {
-                // Rotation
-                target.rotation = transform.rotation;
-
                 // Position
                 if (connectedBodyTransform != null)
                 {
                     Vector3 relativePosition = connectedBodyTransform.InverseTransformPoint(transform.position);
-                    target.position = connectedBodyTarget.TransformPoint(relativePosition);
+                    p = connectedBodyTarget.TransformPoint(relativePosition);
                 }
-                else
-                {
-                    target.position = transform.position;
-                }
+
+                target.SetPositionAndRotation(p, r);
 
                 return;
             }
 
             // Rotation
-            target.rotation = Quaternion.Lerp(target.rotation, transform.rotation, w);
+            r = Quaternion.Lerp(target.rotation, r, w);
 
             // Position
             if (connectedBodyTransform != null)
             {
                 Vector3 relativePosition = connectedBodyTransform.InverseTransformPoint(transform.position);
-                target.position = Vector3.Lerp(target.position, connectedBodyTarget.TransformPoint(relativePosition), w);
+                p = Vector3.Lerp(target.position, connectedBodyTarget.TransformPoint(relativePosition), w);
             }
             else
             {
-                target.position = Vector3.Lerp(target.position, transform.position, w);
+                p = Vector3.Lerp(target.position, transform.position, w);
             }
+
+            target.SetPositionAndRotation(p, r);
         }
 
         // Update Joint connected anchor

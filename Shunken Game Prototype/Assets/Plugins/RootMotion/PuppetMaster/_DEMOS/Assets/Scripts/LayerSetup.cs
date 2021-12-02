@@ -18,7 +18,7 @@ namespace RootMotion.Demos {
 		[Tooltip("The layer to assign the character controller to. Collisions between this layer and the 'Ragdoll Layer' will be ignored, or else the ragdoll would collide with the character controller.")]
 		public int characterControllerLayer;
 
-		[Tooltip("The layer to assign the PuppetMaster and all it's muscles to. Collisions between this layer and the 'Character Controller Layer' will be ignored, or else the ragdoll would collide with the character controller.")]
+		[Tooltip("The layer to assign the PuppetMaster and all its muscles to. Collisions between this layer and the 'Character Controller Layer' will be ignored, or else the ragdoll would collide with the character controller.")]
 		public int ragdollLayer;
 
 		[Tooltip("Layers that will be ignored by the character controller")]

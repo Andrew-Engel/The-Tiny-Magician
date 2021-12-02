@@ -62,9 +62,6 @@ namespace RootMotion.Dynamics
             }
 
             Read();
-
-            //Debug.Break();
-            //return;
             
             StopAllCoroutines();
             StartCoroutine(Activation());
@@ -119,7 +116,7 @@ namespace RootMotion.Dynamics
             foreach (MuscleLite m in muscles)
             {
                 m.Initiate(muscles);
-                m.mappingWeightMlp = 0f;
+                //m.mappingWeightMlp = 0f;
             }
         }
 

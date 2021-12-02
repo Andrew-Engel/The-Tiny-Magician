@@ -39,11 +39,7 @@ public class CampingBaseBehavior : MonoBehaviour
     {
         controls.Player.Disable();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
     private void Interact()
     {
         if (playerNearby && !modalWindowOpen)

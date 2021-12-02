@@ -12,7 +12,8 @@ namespace RootMotion.Dynamics
     {
 
         public Transform target;
-        [Range(0f, 1f)] public float weight = 1f;
+        [Range(0f, 1f)] public float forceWeight = 1f;
+        [Range(0f, 1f)] public float torqueWeight = 1f;
         public bool useTargetVelocity = true;
 
         private Rigidbody r;
@@ -55,14 +56,14 @@ namespace RootMotion.Dynamics
             force += targetVelocity;
             force -= r.velocity;
             if (r.useGravity) force -= Physics.gravity * Time.deltaTime;
-            force *= weight;
+            force *= forceWeight;
             r.AddForce(force, ForceMode.VelocityChange);
 
             // Torque
             Vector3 torque = PhysXTools.GetAngularAcceleration(r.rotation, target.rotation);
             torque += targetAngularVelocity;
             torque -= r.angularVelocity;
-            torque *= weight;
+            torque *= torqueWeight;
             r.AddTorque(torque, ForceMode.VelocityChange);
         }
     }

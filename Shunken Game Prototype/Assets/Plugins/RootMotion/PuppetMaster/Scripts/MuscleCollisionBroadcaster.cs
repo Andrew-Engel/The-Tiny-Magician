@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace RootMotion.Dynamics {
 
@@ -86,14 +87,21 @@ namespace RootMotion.Dynamics {
 				behaviour.OnMuscleHit(new MuscleHit(muscleIndex, unPin, force, position));
 			}
 		}
+
+        // Prevents processing internal collisions.
+        private bool IsSelf(Collider c)
+        {
+            //return c.transform.root == transform.root; // Might be faster, but make sure characters are not stacked to the same root!
+            return c.transform.IsChildOf(puppetMaster.transform); // Use this if you need all your puppets to be parented to a single container gameobject.
+        }
 		
 		void OnCollisionEnter(Collision collision) {
-			if (!enabled) return;
+            if (!enabled) return;
 			if (puppetMaster == null) return;
-			if (collision.collider.transform.root == transform.root) return; // @todo make sure characters are not stacked to the same root
+			if (IsSelf(collision.collider)) return;
             if (puppetMaster.muscles[muscleIndex].state.isDisconnected) return;
-			
-			foreach (BehaviourBase behaviour in puppetMaster.behaviours) {
+
+            foreach (BehaviourBase behaviour in puppetMaster.behaviours) {
 				behaviour.OnMuscleCollision(new MuscleCollision(muscleIndex, collision));
 			}
 		}
@@ -102,7 +110,7 @@ namespace RootMotion.Dynamics {
 			if (!enabled) return;
 			if (puppetMaster == null) return;
 			if (PuppetMasterSettings.instance != null && !PuppetMasterSettings.instance.collisionStayMessages) return;
-			if (collision.collider.transform.root == transform.root) return;
+            if (IsSelf(collision.collider)) return;
             if (puppetMaster.muscles[muscleIndex].state.isDisconnected) return;
 
             foreach (BehaviourBase behaviour in puppetMaster.behaviours) {
@@ -114,12 +122,12 @@ namespace RootMotion.Dynamics {
 			if (!enabled) return;
 			if (puppetMaster == null) return;
 			if (PuppetMasterSettings.instance != null && !PuppetMasterSettings.instance.collisionExitMessages) return;
-			if (collision.collider.transform.root == transform.root) return;
+            if (IsSelf(collision.collider)) return;
             if (puppetMaster.muscles[muscleIndex].state.isDisconnected) return;
 
             foreach (BehaviourBase behaviour in puppetMaster.behaviours) {
 				behaviour.OnMuscleCollisionExit(new MuscleCollision(muscleIndex, collision));
 			}
 		}
-	}
+    }
 }

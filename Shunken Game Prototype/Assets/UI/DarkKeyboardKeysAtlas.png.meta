@@ -1,0 +1,2268 @@
+fileFormatVersion: 2
+guid: 10aa7ba4cd2ee1b42896ee1f6701b7ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8924273735385716385
+    second: DarkKeyboardKeysAtlas_0
+  - first:
+      213: -3250035642056441523
+    second: DarkKeyboardKeysAtlas_1
+  - first:
+      213: 5732657449519429558
+    second: DarkKeyboardKeysAtlas_2
+  - first:
+      213: 5996048729338522497
+    second: DarkKeyboardKeysAtlas_3
+  - first:
+      213: 5379943925051339946
+    second: DarkKeyboardKeysAtlas_4
+  - first:
+      213: 8548431354518576754
+    second: DarkKeyboardKeysAtlas_5
+  - first:
+      213: -6440839671184216964
+    second: DarkKeyboardKeysAtlas_6
+  - first:
+      213: 5598771756699564707
+    second: DarkKeyboardKeysAtlas_7
+  - first:
+      213: -5110941628730339740
+    second: DarkKeyboardKeysAtlas_8
+  - first:
+      213: 8634299142693610022
+    second: DarkKeyboardKeysAtlas_9
+  - first:
+      213: 3905500915484894138
+    second: DarkKeyboardKeysAtlas_10
+  - first:
+      213: 2391956920939002649
+    second: DarkKeyboardKeysAtlas_11
+  - first:
+      213: -1068728809569792302
+    second: DarkKeyboardKeysAtlas_12
+  - first:
+      213: -3614114821550096768
+    second: DarkKeyboardKeysAtlas_13
+  - first:
+      213: 2440473641456522465
+    second: DarkKeyboardKeysAtlas_14
+  - first:
+      213: 7025506791649337342
+    second: DarkKeyboardKeysAtlas_15
+  - first:
+      213: -8362955277261791392
+    second: DarkKeyboardKeysAtlas_16
+  - first:
+      213: -4595916307304991951
+    second: DarkKeyboardKeysAtlas_17
+  - first:
+      213: -8953918541145304470
+    second: DarkKeyboardKeysAtlas_18
+  - first:
+      213: 1207083329497084464
+    second: DarkKeyboardKeysAtlas_19
+  - first:
+      213: -4036170451897615228
+    second: DarkKeyboardKeysAtlas_20
+  - first:
+      213: 201598043795180056
+    second: DarkKeyboardKeysAtlas_21
+  - first:
+      213: 8458640911729467798
+    second: DarkKeyboardKeysAtlas_22
+  - first:
+      213: 5453607241092240220
+    second: DarkKeyboardKeysAtlas_23
+  - first:
+      213: -2976645510373465548
+    second: DarkKeyboardKeysAtlas_24
+  - first:
+      213: -391130488369037510
+    second: DarkKeyboardKeysAtlas_25
+  - first:
+      213: 5891895846287536863
+    second: DarkKeyboardKeysAtlas_26
+  - first:
+      213: -4384704783044829254
+    second: DarkKeyboardKeysAtlas_27
+  - first:
+      213: -5235579453397893071
+    second: DarkKeyboardKeysAtlas_28
+  - first:
+      213: 4214426121767261499
+    second: DarkKeyboardKeysAtlas_29
+  - first:
+      213: -7528790737465945223
+    second: DarkKeyboardKeysAtlas_30
+  - first:
+      213: -1136420358113532948
+    second: DarkKeyboardKeysAtlas_31
+  - first:
+      213: -5146763743242206415
+    second: DarkKeyboardKeysAtlas_32
+  - first:
+      213: 7547017512590902688
+    second: DarkKeyboardKeysAtlas_33
+  - first:
+      213: -4209243877615604142
+    second: DarkKeyboardKeysAtlas_34
+  - first:
+      213: -1204320825922453771
+    second: DarkKeyboardKeysAtlas_35
+  - first:
+      213: 4814526209478639811
+    second: DarkKeyboardKeysAtlas_36
+  - first:
+      213: 4138053719565549395
+    second: DarkKeyboardKeysAtlas_37
+  - first:
+      213: -5859899344426596433
+    second: DarkKeyboardKeysAtlas_38
+  - first:
+      213: 96559410193773400
+    second: DarkKeyboardKeysAtlas_39
+  - first:
+      213: 1327567920230338656
+    second: DarkKeyboardKeysAtlas_40
+  - first:
+      213: 5351545262585094617
+    second: DarkKeyboardKeysAtlas_41
+  - first:
+      213: 298780813041524042
+    second: DarkKeyboardKeysAtlas_42
+  - first:
+      213: -3844654530564892821
+    second: DarkKeyboardKeysAtlas_43
+  - first:
+      213: 2929424050046151594
+    second: DarkKeyboardKeysAtlas_44
+  - first:
+      213: 2374773973547782265
+    second: DarkKeyboardKeysAtlas_45
+  - first:
+      213: 5951410755931984590
+    second: DarkKeyboardKeysAtlas_46
+  - first:
+      213: -6758999150476320470
+    second: DarkKeyboardKeysAtlas_47
+  - first:
+      213: -1453635348554718558
+    second: DarkKeyboardKeysAtlas_48
+  - first:
+      213: -5381604151762623439
+    second: DarkKeyboardKeysAtlas_49
+  - first:
+      213: -3073981062591789629
+    second: DarkKeyboardKeysAtlas_50
+  - first:
+      213: -4772346605250582978
+    second: DarkKeyboardKeysAtlas_51
+  - first:
+      213: 7414986406030018334
+    second: DarkKeyboardKeysAtlas_52
+  - first:
+      213: 2610910890124888351
+    second: DarkKeyboardKeysAtlas_53
+  - first:
+      213: -5689572851672949170
+    second: DarkKeyboardKeysAtlas_54
+  - first:
+      213: -4727162218746394899
+    second: DarkKeyboardKeysAtlas_55
+  - first:
+      213: -167416491955146214
+    second: DarkKeyboardKeysAtlas_56
+  - first:
+      213: 2113963615646975367
+    second: DarkKeyboardKeysAtlas_57
+  - first:
+      213: 5164633627372947186
+    second: DarkKeyboardKeysAtlas_58
+  - first:
+      213: 4175682496230256827
+    second: DarkKeyboardKeysAtlas_59
+  - first:
+      213: -5864107647158347009
+    second: DarkKeyboardKeysAtlas_60
+  - first:
+      213: -8488605271666089932
+    second: DarkKeyboardKeysAtlas_61
+  - first:
+      213: -5212508140554958554
+    second: DarkKeyboardKeysAtlas_62
+  - first:
+      213: -3729585764910559726
+    second: DarkKeyboardKeysAtlas_63
+  - first:
+      213: -7536885846813807770
+    second: DarkKeyboardKeysAtlas_64
+  - first:
+      213: -8457613107591476201
+    second: DarkKeyboardKeysAtlas_65
+  - first:
+      213: -3150271909282344458
+    second: DarkKeyboardKeysAtlas_66
+  - first:
+      213: 4323072225991792855
+    second: DarkKeyboardKeysAtlas_67
+  - first:
+      213: -5388258472852419324
+    second: DarkKeyboardKeysAtlas_68
+  - first:
+      213: 6488552977312495921
+    second: DarkKeyboardKeysAtlas_69
+  - first:
+      213: 5727300041593061998
+    second: DarkKeyboardKeysAtlas_70
+  - first:
+      213: -2520593160077468894
+    second: DarkKeyboardKeysAtlas_71
+  - first:
+      213: -7153249989277281896
+    second: DarkKeyboardKeysAtlas_72
+  - first:
+      213: -1346427559157983933
+    second: DarkKeyboardKeysAtlas_73
+  - first:
+      213: 3843071919346720039
+    second: DarkKeyboardKeysAtlas_74
+  - first:
+      213: 3213866768168536569
+    second: DarkKeyboardKeysAtlas_75
+  - first:
+      213: -6837730058780867762
+    second: DarkKeyboardKeysAtlas_76
+  - first:
+      213: -6416188786021962478
+    second: DarkKeyboardKeysAtlas_77
+  - first:
+      213: -6741577971761050451
+    second: DarkKeyboardKeysAtlas_78
+  - first:
+      213: 7635447596826217847
+    second: DarkKeyboardKeysAtlas_79
+  - first:
+      213: -7216233790575998153
+    second: DarkKeyboardKeysAtlas_80
+  - first:
+      213: 1355034891452573528
+    second: DarkKeyboardKeysAtlas_81
+  - first:
+      213: -2296645251268157764
+    second: DarkKeyboardKeysAtlas_82
+  - first:
+      213: -3514826444598607027
+    second: DarkKeyboardKeysAtlas_83
+  - first:
+      213: -7161539661247322510
+    second: DarkKeyboardKeysAtlas_84
+  - first:
+      213: -74125460650499021
+    second: DarkKeyboardKeysAtlas_85
+  - first:
+      213: 4697805482561102389
+    second: DarkKeyboardKeysAtlas_86
+  - first:
+      213: -3299892062166587388
+    second: DarkKeyboardKeysAtlas_87
+  - first:
+      213: -5618077869740527009
+    second: DarkKeyboardKeysAtlas_88
+  - first:
+      213: 1453403280978417033
+    second: DarkKeyboardKeysAtlas_89
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1412
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a69304fda369db70800000000000000
+      internalID: 8924273735385716385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1404
+        width: 91
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d410edf8dcd85e2d0800000000000000
+      internalID: -3250035642056441523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1396
+        width: 54
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b73a91d39d7e8f40800000000000000
+      internalID: 5732657449519429558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1405
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ba7280d8e363350800000000000000
+      internalID: 5996048729338522497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1405
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4b434ee7669aa40800000000000000
+      internalID: 5379943925051339946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1408
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e14e0860122a670800000000000000
+      internalID: 8548431354518576754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1406
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c22dfa17a8d96a0800000000000000
+      internalID: -6440839671184216964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1407
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa3198cf35d2bd40800000000000000
+      internalID: 5598771756699564707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1405
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e85c7eaa94219b0800000000000000
+      internalID: -5110941628730339740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1403
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62266b4e25133d770800000000000000
+      internalID: 8634299142693610022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1396
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3a071f360233630800000000000000
+      internalID: 3905500915484894138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1309
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b3b9e7520f13120800000000000000
+      internalID: 2391956920939002649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1312
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2decd506fcc1b21f0800000000000000
+      internalID: -1068728809569792302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1309
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e380cd7b518ddc0800000000000000
+      internalID: -3614114821550096768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1305
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e458b2c8dd4ed120800000000000000
+      internalID: 2440473641456522465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1309
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff5a5b443d9f7160800000000000000
+      internalID: 7025506791649337342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1307
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f1552fb70d0fb80800000000000000
+      internalID: -8362955277261791392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1307
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13339adf7760830c0800000000000000
+      internalID: -4595916307304991951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1304
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a621047d68a4db380800000000000000
+      internalID: -8953918541145304470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1300
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03238fc84eb60c010800000000000000
+      internalID: 1207083329497084464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1298
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cf6b9cb54acf7c0800000000000000
+      internalID: -4036170451897615228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1290
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a43db4a583cc200800000000000000
+      internalID: 201598043795180056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1212
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691a83ae711236570800000000000000
+      internalID: 8458640911729467798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1210
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c531dcd24ea1fab40800000000000000
+      internalID: 5453607241092240220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1210
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432ade3eda4d0b6d0800000000000000
+      internalID: -2976645510373465548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1209
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f30f3a4ec629af0800000000000000
+      internalID: -391130488369037510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1211
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2719b3e0834c150800000000000000
+      internalID: 5891895846287536863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 1210
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf18a12b366623c0800000000000000
+      internalID: -4384704783044829254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1207
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13082e6f93c7757b0800000000000000
+      internalID: -5235579453397893071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1205
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3590109a36ac7a30800000000000000
+      internalID: 4214426121767261499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 1204
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9735719a6bc548790800000000000000
+      internalID: -7528790737465945223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 1188
+        width: 68
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3ee1f84bf9a30f0800000000000000
+      internalID: -1136420358113532948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1188
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133403de4a50398b0800000000000000
+      internalID: -5146763743242206415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1083
+        width: 68
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a502af11746cb860800000000000000
+      internalID: 7547017512590902688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1082
+        width: 68
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25eebbdaef2c595c0800000000000000
+      internalID: -4209243877615604142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1084
+        width: 68
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe794fe694694fe0800000000000000
+      internalID: -1204320825922453771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1090
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c048cd3412a0d240800000000000000
+      internalID: 4814526209478639811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1092
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f30300fe15d6930800000000000000
+      internalID: 4138053719565549395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1090
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa788e3e7947daea0800000000000000
+      internalID: -5859899344426596433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1084
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8533250a54c075100800000000000000
+      internalID: 96559410193773400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 1087
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060988c5df77c6210800000000000000
+      internalID: 1327567920230338656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1084
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d12fc70012844a40800000000000000
+      internalID: 5351545262585094617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1073
+        width: 54
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4dda03019b752400800000000000000
+      internalID: 298780813041524042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 1078
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b675595031b05aac0800000000000000
+      internalID: -3844654530564892821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 982
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabac7b17a767a820800000000000000
+      internalID: 2929424050046151594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 977
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970982bc854e4f020800000000000000
+      internalID: 2374773973547782265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 979
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2d3c3fc88a79250800000000000000
+      internalID: 5951410755931984590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 976
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2121b655163332a0800000000000000
+      internalID: -6758999150476320470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_48
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 973
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2e1782a56a3dbe0800000000000000
+      internalID: -1453635348554718558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_49
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 970
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134eb647983b055b0800000000000000
+      internalID: -5381604151762623439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_50
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 968
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c540fd92860755d0800000000000000
+      internalID: -3073981062591789629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_51
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 967
+        width: 75
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e366ff82c0835cdb0800000000000000
+      internalID: -4772346605250582978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_52
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 970
+        width: 91
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1705c999d257e660800000000000000
+      internalID: 7414986406030018334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_53
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 963
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19c7121f91db3420800000000000000
+      internalID: 2610910890124888351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_54
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 877
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ed354d2a39a01b0800000000000000
+      internalID: -5689572851672949170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_55
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 862
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de649f3f10fb56eb0800000000000000
+      internalID: -4727162218746394899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_56
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 866
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12b87b66973dadf0800000000000000
+      internalID: -167416491955146214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_57
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 864
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7850dba45be465d10800000000000000
+      internalID: 2113963615646975367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_58
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 862
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f60a92bbe67ca740800000000000000
+      internalID: 5164633627372947186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_59
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 858
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0fe9a4b1103f930800000000000000
+      internalID: 4175682496230256827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_60
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 854
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa997e0a218e9ea0800000000000000
+      internalID: -5864107647158347009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_61
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 856
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430a5dfda7a623a80800000000000000
+      internalID: -8488605271666089932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_62
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 833
+        width: 54
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629c365967379a7b0800000000000000
+      internalID: -5212508140554958554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_63
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 758
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e072bc189dd3cc0800000000000000
+      internalID: -3729585764910559726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_64
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 759
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b6ef3214a976790800000000000000
+      internalID: -7536885846813807770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_65
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 758
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c825260b580aa80800000000000000
+      internalID: -8457613107591476201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_66
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 760
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1955da36cf744d0800000000000000
+      internalID: -3150271909282344458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_67
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 758
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d81990f843aefb30800000000000000
+      internalID: 4323072225991792855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_68
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 758
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d84a7977f0935b0800000000000000
+      internalID: -5388258472852419324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_69
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 750
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139b3071e88fb0a50800000000000000
+      internalID: 6488552977312495921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_70
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 750
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e620c351b057b7f40800000000000000
+      internalID: 5727300041593061998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_71
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 732
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b9d4620ed050dd0800000000000000
+      internalID: -2520593160077468894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_72
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 662
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8919f87c80d8abc90800000000000000
+      internalID: -7153249989277281896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_73
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 658
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3459794c447805de0800000000000000
+      internalID: -1346427559157983933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_74
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 656
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d90f69c85555530800000000000000
+      internalID: 3843071919346720039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_75
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 658
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f94e104cc2f99c20800000000000000
+      internalID: 3213866768168536569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_76
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 658
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e430b584db08b11a0800000000000000
+      internalID: -6837730058780867762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_77
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 655
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21de0552b4e15f6a0800000000000000
+      internalID: -6416188786021962478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_78
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 649
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac85979d8a1172a0800000000000000
+      internalID: -6741577971761050451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_79
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 652
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77dcfed822f86f960800000000000000
+      internalID: 7635447596826217847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_80
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 639
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b0c88c999cadb90800000000000000
+      internalID: -7216233790575998153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_81
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 528
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8576a43fd0d0ec210800000000000000
+      internalID: 1355034891452573528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_82
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 530
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbed217ef4da020e0800000000000000
+      internalID: -2296645251268157764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_83
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 518
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d430d8298f3d83fc0800000000000000
+      internalID: -3514826444598607027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_84
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 522
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2766b7e1f991d9c90800000000000000
+      internalID: -7161539661247322510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_85
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 526
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3346d194947a8fef0800000000000000
+      internalID: -74125460650499021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_86
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 518
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532efe34235f13140800000000000000
+      internalID: 4697805482561102389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_87
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 528
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408ed6d27ad6432d0800000000000000
+      internalID: -3299892062166587388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_88
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 514
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52f1ad71f39802b0800000000000000
+      internalID: -5618077869740527009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DarkKeyboardKeysAtlas_89
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 520
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9851b1665968b2410800000000000000
+      internalID: 1453403280978417033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5345cf241b08caf4995d0c5fa988bfcd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -35,7 +35,7 @@ namespace RootMotion.Dynamics
             {
                 monoScript = MonoScript.FromMonoBehaviour(script);
                 int currentExecutionOrder = MonoImporter.GetExecutionOrder(monoScript);
-                if (currentExecutionOrder != 90) MonoImporter.SetExecutionOrder(monoScript, 90);
+                if (currentExecutionOrder != 10100) MonoImporter.SetExecutionOrder(monoScript, 10100);
 
                 // Fix negative collider sizes for ragdolls created before PuppetMaster 0.3
                 BoxCollider[] boxColliders = script.GetComponentsInChildren<BoxCollider>();
@@ -138,7 +138,7 @@ namespace RootMotion.Dynamics
 
                 GUILayout.Space(5);
                 characterControllerLayer = EditorGUILayout.IntField(new GUIContent("Character Controller Layer", "The layer to assign the character controller to. Collisions between this layer and the 'Ragdoll Layer' will be ignored, or else the ragdoll would collide with the character controller."), characterControllerLayer);
-                ragdollLayer = EditorGUILayout.IntField(new GUIContent("Ragdoll Layer", "The layer to assign the PuppetMaster and all it's muscles to. Collisions between this layer and the 'Character Controller Layer' will be ignored, or else the ragdoll would collide with the character controller."), ragdollLayer);
+                ragdollLayer = EditorGUILayout.IntField(new GUIContent("Ragdoll Layer", "The layer to assign the PuppetMaster and all its muscles to. Collisions between this layer and the 'Character Controller Layer' will be ignored, or else the ragdoll would collide with the character controller."), ragdollLayer);
 
                 if (characterControllerLayer == ragdollLayer)
                 {
@@ -177,7 +177,7 @@ namespace RootMotion.Dynamics
                     {
                         GUILayout.Space(5);
                         EditorGUILayout.BeginVertical("Box");
-                        GUILayout.Label("NB! 'Animated Target' is set to the same GameObject as this. PuppetMaster will make a duplicate of this GameObject and break the prefab to remove ragdoll components. It is recommended to set up the ragdoll on a new model instance, add PuppetMater to that and assign the original character as it's 'Animated Target'.", miniLabelStyle);
+                        GUILayout.Label("NB! 'Animated Target' is set to the same GameObject as this. PuppetMaster will make a duplicate of this GameObject and break the prefab to remove ragdoll components. It is recommended to set up the ragdoll on a new model instance, add PuppetMater to that and assign the original character as its 'Animated Target'.", miniLabelStyle);
                         EditorGUILayout.EndVertical();
                     }
                 }

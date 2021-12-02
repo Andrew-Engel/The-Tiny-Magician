@@ -53,7 +53,7 @@ MonoBehaviour:
   writheHeight: 2.5
   writheYVelocity: 1
   blendSpeed: 3
-  blendMappingSpeed: 1
+  blendMappingSpeed: 20
   canEnd: 1
   minTime: 1
   maxEndVelocity: 0.4

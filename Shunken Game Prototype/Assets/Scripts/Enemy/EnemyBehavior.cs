@@ -6,7 +6,9 @@ using UnityEngine.AI;
 using System;
 
 public class EnemyBehavior : MonoBehaviour
-{//Audio
+{
+    public event EventHandler onEnemyDeath;
+    //Audio
     [SerializeField] string backGroundMusicTitle = "Background Music", combatMusicTitle = "Combat Song Flute";
     // HealthBar
     public GameObject enemyHUD;
@@ -89,6 +91,8 @@ public class EnemyBehavior : MonoBehaviour
     }
     void OnDestroy()
     {// presenceCheck.EnemyDeathEvent(); 
+       
+        onEnemyDeath?.Invoke(this, EventArgs.Empty);
     }
     void Start()
     {

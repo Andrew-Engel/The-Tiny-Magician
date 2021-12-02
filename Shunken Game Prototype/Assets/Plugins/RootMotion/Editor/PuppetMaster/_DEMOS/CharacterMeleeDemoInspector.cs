@@ -27,16 +27,7 @@ namespace RootMotion.Demos {
 				
 				if (replace != null) {
 					if (GUILayout.Button("Replace")) {
-                        //Debug.Log("PropMuscle needs to be set up manually and assigned as 'Prop Muscle' in the CharacterMeleeDemo component on the character.");
-
-                        //TODO Update to PropMuscle
-                        /*
-						PropRoot propRoot = script.propRoot;
-						Vector3 localPosition = propRoot.transform.localPosition;
-						Quaternion localRotation = propRoot.transform.localRotation;
-						propRoot.transform.parent = null;
-                        */
-
+                        // Find Prop Muscle
                         bool hasPropMuscle = script.propMuscle != null;
                         PropMuscle propMuscle = script.propMuscle;
                         Vector3 propMusclePosition = Vector3.zero;
@@ -51,8 +42,10 @@ namespace RootMotion.Demos {
                             additionalPinOffset = propMuscle.additionalPinOffset;
                         }
 
+                        // Run the rest of the puppet replacement code
 						CharacterPuppetInspector.ReplacePuppetModel(script as CharacterThirdPerson, replace);
 
+                        // Prop Muscle again
                         if (hasPropMuscle)
                         {
                             Animator animator = script.characterAnimation.GetComponent<Animator>();
@@ -67,18 +60,6 @@ namespace RootMotion.Demos {
                             Selection.activeGameObject = script.propMuscle.gameObject;
                         }
 
-                        /*
-						Animator animator = script.characterAnimation.GetComponent<Animator>();
-						PuppetMaster puppetMaster = script.transform.parent.GetComponentInChildren<PuppetMaster>();
-
-						propRoot.transform.parent = animator.GetBoneTransform(HumanBodyBones.RightHand);
-						propRoot.transform.localPosition = localPosition;
-						propRoot.transform.localRotation = localRotation;
-						propRoot.puppetMaster = puppetMaster;
-						propRoot.connectTo = GetRigidbody(puppetMaster, animator.GetBoneTransform(HumanBodyBones.RightLowerArm));
-                        
-						Debug.Log("You probably need to adjust the localPosition and localRotation of the Prop Root to match this character's hand.");
-                        */
                         UserControlAI[] userControls = (UserControlAI[])GameObject.FindObjectsOfType<UserControlAI>();
 						foreach (UserControlAI ai in userControls) {
 							if (ai.moveTarget == null) {
@@ -87,6 +68,7 @@ namespace RootMotion.Demos {
 							}
 						}
 
+                        // Mark dirty (so changes could be saved)
                         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
                         EditorUtility.SetDirty(script);
                     }

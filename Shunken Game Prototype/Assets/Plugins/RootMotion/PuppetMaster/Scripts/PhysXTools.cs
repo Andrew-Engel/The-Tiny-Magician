@@ -163,7 +163,7 @@ namespace RootMotion.Dynamics {
 		}
 
         /// <summary>
-		/// Adds torque to the Ridigbody that accelerates it from it's current rotation to another using any force mode.
+		/// Adds torque to the Ridigbody that accelerates it from its current rotation to another using any force mode.
 		/// </summary>
         public static void AddFromToTorque(Rigidbody r, Quaternion toR, ForceMode forceMode) {
             Vector3 requiredAcceleration = GetAngularAcceleration(r.rotation, toR); // Acceleration required for a single solver step

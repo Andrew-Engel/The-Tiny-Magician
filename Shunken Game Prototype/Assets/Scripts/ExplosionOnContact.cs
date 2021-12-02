@@ -35,10 +35,7 @@ public class ExplosionOnContact : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
     void OnCollision (Collision collision)
     {
         if (collision.gameObject.layer == interactableLayers)
