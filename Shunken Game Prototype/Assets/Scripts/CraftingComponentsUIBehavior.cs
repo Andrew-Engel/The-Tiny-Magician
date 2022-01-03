@@ -5,26 +5,28 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class CraftingComponentsUIBehavior : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CraftingComponentsUIBehavior : MonoBehaviour
 {
     [SerializeField] CanvasGroup materialImageCanvasGroup;
-    // Start is called before the first frame update
-    void Start()
+    CraftingComponentsDescriptionsHandler CraftingComponentsDescriptionsHandler;
+    public string whatMaterialIsThis;
+    private void Start()
     {
-        
+        CraftingComponentsDescriptionsHandler = GetComponentInParent<CraftingComponentsDescriptionsHandler>();
     }
+ 
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void ShowDescription()
     {
         
         DOTween.To(() => materialImageCanvasGroup.alpha, x => materialImageCanvasGroup.alpha = x, 1f, 0.5f).SetUpdate(true);
-   
+        CraftingComponentsDescriptionsHandler.TurnOffInactiveDescriptions(whatMaterialIsThis);
 
     }
 
     // Called when the pointer exits our GUI component.
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void HideDescription()
     {
 
 

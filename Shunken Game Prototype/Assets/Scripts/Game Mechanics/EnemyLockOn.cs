@@ -42,11 +42,7 @@ public class EnemyLockOn : MonoBehaviour
         controls.Player.Disable();
     }
     // Start is called before the first frame update
-    void Start()
-    {
-     
-
-    }
+ 
     private void LockOnEnemy()
     {
         if (!lockedOnEnemy)
@@ -74,12 +70,7 @@ public class EnemyLockOn : MonoBehaviour
         animator.SetLayerWeight(2, 0f);
         lockedOnEnemy = false;
     }
-    void Update()
-    {
-     
-       
-       
-    }
+    
     // Update is called once per frame
     void LateUpdate()
     {
@@ -167,6 +158,7 @@ public class EnemyLockOn : MonoBehaviour
             }
         
     }
+   
         private void  SwitchLockon()
     {
         if (enemyLockonIndex < (enemyTransformsList.Count -1))

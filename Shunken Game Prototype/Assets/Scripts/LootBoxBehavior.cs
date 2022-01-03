@@ -86,13 +86,15 @@ public class LootBoxBehavior : MonoBehaviour
         anim.Play();
         Destroy(parentTransform.gameObject, destroyDelay);
     }
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-    
-        mouseOver = true;
-        DOTween.To(() => interactPromptCanvasGroup.alpha, x => interactPromptCanvasGroup.alpha = x, 1f, 0.3f);
+        if (other.CompareTag("Player"))
+        {
+            mouseOver = true;
+            DOTween.To(() => interactPromptCanvasGroup.alpha, x => interactPromptCanvasGroup.alpha = x, 1f, 0.3f);
+        }
     }
-    private void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
       
         mouseOver = false;

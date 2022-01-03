@@ -294,6 +294,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2260,6 +2261,97 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      DarkKeyboardKeysAtlas_83: -3514826444598607027
+      DarkKeyboardKeysAtlas_82: -2296645251268157764
+      DarkKeyboardKeysAtlas_15: 7025506791649337342
+      DarkKeyboardKeysAtlas_61: -8488605271666089932
+      DarkKeyboardKeysAtlas_3: 5996048729338522497
+      DarkKeyboardKeysAtlas_75: 3213866768168536569
+      DarkKeyboardKeysAtlas_86: 4697805482561102389
+      DarkKeyboardKeysAtlas_58: 5164633627372947186
+      DarkKeyboardKeysAtlas_84: -7161539661247322510
+      DarkKeyboardKeysAtlas_72: -7153249989277281896
+      DarkKeyboardKeysAtlas_71: -2520593160077468894
+      DarkKeyboardKeysAtlas_69: 6488552977312495921
+      DarkKeyboardKeysAtlas_19: 1207083329497084464
+      DarkKeyboardKeysAtlas_70: 5727300041593061998
+      DarkKeyboardKeysAtlas_28: -5235579453397893071
+      DarkKeyboardKeysAtlas_30: -7528790737465945223
+      DarkKeyboardKeysAtlas_32: -5146763743242206415
+      DarkKeyboardKeysAtlas_68: -5388258472852419324
+      DarkKeyboardKeysAtlas_57: 2113963615646975367
+      DarkKeyboardKeysAtlas_7: 5598771756699564707
+      DarkKeyboardKeysAtlas_38: -5859899344426596433
+      DarkKeyboardKeysAtlas_67: 4323072225991792855
+      DarkKeyboardKeysAtlas_89: 1453403280978417033
+      DarkKeyboardKeysAtlas_17: -4595916307304991951
+      DarkKeyboardKeysAtlas_24: -2976645510373465548
+      DarkKeyboardKeysAtlas_8: -5110941628730339740
+      DarkKeyboardKeysAtlas_34: -4209243877615604142
+      DarkKeyboardKeysAtlas_9: 8634299142693610022
+      DarkKeyboardKeysAtlas_77: -6416188786021962478
+      DarkKeyboardKeysAtlas_2: 5732657449519429558
+      DarkKeyboardKeysAtlas_31: -1136420358113532948
+      DarkKeyboardKeysAtlas_81: 1355034891452573528
+      DarkKeyboardKeysAtlas_55: -4727162218746394899
+      DarkKeyboardKeysAtlas_25: -391130488369037510
+      DarkKeyboardKeysAtlas_33: 7547017512590902688
+      DarkKeyboardKeysAtlas_85: -74125460650499021
+      DarkKeyboardKeysAtlas_12: -1068728809569792302
+      DarkKeyboardKeysAtlas_0: 8924273735385716385
+      DarkKeyboardKeysAtlas_40: 1327567920230338656
+      DarkKeyboardKeysAtlas_59: 4175682496230256827
+      DarkKeyboardKeysAtlas_21: 201598043795180056
+      DarkKeyboardKeysAtlas_52: 7414986406030018334
+      DarkKeyboardKeysAtlas_43: -3844654530564892821
+      DarkKeyboardKeysAtlas_64: -7536885846813807770
+      DarkKeyboardKeysAtlas_50: -3073981062591789629
+      DarkKeyboardKeysAtlas_76: -6837730058780867762
+      DarkKeyboardKeysAtlas_54: -5689572851672949170
+      DarkKeyboardKeysAtlas_11: 2391956920939002649
+      DarkKeyboardKeysAtlas_51: -4772346605250582978
+      DarkKeyboardKeysAtlas_18: -8953918541145304470
+      DarkKeyboardKeysAtlas_48: -1453635348554718558
+      DarkKeyboardKeysAtlas_1: -3250035642056441523
+      DarkKeyboardKeysAtlas_14: 2440473641456522465
+      DarkKeyboardKeysAtlas_49: -5381604151762623439
+      DarkKeyboardKeysAtlas_20: -4036170451897615228
+      DarkKeyboardKeysAtlas_88: -5618077869740527009
+      DarkKeyboardKeysAtlas_80: -7216233790575998153
+      DarkKeyboardKeysAtlas_53: 2610910890124888351
+      DarkKeyboardKeysAtlas_37: 4138053719565549395
+      DarkKeyboardKeysAtlas_79: 7635447596826217847
+      DarkKeyboardKeysAtlas_41: 5351545262585094617
+      DarkKeyboardKeysAtlas_56: -167416491955146214
+      DarkKeyboardKeysAtlas_46: 5951410755931984590
+      DarkKeyboardKeysAtlas_65: -8457613107591476201
+      DarkKeyboardKeysAtlas_27: -4384704783044829254
+      DarkKeyboardKeysAtlas_23: 5453607241092240220
+      DarkKeyboardKeysAtlas_87: -3299892062166587388
+      DarkKeyboardKeysAtlas_16: -8362955277261791392
+      DarkKeyboardKeysAtlas_29: 4214426121767261499
+      DarkKeyboardKeysAtlas_13: -3614114821550096768
+      DarkKeyboardKeysAtlas_39: 96559410193773400
+      DarkKeyboardKeysAtlas_66: -3150271909282344458
+      DarkKeyboardKeysAtlas_62: -5212508140554958554
+      DarkKeyboardKeysAtlas_6: -6440839671184216964
+      DarkKeyboardKeysAtlas_63: -3729585764910559726
+      DarkKeyboardKeysAtlas_45: 2374773973547782265
+      DarkKeyboardKeysAtlas_47: -6758999150476320470
+      DarkKeyboardKeysAtlas_44: 2929424050046151594
+      DarkKeyboardKeysAtlas_42: 298780813041524042
+      DarkKeyboardKeysAtlas_10: 3905500915484894138
+      DarkKeyboardKeysAtlas_78: -6741577971761050451
+      DarkKeyboardKeysAtlas_5: 8548431354518576754
+      DarkKeyboardKeysAtlas_4: 5379943925051339946
+      DarkKeyboardKeysAtlas_74: 3843071919346720039
+      DarkKeyboardKeysAtlas_36: 4814526209478639811
+      DarkKeyboardKeysAtlas_60: -5864107647158347009
+      DarkKeyboardKeysAtlas_73: -1346427559157983933
+      DarkKeyboardKeysAtlas_35: -1204320825922453771
+      DarkKeyboardKeysAtlas_22: 8458640911729467798
+      DarkKeyboardKeysAtlas_26: 5891895846287536863
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

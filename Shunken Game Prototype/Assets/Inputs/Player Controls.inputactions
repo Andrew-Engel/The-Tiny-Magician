@@ -11,7 +11,8 @@
                     "id": "6ef09871-1ed5-4eaa-8f8f-aabea5ad326b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Move",
@@ -19,7 +20,8 @@
                     "id": "4abfbe69-d886-47d2-8cc7-c6ece9cc3c99",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Look",
@@ -27,7 +29,8 @@
                     "id": "f67c6033-74f1-4789-a889-8ff705b4ca49",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MagicExecution",
@@ -35,7 +38,8 @@
                     "id": "45f10a06-52c1-4ee7-9413-148f2987503e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "SwitchSpell",
@@ -43,7 +47,8 @@
                     "id": "53f6aee0-bf63-4533-be6c-5a8f72e1cfd5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Interact",
@@ -51,7 +56,8 @@
                     "id": "32efd1d0-f057-43cb-9949-8de5358dc90a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "SwitchLockon",
@@ -59,7 +65,8 @@
                     "id": "baaa2256-aa43-402f-a5f1-51e57e644116",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "LockOnEnemy",
@@ -67,7 +74,8 @@
                     "id": "93d1d007-39d4-4309-ac65-30528ebcaeab",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Pause",
@@ -75,7 +83,8 @@
                     "id": "f50202b9-e9c9-481f-b4f2-dbfaa3063803",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Melee",
@@ -83,7 +92,8 @@
                     "id": "cb8c5e64-7934-43ba-a0b0-9cf3e7988eb8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Crouch",
@@ -91,7 +101,8 @@
                     "id": "45d04faf-597c-49a3-ba62-a046b7f60b84",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "OpenInventory",
@@ -99,7 +110,8 @@
                     "id": "3aae533f-82ec-4d56-9a3a-8b8cc1d758a9",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "EquipThrowable",
@@ -107,7 +119,17 @@
                     "id": "6b68a11e-38b3-42bc-b196-0e54b5a55166",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AnyKey",
+                    "type": "Button",
+                    "id": "2a9737ee-1c55-471e-98b9-07a960c5c08f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -328,6 +350,39 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "EquipThrowable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf85136e-7e20-4d8b-b200-0e09c7433645",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "AnyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aacc454b-d907-4036-bac3-61e1146dfe2b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "AnyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa6bd896-e509-43d0-a5fb-f3b6af488d46",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad;Joystick",
+                    "action": "AnyKey",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

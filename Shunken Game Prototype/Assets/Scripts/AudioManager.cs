@@ -28,10 +28,7 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
     }
-    void Start()
-    {
-
-    }
+  
     //FindObjectOfType<AudioManager>().Play("name of sound desired"); = line to play a sound in other scripts
     public void Play(string name)
     {

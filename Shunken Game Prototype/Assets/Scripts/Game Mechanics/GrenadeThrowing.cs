@@ -37,6 +37,8 @@ public class GrenadeThrowing : MonoBehaviour
     PlayerControls controls;
     [SerializeField] TwoBoneIKConstraint throwingArmRigConstraint;
     [SerializeField] Rig throwingRig;
+    [SerializeField] CanvasGroup bombIcon,noSpellIcon;
+    bool nothingIconOpen;
     void Awake()
     {
 
@@ -44,6 +46,8 @@ public class GrenadeThrowing : MonoBehaviour
         controls.Player.EquipThrowable.performed += context => Equip();
         controls.Player.MagicExecution.performed += context => AimGrenade();
         controls.Player.MagicExecution.canceled += context => ThrowGrenade();
+
+        controls.Player.SwitchSpell.performed += context => OnSwitchSpells();
 
 
     }
@@ -68,14 +72,7 @@ public class GrenadeThrowing : MonoBehaviour
       
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (renderTrajectoryEnabled)
-        { 
-        }
-      
-    }
+ 
     public void ThrowGrenade()
     {
         if (holdingGrenade  && Time.timeScale == 1f)
@@ -93,7 +90,14 @@ public class GrenadeThrowing : MonoBehaviour
             StartCoroutine(StandStill(throwingAnimationDuration));
         }
     }
-    
+    private void OnSwitchSpells()
+    {
+        if (nothingIconOpen && noSpellIcon.alpha>0)
+        {
+            noSpellIcon.alpha = 0f;
+            nothingIconOpen = false;
+        }
+    }
     public IEnumerator CallLaunchMethod()
     {
         propMuscleRightHand.currentProp = null;
@@ -123,8 +127,10 @@ public class GrenadeThrowing : MonoBehaviour
         playerAnimator.SetTrigger("EquipItem");
         holdingGrenade = true;
         magicCasting.StopMagic();
+        if (magicCasting.spellUsed == "FireBall") magicCasting.TurnOffFireBall();
         magicCasting.spellUsed = "Nothing";
-        
+        DOTween.To(() => bombIcon.alpha, x => bombIcon.alpha = x, 1f, 0.5f);
+
         StartCoroutine(StandStill(0.8f));
         yield return new WaitForSeconds(0.8f);
         grenade = Instantiate(bombPrefab, rightHandTransform.position, Quaternion.identity);
@@ -137,10 +143,12 @@ public class GrenadeThrowing : MonoBehaviour
     }
     private IEnumerator UnequipGrenade()
     {
+        DOTween.To(() => bombIcon.alpha, x => bombIcon.alpha = x, 0f, 0.5f);
+        DOTween.To(() => noSpellIcon.alpha, x => noSpellIcon.alpha = x, 1f, 0.5f);
         StartCoroutine(StandStill(0.5f));
         playerAnimator.SetTrigger("UnequipItem");
         GameObject currentGrenade = propMuscleRightHand.currentProp.gameObject;
-        Debug.Log(currentGrenade.name);
+        //Debug.Log(currentGrenade.name);
         //propMuscleRightHand.currentProp = null;
       //  currentGrenade.SetActive(false);
         
@@ -151,7 +159,7 @@ public class GrenadeThrowing : MonoBehaviour
         Destroy(currentGrenade);
   
         holdingGrenade = false;
-        
+        nothingIconOpen = true;
     }
     private void GetRidOfModel()
     {

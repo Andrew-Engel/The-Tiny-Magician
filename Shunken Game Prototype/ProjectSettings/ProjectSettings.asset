@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 22
+  serializedVersion: 23
   productGUID: fa789d7bc8c3fc1488394d080f68dea1
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -164,7 +164,7 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -220,6 +220,7 @@ PlayerSettings:
   iOSLaunchScreeniPadCustomStoryboardPath: 
   iOSDeviceRequirements: []
   iOSURLSchemes: []
+  macOSURLSchemes: []
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
   metalEditorSupport: 1
@@ -319,6 +320,9 @@ PlayerSettings:
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
     m_Automatic: 1
+  - m_BuildTarget: AndroidPlayer
+    m_APIs: 0b00000008000000
+    m_Automatic: 0
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
     m_Enabled: 0
@@ -390,6 +394,7 @@ PlayerSettings:
     m_EncodingQuality: 1
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetNormalMapEncoding: []
+  m_BuildTargetDefaultTextureCompressionFormat: []
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -539,7 +544,9 @@ PlayerSettings:
   switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 0
   switchUseMicroSleepForYield: 1
+  switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
+  switchRamDiskSpaceSize: 12
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -610,7 +617,6 @@ PlayerSettings:
   ps4videoRecordingFeaturesUsed: 0
   ps4contentSearchFeaturesUsed: 0
   ps4CompatibilityPS5: 0
-  ps4AllowPS5Detection: 0
   ps4GPU800MHz: 1
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
@@ -636,28 +642,22 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;STARTER_ASSETS_PACKAGES_CHECKED;ENVIRO_LW;ENVIRO_LWRP
-    2: CROSS_PLATFORM_INPUT
-    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2
-    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    13: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    14: MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    17: MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2
-    18: UNITY_POST_PROCESSING_STACK_V2
-    19: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    20: MOBILE_INPUT
-    21: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    23: UNITY_POST_PROCESSING_STACK_V2
-    25: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    26: UNITY_POST_PROCESSING_STACK_V2
-    27: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    28: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    29: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    30: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    32: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
-    33: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    : UNITY_POST_PROCESSING_STACK_V2
+    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    CloudRendering: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW
+    GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    Lumin: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    PS4: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    PS5: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    Stadia: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    Standalone: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;STARTER_ASSETS_PACKAGES_CHECKED;ENVIRO_LW;ENVIRO_LWRP
+    WebGL: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    Windows Store Apps: MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    XboxOne: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2
+    tvOS: UNITY_POST_PROCESSING_STACK_V2;ENVIRO_LW;ENVIRO_LWRP
   additionalCompilerArguments: {}
   platformArchitecture:
     iPhone: 1
@@ -776,4 +776,6 @@ PlayerSettings:
   organizationId: a_engel123
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
+  playerDataPath: 
+  forceSRGBBlit: 1
   virtualTexturingSupportEnabled: 0

@@ -7,6 +7,8 @@ using TMPro;
 
 public class TutorialBehavior : MonoBehaviour
 {
+    GameBehavior levelGameManager;
+    public PauseMenuFunctionality tutorialGameManagerPauseMenuFunctionality;
     public static bool promptOpen = false;
     public GameObject promptGameObject;
     public Transform hUDParent;
@@ -29,8 +31,20 @@ public class TutorialBehavior : MonoBehaviour
         controls.Player.Disable();
     }
     // Start is called before the first frame update
-   
-   private void Interact()
+    private void Start()
+    {/*
+        levelGameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameBehavior>();
+        levelGameManager.gameObject.SetActive(false);
+        tutorialGameManagerPauseMenuFunctionality.OnMainMenuLoad += TutorialGameManagerPauseMenuFunctionality_OnMainMenuLoad;*/
+    }
+
+    private void TutorialGameManagerPauseMenuFunctionality_OnMainMenuLoad(object sender, System.EventArgs e)
+    {
+        levelGameManager.gameObject.SetActive(true);
+        throw new System.NotImplementedException();
+    }
+
+    private void Interact()
     {
       
         if (promptOpen)

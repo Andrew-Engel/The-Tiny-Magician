@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenuFunctionality : MonoBehaviour
 {
+    //LoadingIcon
+    public GameObject loadingIcon;
+
     //Sounds
     public AudioClip menuClick;
    new AudioSource audio;
     private AudioManager musicManager;
     //InputControls
     PlayerControls controls;
-
+    public event EventHandler OnMainMenuLoad;
 
     public static bool gameIsPaused = false;
     //Controls
@@ -95,10 +99,20 @@ public class PauseMenuFunctionality : MonoBehaviour
     }
     public void LoadMenu()
     {
-       
+        LoadingIconAnimation();
         SceneManager.LoadScene("MainMenu");
-        
+        if (OnMainMenuLoad != null)
+        {
+            OnMainMenuLoad(this, EventArgs.Empty);
+        }
     }
+  void LoadingIconAnimation()
+    {
+        loadingIcon.SetActive(true);
+      
+ 
+    }
+ 
     public void QuitGame()
     {
         Application.Quit();

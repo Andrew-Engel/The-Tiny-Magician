@@ -7,6 +7,8 @@ using RootMotion.Dynamics;
 
 public class AirPathSpells : MonoBehaviour
 {
+    AudioSource audioSource;
+    public AudioClip airEscapeSound;
     public PuppetMaster puppet;
     [SerializeField] CinemachineVirtualCamera followCam;
     [SerializeField] float effectFOV = 30f, effectTime = 0.8f;
@@ -21,6 +23,7 @@ public class AirPathSpells : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public IEnumerator AirEscapeBackwards()
@@ -30,6 +33,7 @@ public class AirPathSpells : MonoBehaviour
         anim.SetBool("LeapBack", true);
         transform.DOJump(targetEnd,airEscapeHeight, 1 , airEscapeTime);
         puppet.enabled = false;
+        audioSource.PlayOneShot(airEscapeSound);
         yield return new WaitForSeconds(airEscapeTime-0.1f);
         puppet.enabled = true;
         anim.SetBool("LeapBack", false);

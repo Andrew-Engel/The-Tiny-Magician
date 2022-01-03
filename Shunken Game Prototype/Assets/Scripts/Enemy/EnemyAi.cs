@@ -20,7 +20,7 @@ public class EnemyAi : MonoBehaviour
     Vector3 originalPosition;
     //Animation
    public Animator animator;
-    bool isMoving;
+    public bool isMoving;
     public float attackReactionDuration;
     //What Type of Enemy?
     [SerializeField] string enemyType;
@@ -132,7 +132,7 @@ public class EnemyAi : MonoBehaviour
         if (agent.enabled)
         {
 
-            if (!FindObjectOfType<AudioManager>().IsSoundPlaying(combatMusicTitle) && !PauseMenuFunctionality.gameIsPaused)
+            if (!FindObjectOfType<AudioManager>().IsSoundPlaying(combatMusicTitle) && !PauseMenuFunctionality.gameIsPaused && !GameBehavior.showLossScreen)
             {
                 AudioManager.instance.StopPlaying(backGroundMusicTitle);
                 AudioManager.instance.Play(combatMusicTitle);
@@ -169,7 +169,7 @@ public class EnemyAi : MonoBehaviour
     }
     private void AttackPlayer ()
     {
-        if (!FindObjectOfType<AudioManager>().IsSoundPlaying(combatMusicTitle) && enemyBehavior.enemyLives > 0  && !PauseMenuFunctionality.gameIsPaused)
+        if (!FindObjectOfType<AudioManager>().IsSoundPlaying(combatMusicTitle) && enemyBehavior.enemyLives > 0  && !PauseMenuFunctionality.gameIsPaused && !GameBehavior.showLossScreen)
         {
             AudioManager.instance.StopPlaying(backGroundMusicTitle);
             AudioManager.instance.Play(combatMusicTitle);

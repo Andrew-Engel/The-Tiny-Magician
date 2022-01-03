@@ -27,8 +27,7 @@ public class EnemyBehavior : MonoBehaviour
     //Remove transform from list upon death
     private EnemyPresenceCheckSampleScene presenceCheck;
     //Sound
-    [SerializeField] AudioClip damageSound;
-   new AudioSource audio;
+   public InsectAnimationEventHandler soundEffects;
 
     // Experience
     private LevelSystem levelSystem;
@@ -43,27 +42,26 @@ public class EnemyBehavior : MonoBehaviour
         get { return _lives; }
          set
         {
-            if (!audio.isPlaying)
-            audio.PlayOneShot(damageSound, 1f);
+            soundEffects.DamageSoundFX();
             _lives = value;
             if (_lives <= 0)
             {
                
                 if (!enemyDeathCompleted)
                 {
-                  
+                    soundEffects.DeathSoundFX();
                     enemyDeathCompleted = true;
-                    Debug.Log("EnemyDEath");
-                    itemDropping.RunPotionLottery();
-
                    
+                    itemDropping.RunPotionLottery();
+                 
 
                     levelSystem.AddExperience(experienceGiven);
 
                    switch (enemyType)
                     {
                         case ("Centipede"):
-                            
+
+                           
                             animator.SetBool("Death", true);
                             Instantiate(dissolveParticleSystem, this.transform);
                             Destroy(this.transform.parent.gameObject, 1.7f);
@@ -89,18 +87,21 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
     }
-    void OnDestroy()
+   void OnDestroy()
     {// presenceCheck.EnemyDeathEvent(); 
-       
-        onEnemyDeath?.Invoke(this, EventArgs.Empty);
+
+        // onEnemyDeath?.Invoke(this, EventArgs.Empty);
+        presenceCheck.RemoveDeadEnemyFromTransformList();
+     
     }
     void Start()
     {
-       // presenceCheck = GameObject.Find("Enemies").GetComponent<EnemyPresenceCheckSampleScene>();
+         presenceCheck = GetComponentInParent<EnemyPresenceCheckSampleScene>();
         // _dissolve = GetComponent<DissolveEffectTrigger>();
+        // TryGetComponent<InsectAnimationEventHandler>(out soundEffects);
         levelSystem = GameObject.Find("GameManager").GetComponent<LevelSystem>();
         itemDropping = GetComponent<ItemDropping>();
-        audio = GetComponent<AudioSource>();
+       
       //  itemDropping = GetComponent<ItemDropping>();
         meleeAttacking = GameObject.Find("Player").GetComponent<MeleeAttacking>();
         switch (enemyType)
@@ -119,19 +120,6 @@ public class EnemyBehavior : MonoBehaviour
       //  healthbar.SetMaxHealth(_lives);
     }
    
-
-
-    
-   
-   
-   
-    
-    
-    void Update()
-    {
- 
-        
-    }
 
     
     /*

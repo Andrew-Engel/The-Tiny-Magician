@@ -20,6 +20,7 @@ namespace StarterAssets
 		//[SerializeField] MagicCasting magic;
 		//Magic casting has static bools in this script; if not using magiccastingscript!
 		StaminaBar stamina;
+		EnemyLockOn enemyLock;
 
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -60,8 +61,10 @@ namespace StarterAssets
 		public GameObject CinemachineCameraTarget;
 		[Tooltip("How far in degrees can you move the camera up")]
 		public float TopClamp = 70.0f;
+		public float TopClampAim = 30.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -30.0f;
+		public float BottomClampAim = -30.0f;
 		[Tooltip("Additional degress to override the camera. Useful for fine tuning camera position when locked")]
 		public float CameraAngleOverride = 0.0f;
 		[Tooltip("For locking the camera position on all axis")]
@@ -119,7 +122,7 @@ namespace StarterAssets
 			_input = GetComponent<StarterAssetsInputs>();
 			stamina = GameObject.Find("GameManager").GetComponent<StaminaBar>();
 			AssignAnimationIDs();
-
+			enemyLock = GetComponent<EnemyLockOn>();
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
@@ -181,6 +184,9 @@ namespace StarterAssets
 
 			// clamp our rotations so our values are limited 360 degrees
 			_cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
+			if (MagicCasting.castingAimedSpells || enemyLock.lockedOnEnemy)
+				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClampAim, TopClampAim);
+			else
 			_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
 
@@ -200,6 +206,7 @@ namespace StarterAssets
 
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			 targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			if (Sneaking.playerSneaking) targetSpeed *= 0.8f;
 			if (stamina.stamina < 5)
 				targetSpeed = MoveSpeed;
 			if (_input.sprint)

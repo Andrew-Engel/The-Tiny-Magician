@@ -4,23 +4,39 @@ using UnityEngine;
 
 public class ShardBehavior : MonoBehaviour
 {
-    AudioSource audioSource;
+   public GameObject audioSourceObject;
+    public AudioClip pickUpSound;
     bool active = true;
     DemoObjective objective;
     // Start is called before the first frame update
     void Start()
     {
         objective = GameObject.Find("Stone").GetComponent<DemoObjective>();
-        audioSource = GetComponent<AudioSource>();
+       
     }
 
     private void OnTriggerEnter (Collider collision)
     {
         if (collision.gameObject.CompareTag("Player") && active)
         {
-            audioSource.Play();
-            objective.fragmentsCollected++;
-            Destroy(this.gameObject);
+
+            StartCoroutine(CollectShard());
+          
         }
+    }
+    void SpawnAudioSource()
+    {
+       GameObject newObject = Instantiate(audioSourceObject, this.transform.position, Quaternion.identity);
+      AudioSource  audioSource = newObject.GetComponent<AudioSource>();
+        audioSource.clip = pickUpSound;
+        audioSource.Play();
+
+    }
+    IEnumerator CollectShard()
+    {
+        objective.fragmentsCollected++;
+        SpawnAudioSource();
+        yield return new WaitForEndOfFrame();
+        Destroy(this.gameObject);
     }
 }

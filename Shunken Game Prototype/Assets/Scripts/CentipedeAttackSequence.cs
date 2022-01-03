@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class CentipedeAttackSequence : MonoBehaviour
 {
-  
+    public bool playerInRange;
  
     [SerializeField] private Animator animator;
 
@@ -45,7 +45,7 @@ public class CentipedeAttackSequence : MonoBehaviour
        
        if (Physics.CheckSphere(attackSource.position,attackRange,playerLayer))
         {
-            Debug.Log("OUCH A CENTIPEDE");
+            playerInRange = true;
             _gameManager.HP -= attackDamage;
             
         }
@@ -53,7 +53,7 @@ public class CentipedeAttackSequence : MonoBehaviour
         attackOccuring = false;
 
         animator.SetBool("Attack", false);
-
+        playerInRange = false;
 
     }
    

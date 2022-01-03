@@ -6,6 +6,8 @@ using CustomExtensions;
 using RootMotion.Dynamics;
 using System;
 using DG.Tweening;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GameBehavior : MonoBehaviour //Imanager
 { Transform screenCanvasTransform;
@@ -32,8 +34,10 @@ public class GameBehavior : MonoBehaviour //Imanager
 
     private int _itemsCollected = 0;
     public int _playerHP = 20;
+    public int lowHealthThreshold = 4;
     public static int maxPlayerHP = 20;
    public static int absoluteMaxHP = 42;
+    bool lowHealthEffect;
     //Cam Sensitivity
     //public float camSensitivity;
     private AudioManager audioManager;
@@ -41,10 +45,10 @@ public class GameBehavior : MonoBehaviour //Imanager
     public HealthBar healthBar;
     // CentipedeEscapeStuff
     public int buttonTapCount;
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    //Low Health Vignette stuff
+   public Volume volume;
+     Vignette thisVignette;
+  
     void Start ()
     {
         hud = GameObject.Find("PlayTime HUD");
@@ -57,8 +61,20 @@ public class GameBehavior : MonoBehaviour //Imanager
         animator = GameObject.Find("Player").GetComponent<Animator>();
          FindObjectOfType<AudioManager>().Play(backgroundMusicTitle);
         SendHealthToHealthBar(_playerHP);
+        previousHP = _playerHP;
+        ClearOtherGameManagers();
     }
-    
+    void ClearOtherGameManagers()
+    {
+        GameObject[] otherGameManagers = GameObject.FindGameObjectsWithTag("GameManager");
+        foreach (GameObject gm in otherGameManagers)
+        {
+            if (gm != this.gameObject)
+            {
+                Destroy(gm);
+            }
+        }
+    }
 
     public int Items
     {
@@ -79,19 +95,28 @@ public class GameBehavior : MonoBehaviour //Imanager
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+    int previousHP;
     public int HP
     {
         get { return _playerHP; }
         set
         {
+            
+         
             //healthBar.SetHealth(_playerHP);
             _playerHP = value;
-            Debug.LogFormat("Lives: {0}", _playerHP);
+            if (previousHP > _playerHP) Damage();
+            previousHP = _playerHP;
+            // Debug.LogFormat("Lives: {0}", _playerHP);
             SendHealthToHealthBar(_playerHP);
             if (_playerHP > maxPlayerHP)
             {
                 _playerHP = maxPlayerHP;
             }
+            if (_playerHP <= lowHealthThreshold)
+            { LowHealth(); }
+            else if (_playerHP >= lowHealthThreshold && lowHealthEffect)
+            { StopLowHealth(); }
             if (_playerHP <= 0)
             {
 
@@ -112,7 +137,28 @@ public class GameBehavior : MonoBehaviour //Imanager
         }
 
     }
-   
+   public void Damage()
+    {
+        AudioManager.instance.Play("PlayerDamageSound");
+       
+    }
+    private void LowHealth()
+    {
+
+        VolumeProfile profile = volume.sharedProfile;
+
+
+        volume.profile.TryGet(out thisVignette);
+        thisVignette.active = true;
+        FindObjectOfType<AudioManager>().Play("HeartBeat");
+        lowHealthEffect = true;
+    }
+    private void StopLowHealth()
+    {
+        thisVignette.active = false;
+        FindObjectOfType<AudioManager>().StopPlaying("HeartBeat");
+        lowHealthEffect = false;
+    }
     void OnGUI()
     {
 

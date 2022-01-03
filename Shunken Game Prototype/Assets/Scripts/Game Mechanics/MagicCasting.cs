@@ -124,16 +124,12 @@ public class MagicCasting : MonoBehaviour
            
             if (spellUsed == "FireBall")
             {
-                puppet.mode = PuppetMaster.Mode.Disabled;
-                DOTween.To(() => throwingRig.weight, x => throwingRig.weight = x, 0f, 0.3f);
-                fireBallInHand.SetActive(false);
-                puppet.mode = PuppetMaster.Mode.Active;
 
+                TurnOffFireBall();
             }
 
             spellIndex++;
             string nextSpell;
-            
             if (spellIndex > (SpellEquipping.spellsEquiped.Length - 1))
             {
                 spellIndex = 0;
@@ -165,6 +161,13 @@ public class MagicCasting : MonoBehaviour
           
 
         }
+    }
+    public void TurnOffFireBall()
+    {
+        puppet.mode = PuppetMaster.Mode.Disabled;
+        DOTween.To(() => throwingRig.weight, x => throwingRig.weight = x, 0f, 0.3f);
+        fireBallInHand.SetActive(false);
+        puppet.mode = PuppetMaster.Mode.Active;
     }
     // set up starting values and variables
     void Start()

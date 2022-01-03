@@ -14,9 +14,11 @@ public class CraftingSystemUIElementBehavior : MonoBehaviour, IPointerEnterHandl
     [SerializeField] CanvasGroup recipeImageCanvasGroup;
     [SerializeField] TextMeshProUGUI[] ingredientQuantatityTexts = new TextMeshProUGUI[2];
     Button button;
-    [SerializeField] string whatDoesThisCraft;
+    public string whatDoesThisCraft;
     InventorySystem inventory;
     CraftingSystem craftingSystem;
+    RecipePromptDoubleCheck RecipePromptDoubleCheck;
+    bool pointerEntered;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class CraftingSystemUIElementBehavior : MonoBehaviour, IPointerEnterHandl
         inventory = GameObject.Find("GameManager").GetComponent<InventorySystem>();
         craftingSystem = GameObject.Find("GameManager").GetComponent<CraftingSystem>();
         inventory.OnCraftingMaterialAddition += On_Material_Addition;
+        RecipePromptDoubleCheck = transform.GetComponentInParent<RecipePromptDoubleCheck>();
     }
     private void On_Material_Addition(object sender, EventArgs e)
     {
@@ -41,16 +44,24 @@ public class CraftingSystemUIElementBehavior : MonoBehaviour, IPointerEnterHandl
     {
 
         DOTween.To(() => recipeImageCanvasGroup.alpha, x => recipeImageCanvasGroup.alpha = x, 1f, 0.5f).SetUpdate(true);
+        TurnOffOtherRecipes(whatDoesThisCraft);
 
 
     }
-
+    private void TurnOffOtherRecipes(string currentRecipe)
+    {
+        RecipePromptDoubleCheck.TurnOffInactiveRecipes(whatDoesThisCraft);
+    }
     // Called when the pointer exits our GUI component.
 
     public void OnPointerExit(PointerEventData eventData)
     {
 
 
+        recipeImageCanvasGroup.alpha = 0f;
+    }
+    public void TurnOffCanvasGroup()
+    {
         recipeImageCanvasGroup.alpha = 0f;
     }
     private void SetQuantityTexts(string recipeProduct)

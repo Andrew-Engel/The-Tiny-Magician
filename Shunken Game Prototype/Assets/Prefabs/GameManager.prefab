@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 4080589620842228025}
   - component: {fileID: 4078552198549134366}
   - component: {fileID: 3261436548026785629}
+  - component: {fileID: 6613207821446254382}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -44,6 +45,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.232756, y: 8.717109, z: -18.450356}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,8 +70,10 @@ MonoBehaviour:
   showWinScreen: 0
   maxItems: 4
   _playerHP: 14
+  lowHealthThreshold: 4
   healthBar: {fileID: 0}
   buttonTapCount: 0
+  volume: {fileID: 0}
 --- !u!114 &4394132764989996619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +257,7 @@ MonoBehaviour:
   flameThrowerSound: {fileID: 8300000, guid: 1ab1dc1296ee95a46a01330fb5646f2f, type: 3}
   earthShatterSound: {fileID: 8300000, guid: 86d9a15dec86eaf49a1df2561832430a, type: 3}
   iceLanceSound: {fileID: 8300000, guid: 86d52160ba74c1e4496e64c67cd3509c, type: 3}
+  windSound: {fileID: 8300000, guid: fe0a0e368a5abbe4a90c6f56be6f3af4, type: 3}
   noSpellSound: {fileID: 8300000, guid: 9a304faffa1dbc147b5d3539022e2136, type: 3}
 --- !u!114 &4394132764989996621
 MonoBehaviour:
@@ -346,14 +351,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be199f86b183434bb36d4083762f8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAdditionSound: {fileID: 8300000, guid: 220de0a1ff9b5ba44bc32e1294e9c5a1, type: 3}
-  healthUseSound: {fileID: 8300000, guid: 220de0a1ff9b5ba44bc32e1294e9c5a1, type: 3}
-  manaAdditionSound: {fileID: 8300000, guid: 2934bb5d9e5654544b33b86b4bb1632f, type: 3}
-  manaUseSound: {fileID: 8300000, guid: 2934bb5d9e5654544b33b86b4bb1632f, type: 3}
-  staminaAdditionSound: {fileID: 8300000, guid: 2934bb5d9e5654544b33b86b4bb1632f,
+  healthAdditionSound: {fileID: 8300000, guid: eae0402bf46b7ef4595aa3efde031f3c, type: 3}
+  healthUseSound: {fileID: 8300000, guid: f7158451b62c4174f8c25b5196fb0112, type: 3}
+  manaAdditionSound: {fileID: 8300000, guid: eae0402bf46b7ef4595aa3efde031f3c, type: 3}
+  manaUseSound: {fileID: 8300000, guid: 616ae3db500e4b44c920f6ca0c92f8bd, type: 3}
+  staminaAdditionSound: {fileID: 8300000, guid: eae0402bf46b7ef4595aa3efde031f3c,
     type: 3}
-  staminaUseSound: {fileID: 8300000, guid: 2934bb5d9e5654544b33b86b4bb1632f, type: 3}
-  bombAdditionSound: {fileID: 0}
+  staminaUseSound: {fileID: 8300000, guid: b479544712852e843b85963459325a80, type: 3}
+  bombAdditionSound: {fileID: 8300000, guid: f2a5a2943c9393f4fa5c3254a09669f3, type: 3}
   inventoryOpenSound: {fileID: 8300000, guid: 9e26d8772033a0d44a852aa1a67d33a7, type: 3}
   craftingMaterialQuantityTexts:
   - {fileID: 0}
@@ -376,6 +381,7 @@ MonoBehaviour:
   - {fileID: 5138808280267918618, guid: 9ad356997044a814a89dc2f58a4cf50a, type: 3}
   bombItemUIPrefabs:
   - {fileID: 5138808280267918618, guid: 3323d615910af5f4ca0fc755bc295007, type: 3}
+  specialItemUIPrefabs: []
   itemListParent: {fileID: 0}
 --- !u!114 &9004632100509942198
 MonoBehaviour:
@@ -440,5 +446,19 @@ MonoBehaviour:
   - {fileID: 4145807509483931040, guid: 9d9888d172f0c7b44873d6bae4a17e02, type: 3}
   screenOverlayPrefabs:
   - {fileID: 4145807509483931040, guid: 7d61b0eebf6a5824487382dc812c27eb, type: 3}
+  MissionDescriptionText: {fileID: 0}
   MenuTitleParent: {fileID: 0}
   ScreenOverlayParent: {fileID: 0}
+  newMissionSound: {fileID: 0}
+--- !u!114 &6613207821446254382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394132764989996630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ae2d9256fc12e46b692d7a90ee90a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

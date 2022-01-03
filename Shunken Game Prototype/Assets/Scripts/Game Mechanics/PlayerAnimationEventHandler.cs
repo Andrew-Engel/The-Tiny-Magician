@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class PlayerAnimationEventHandler : MonoBehaviour
 {
@@ -13,10 +14,17 @@ public class PlayerAnimationEventHandler : MonoBehaviour
     public void ThrowGrenadeEvent()
     {
         StartCoroutine(grenade.CallLaunchMethod());
+       
     }
-    // Update is called once per frame
-    void Update()
+   public void PlayWalkingSound()
     {
-        
+        if (ThirdPersonController.Grounded)
+        AudioManager.instance.Play("Gravel Footsteps Slow");
     }
+    public void PlayRunningSound()
+    {
+        if (ThirdPersonController.Grounded)
+            AudioManager.instance.Play("Gravel Footsteps");
+    }
+ 
 }

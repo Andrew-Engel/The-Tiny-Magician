@@ -7,35 +7,53 @@ public class EnemyPresenceCheckSampleScene : MonoBehaviour
 {
     [SerializeField] string backgroundMusicTitle, combatMusicTitle;
     public event EventHandler OnEnemyDeath;
+    public EnemyLockOn enemyLockOn;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.childCount == 0 && FindObjectOfType<AudioManager>().IsSoundPlaying(combatMusicTitle))
+        if (!GameBehavior.showLossScreen)
         {
-            if (!FindObjectOfType<AudioManager>().IsSoundPlaying(backgroundMusicTitle))
+            Debug.Log("MusicResumed");
+            if (transform.childCount == 0 && FindObjectOfType<AudioManager>().IsSoundPlaying(combatMusicTitle))
             {
-                FindObjectOfType<AudioManager>().StopPlaying(combatMusicTitle);
-                AudioManager.instance.Play(backgroundMusicTitle);
+                if (!FindObjectOfType<AudioManager>().IsSoundPlaying(backgroundMusicTitle))
+                {
+                    FindObjectOfType<AudioManager>().StopPlaying(combatMusicTitle);
+                    AudioManager.instance.Play(backgroundMusicTitle);
+                }
             }
-        }
-       
-        else if (!EnemyLockOn.enemiesNearby)
-        { Debug.Log("NoEnemiesNearby");
-            if (!FindObjectOfType<AudioManager>().IsSoundPlaying(backgroundMusicTitle))
+
+            else if (!EnemyLockOn.enemiesNearby)
             {
-                FindObjectOfType<AudioManager>().StopPlaying(combatMusicTitle);
-                AudioManager.instance.Play(backgroundMusicTitle);
+                Debug.Log("NoEnemiesNearby");
+                if (!FindObjectOfType<AudioManager>().IsSoundPlaying(backgroundMusicTitle))
+                {
+                    FindObjectOfType<AudioManager>().StopPlaying(combatMusicTitle);
+                    AudioManager.instance.Play(backgroundMusicTitle);
+                }
             }
         }
     }
-    public void EnemyDeathEvent()
+    public void RemoveDeadEnemyFromTransformList()
     {
-        OnEnemyDeath(this, EventArgs.Empty);
+        //OnEnemyDeath(this, EventArgs.Empty);
+        StartCoroutine(ClearEmptyTransforms());
+        // enemyLockOn.enemyTransformsList.Remove(enemyTransform);
+        //enemyLockOn.enemyTransformsList.TrimExcess();
+        
+    }
+    IEnumerator ClearEmptyTransforms()
+    {
+        yield return new WaitForEndOfFrame();
+        for (int i = 0; i < enemyLockOn.enemyTransformsList.Count; i++)
+        {
+            if (enemyLockOn.enemyTransformsList[i] == null)
+            {
+                enemyLockOn.enemyTransformsList.Remove(enemyLockOn.enemyTransformsList[i]);
+                enemyLockOn.enemyTransformsList.TrimExcess();
+            }
+        }
     }
 }

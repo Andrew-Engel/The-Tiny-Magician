@@ -25,11 +25,7 @@ public class LevelWindow : MonoBehaviour
         levelSystemAnimated.OnLevelChanged += LevelSystem_OnLevelChanged;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     private void SetExperienceBarSize(float experienceNormalized)
     {
         slider.value = experienceNormalized;

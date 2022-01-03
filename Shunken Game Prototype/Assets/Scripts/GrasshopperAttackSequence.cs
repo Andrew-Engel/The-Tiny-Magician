@@ -6,6 +6,9 @@ using DG.Tweening;
 
 public class GrasshopperAttackSequence : MonoBehaviour
 {
+    //Used as bool for sound and camera effects in other scripts
+    public bool playerWithinAttackRange;
+
     public bool playerWithinMinRange;
     public bool playerWithinMaxRange;
     Vector3 targetPosition;
@@ -81,9 +84,10 @@ public class GrasshopperAttackSequence : MonoBehaviour
         anim.SetBool("Leap",true);
         targetPosition = playerTransform.position;
         transform.LookAt(targetPosition);
-        Debug.Log($"TargetLocation Coordinates: " + targetPosition.ToString());
+      
         GrasshopperLeapTrajectory();
         yield return new WaitForSeconds(leapDuration);
+        LandingFX();
         agent.enabled = true;
         anim.SetBool("Leap", false);
         CancelInvoke();
@@ -96,6 +100,7 @@ public class GrasshopperAttackSequence : MonoBehaviour
         
         if (Physics.CheckSphere(attackSource.position, closeAttackRange, playerLayer, QueryTriggerInteraction.Ignore))
         {
+            playerWithinAttackRange = true;
             agent.SetDestination(this.transform.position);
             attackOccuring = true;
             anim.SetBool("Attack", true);
@@ -103,10 +108,11 @@ public class GrasshopperAttackSequence : MonoBehaviour
             yield return new WaitForSeconds(attackRate);
             anim.SetBool("Attack", false);
             attackOccuring = false;
-
+            playerWithinAttackRange = false;
         }
 
-        else  yield break;
+        else playerWithinAttackRange = false;
+        yield break;
 
     }
     
@@ -132,7 +138,14 @@ public class GrasshopperAttackSequence : MonoBehaviour
             _audio.PlayOneShot(landingSound, 0.7f);
         }
     }
-
+    void LandingFX()
+    {
+        impulseSource.GenerateImpulse(Camera.main.transform.forward);
+        Debug.Log("GrasshopperLanded");
+        jumping = false;
+        Instantiate(landingEffect, this.transform.position + new Vector3(0, -1, 0), Quaternion.identity);
+        _audio.PlayOneShot(landingSound, 0.7f);
+    }
     private void GroundedCheck()
     {
         // set sphere position, with offset

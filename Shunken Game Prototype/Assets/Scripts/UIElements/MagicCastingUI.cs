@@ -12,7 +12,7 @@ public class MagicCastingUI : MonoBehaviour
     [SerializeField] private Image manaBar;
     [SerializeField] CanvasGroup  noSpellIcon,fireBallIcon, flameThrowerIcon, earthShatterIcon, iceLanceIcon, airEscapeIcon;
     [SerializeField] CanvasGroup noSpellIcon2, fireBallIcon2, flameThrowerIcon2, earthShatterIcon2, iceLanceIcon2, airEscapeIcon2;
-    [SerializeField] AudioClip fireBallSound, flameThrowerSound, earthShatterSound, iceLanceSound, noSpellSound;
+    [SerializeField] AudioClip fireBallSound, flameThrowerSound, earthShatterSound, iceLanceSound, windSound, noSpellSound;
     private AudioSource audioSource;
     private CanvasGroup currentIcon, nextIcon;
     Dictionary<string, CanvasGroup> spellIcons = new Dictionary<string, CanvasGroup>();
@@ -63,6 +63,7 @@ public class MagicCastingUI : MonoBehaviour
         spellSounds.Add(Spells.IceShards.ToString(), iceLanceSound);
         spellSounds.Add(Spells.FlameThrower.ToString(), flameThrowerSound);
         spellSounds.Add(Spells.EarthWave.ToString(), earthShatterSound);
+        spellSounds.Add(Spells.AirEscape.ToString(), windSound);
     }
     public void UpdateManaAnimated(float manaAmount, float tweenTime)
     {
@@ -91,6 +92,7 @@ public class MagicCastingUI : MonoBehaviour
     {
         SwitchSpellIcon(e.currentSpell, e.nextSpell);
         PlaySpellSound(e.currentSpell);
+        DoubleCheckNextSpellIcon(e.nextSpell);
 
     }
     private void ManaBar_OnManaUse(object sender, ManaBarSystem.OnManaUseEventArgs e)
@@ -99,22 +101,38 @@ public class MagicCastingUI : MonoBehaviour
     }
     private IEnumerator SpellIconChangeAnimation(string nextSpell, string currentSpell)
     {
-        CanvasGroup iconToSwitchTo;
+        CanvasGroup iconToTurnOff, iconToTurnOn;
+        nextSpellIcons.TryGetValue(currentSpell, out iconToTurnOff);
+        
+        nextSpellIcons.TryGetValue(nextSpell, out iconToTurnOn);
+ 
         float animationTime = 0.5f;
         Vector3 targetPosition = currentSpellIconTransform.position;
         nextSpellIconTransform.DOAnchorPos3D(targetPosition, animationTime, false);
         DOTween.To(() => nextSpellIconTransform.localScale, x => nextSpellIconTransform.localScale = x, new Vector3 (1.5f,1.5f,1f), animationTime);
+        
         yield return new WaitForSeconds(animationTime);
-        nextSpellIcons.TryGetValue(currentSpell, out iconToSwitchTo);
-       
-        iconToSwitchTo.alpha = 0f;
+      
+        iconToTurnOff.alpha = 0f;
+
+
         nextSpellIconTransform.position = nextSpellIconOriginalPosition;
 
 
         
-        nextSpellIcons.TryGetValue(nextSpell, out iconToSwitchTo);
-        DOTween.To(() => iconToSwitchTo.alpha, x => iconToSwitchTo.alpha = x,1f, 1f);
+        
+        DOTween.To(() => iconToTurnOn.alpha, x => iconToTurnOn.alpha = x,1f, 1f);
      
     }
-
+    private void DoubleCheckNextSpellIcon(string nextSpell)
+    {
+       foreach (var key in nextSpellIcons)
+        {
+            if (key.Key != nextSpell)
+            {
+                nextSpellIcons[key.Key].alpha = 0f;
+              
+            }
+        }
+    }
 }

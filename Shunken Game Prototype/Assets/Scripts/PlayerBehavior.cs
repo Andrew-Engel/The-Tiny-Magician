@@ -112,32 +112,9 @@ public class PlayerBehavior : MonoBehaviour
         {
             animator.SetFloat("MoveY", move.y);
             animator.SetFloat("MoveX", move.x);
-            if (ThirdPersonController.sprinting && thirdPersonController.targetSpeed > thirdPersonController.MoveSpeed)
-            {
-                
-                if (!FindObjectOfType<AudioManager>().IsSoundPlaying("Gravel Footsteps"))
-                {
-                   // Debug.Log("Footsteps");
-                    AudioManager.instance.Play("Gravel Footsteps");
-                }
-            }
-            else
-            {
-                AudioManager.instance.StopPlaying("Gravel Footsteps");
-                if (!FindObjectOfType<AudioManager>().IsSoundPlaying("Gravel Footsteps Slow") && !walkingSoundPlaying)
-                {
-                  //  Debug.Log("Footsteps1");
-                    StartCoroutine(WalkingSound());
-                }
-            }
-        }
-        else
-        {
           
-            AudioManager.instance.StopPlaying("Gravel Footsteps");
-            AudioManager.instance.StopPlaying("Gravel Footsteps Slow");
-            walkingSoundPlaying = false;
         }
+       
         if (ThirdPersonController.Grounded && jumping && !MeleeAttacking.jumpAttack)
         {
           //  Debug.Log("Landing");
@@ -153,16 +130,7 @@ public class PlayerBehavior : MonoBehaviour
             audio.PlayOneShot(jumpLanding, 1.0f);
         }
     }
-    private IEnumerator WalkingSound()
-    {
-        
-        walkingSoundPlaying = true;
-        AudioManager.instance.Play("Gravel Footsteps Slow");
-        yield return new WaitForSeconds(walkingSoundTempo);
-        walkingSoundPlaying = false;
-
-    }
-    
+ 
   
 
 
