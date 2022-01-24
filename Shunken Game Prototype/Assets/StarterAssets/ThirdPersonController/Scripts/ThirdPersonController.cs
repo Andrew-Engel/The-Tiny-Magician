@@ -81,6 +81,7 @@ namespace StarterAssets
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
+		public float sneakMovementFactor = 0.5f;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -206,7 +207,7 @@ namespace StarterAssets
 
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			 targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
-			if (Sneaking.playerSneaking) targetSpeed *= 0.8f;
+			if (Sneaking.playerSneaking) targetSpeed *= sneakMovementFactor;
 			if (stamina.stamina < 5)
 				targetSpeed = MoveSpeed;
 			if (_input.sprint)

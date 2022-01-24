@@ -1103,7 +1103,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    cloudsExposure: 1
+    cloudsExposure: 1.5
     useHaltonRaymarchOffset: 0
     useLessSteps: 0
     weatherMapTiling: 7
@@ -1146,7 +1146,7 @@ MonoBehaviour:
     cirrusCloudsAltitude: 10
     flatCloudsBaseTexture: {fileID: 2800000, guid: 9b9ac0c14a0678d498b26fb2486005f1,
       type: 3}
-    flatCloudsBaseTextureTiling: 1.5
+    flatCloudsBaseTextureTiling: 2
     flatCloudsDetailTexture: {fileID: 2800000, guid: 3904de3fb7c0ff1419fd3064f8114c90,
       type: 3}
     flatCloudsDetailTextureTiling: 12
@@ -1208,7 +1208,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 2
-    flatCloudsAltitude: 84.6
+    flatCloudsAltitude: 200
     shadowIntensity: 0
     shadowCookieSize: 10000
     ParticleCloudsLayer1:
@@ -1276,7 +1276,7 @@ MonoBehaviour:
     dualLayerParticleClouds: 1
   weatherSettings:
     useTag: 0
-    wetnessAccumulationSpeed: 0.32
+    wetnessAccumulationSpeed: 0.05
     wetnessDryingSpeed: 0.05
     snowAccumulationSpeed: 0.05
     snowMeltingSpeed: 0.05
@@ -1288,8 +1288,8 @@ MonoBehaviour:
     audioTransitionSpeed: 0.1
     lightningEffect: {fileID: 1573907201630640, guid: 044a06c0461cf464dbd3727572a70d42,
       type: 3}
-    lightningRange: 1328
-    lightningHeight: 1384
+    lightningRange: 500
+    lightningHeight: 750
     temperatureChangingSpeed: 10
   fogSettings:
     Fogmode: 2
@@ -1374,7 +1374,7 @@ MonoBehaviour:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
   lightshaftsSettings:
-    resolution: 1
+    resolution: 0
     screenBlendMode: 0
     useDepthTexture: 1
     lightShaftsColorSun:

@@ -101,6 +101,10 @@ public class PauseMenuFunctionality : MonoBehaviour
     {
         LoadingIconAnimation();
         SceneManager.LoadScene("MainMenu");
+        LoadMainMenuEvent();
+    }
+    public void LoadMainMenuEvent()
+    {
         if (OnMainMenuLoad != null)
         {
             OnMainMenuLoad(this, EventArgs.Empty);
@@ -109,8 +113,6 @@ public class PauseMenuFunctionality : MonoBehaviour
   void LoadingIconAnimation()
     {
         loadingIcon.SetActive(true);
-      
- 
     }
  
     public void QuitGame()

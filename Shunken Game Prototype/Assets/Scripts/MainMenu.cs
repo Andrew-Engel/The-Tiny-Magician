@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour
     {
         _audio = GetComponent<AudioSource>();
        if (Time.timeScale != 1f) Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     public void PlayGame()
     {

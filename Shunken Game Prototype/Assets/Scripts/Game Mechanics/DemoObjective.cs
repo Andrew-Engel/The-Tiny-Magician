@@ -6,6 +6,8 @@ using DG.Tweening;
 
 public class DemoObjective : MonoBehaviour
 {
+    
+    public TimelineManager timelineManager;
     InventorySystemUI inventoryUI;
     bool finishLevel = false;
     bool openConfirmWindow = false;
@@ -117,6 +119,9 @@ public class DemoObjective : MonoBehaviour
     private void StartEndGameCutScene()
     {
         Debug.Log("RockCleared");
+        CloseAllUI();
+        timelineManager.StartTimeline();
+       
     }
     private void ShowInteractPrompt()
     {

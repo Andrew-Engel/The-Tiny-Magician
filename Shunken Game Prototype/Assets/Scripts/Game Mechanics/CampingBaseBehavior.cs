@@ -5,6 +5,9 @@ using DG.Tweening;
 
 public class CampingBaseBehavior : MonoBehaviour
 {
+    public AudioClip sleepSound, enemiesNearbySound;
+    AudioSource audioSource;
+    [SerializeField] bool tutorialMode;
     Animator playerAnimator;
     StaminaBar staminaBar;
     ManaBarSystem manaBarSystem;
@@ -30,6 +33,7 @@ public class CampingBaseBehavior : MonoBehaviour
         gameBehavior = GameObject.Find("GameManager").GetComponent<GameBehavior>();
         enemyNearbyCG = enemiesNearbyMessage.GetComponent<CanvasGroup>();
         enemyNearbyRT = enemiesNearbyMessage.GetComponent<RectTransform>();
+        audioSource = GetComponent<AudioSource>();
     }
     void OnEnable()
     {
@@ -51,7 +55,7 @@ public class CampingBaseBehavior : MonoBehaviour
         {
             StartCoroutine(SleepThroughNight());
         }
-        else if (playerNearby && modalWindowOpen && EnemyLockOn.enemiesNearby)
+        else if (playerNearby && modalWindowOpen && EnemyLockOn.enemiesNearby && !tutorialMode)
         {
             StartCoroutine(ShowEnemyWarning());
         }
@@ -79,7 +83,7 @@ public class CampingBaseBehavior : MonoBehaviour
     {
         playerAnimator.SetTrigger("WakeUp");
         DOTween.To(() => blackScreen.alpha, x => blackScreen.alpha = x, 1, 2f).SetUpdate(true);
-
+        audioSource.PlayOneShot(sleepSound);
         Invoke("SetTime", 2f);
         yield return new WaitForSecondsRealtime(3f);
         HideModalWindow();
@@ -116,7 +120,7 @@ public class CampingBaseBehavior : MonoBehaviour
     private IEnumerator ShowEnemyWarning()
     {
         enemyNearbyCG.alpha = 1f;
-
+        audioSource.PlayOneShot(enemiesNearbySound);
         enemyNearbyRT.DOScale(1.3f, 0.8f);
         yield return new WaitForSeconds(0.5f);
         enemyNearbyRT.DOScale(1f, 0.8f);

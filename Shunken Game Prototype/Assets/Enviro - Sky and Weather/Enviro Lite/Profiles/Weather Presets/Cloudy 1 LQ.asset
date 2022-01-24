@@ -52,9 +52,9 @@ MonoBehaviour:
     particleLayer2Brightness: 0.75
     particleLayer2ColorPow: 2
     particleCloudsOverwrite: 0
-  fogStartDistance: 0
-  fogDistance: 0
-  fogDensity: 0.0001
+  fogStartDistance: 6.16
+  fogDistance: 76.51
+  fogDensity: 0.46
   weatherSkyMod:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 0}
