@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rhubarbResult>
+  <metadata>
+    <soundFile>C:\Users\Andre\Desktop\unity games\The-Tiny-Magician\Shunken Game Prototype1\Assets/PuppetFace/Demo/Audio/BuyCookies.wav</soundFile>
+    <duration>2.47</duration>
+  </metadata>
+  <mouthCues>
+    <mouthCue start="0.00" end="0.23">X</mouthCue>
+    <mouthCue start="0.23" end="0.44">B</mouthCue>
+    <mouthCue start="0.44" end="0.72">C</mouthCue>
+    <mouthCue start="0.72" end="0.86">B</mouthCue>
+    <mouthCue start="0.86" end="0.94">A</mouthCue>
+    <mouthCue start="0.94" end="1.16">C</mouthCue>
+    <mouthCue start="1.16" end="1.30">B</mouthCue>
+    <mouthCue start="1.30" end="1.37">E</mouthCue>
+    <mouthCue start="1.37" end="1.44">B</mouthCue>
+    <mouthCue start="1.44" end="1.58">C</mouthCue>
+    <mouthCue start="1.58" end="1.72">B</mouthCue>
+    <mouthCue start="1.72" end="1.93">H</mouthCue>
+    <mouthCue start="1.93" end="2.07">G</mouthCue>
+    <mouthCue start="2.07" end="2.14">B</mouthCue>
+    <mouthCue start="2.14" end="2.47">X</mouthCue>
+  </mouthCues>
+</rhubarbResult>
